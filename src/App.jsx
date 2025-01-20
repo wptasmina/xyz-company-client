@@ -13,7 +13,7 @@ function App() {
     <>
     <div>
         <Navbar />
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* <Dashboard /> */}
         {/* <Admin_dashbord /> */}
         {/* <div className="min-h-[calc(100vh-260px)] ">

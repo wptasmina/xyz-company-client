@@ -36,48 +36,7 @@ export const router = createBrowserRouter([
           </PrivatRoutes>
         ),
       },
-      {
-        path: "/admin_dashbord",
-        element: <Admin_dashbord />,
-        children: [
-          {
-            path: "/dashboard",
-            element: <Dashboard />,
-          },
-          {
-            path: "/add-employee",
-            element: <AddEmployee />,
-          },
-          {
-            path: "/my-assets",
-            element: <MyAssets />,
-          },
-          {
-            path: "/my-team",
-            element: <MyTeam />,
-          },
-          {
-            path: "/request-asset",
-            element: <RequestAsset />,
-          },
-          {
-            path: "/add-hr",
-            element: <Add_HR_Manager />,
-          },
-          {
-            path: "/asset-list",
-            element: <AssetList />,
-          },
-          {
-            path: "/add-asset",
-            element: <AddAsset />,
-          },
-          {
-            path: "/employee-list",
-            element: <MyEmployees />,
-          },
-        ],
-      },
+      
       {
         path: "/join-hr",
         element: (

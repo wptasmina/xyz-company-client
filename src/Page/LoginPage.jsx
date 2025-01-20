@@ -49,37 +49,37 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="bg-[#EDF2FA]">
-        <div className="hero min-h-screen w-11/12 mx-auto">
-          <div className="hero-content p-0 flex-col sm:my-10 my-4 md:flex-row-reverse">
-            <div className="text-center lg:text-left">
-              <h1 className="md:text-4xl text-2xl font-bold text-center">Login now!</h1>
-              <img src={loginImg} className="sm:w-full w-40 md:my-6" alt="image" />
+      <div className="bg-[#dbe6f8b6] ">
+        <div className="w-11/12  min-h-screen  mx-auto flex justify-center items-center sm:gap-10 gap-2">
+
+            <div className="text-center lg:text-left border">
+              <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
             </div>
 
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-md">
-              <form onSubmit={handleSignIn} className="card-body">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
+            <div className="card bg-base-100 w-full max-w-sm bg-[#adc8f3b6] p-6  shrink-0 shadow-md">
+              <h1 className="md:text-3xl text-2xl font-bold text-center mb-6">Login now!</h1>
+              <form onSubmit={handleSignIn} className="space-y-4">
+                <div className="">
+                  <label className="">
+                  Email
                   </label>
                   <input
                     type="email"
-                    placeholder="email"
+                    placeholder="Enter your email"
                     name="email"
-                    className="input input-bordered focus:outline-none focus:border-blue-300"
+                    className="border mt-2 w-full py-2 px-4 rounded-md cursor-pointer focus:outline-none focus:border-blue-300"
                     required
                   />
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Password</span>
+                <div className="">
+                  <label className="pb-2">
+                  Password
                   </label>
                   <input
                     type="password"
-                    placeholder="password"
+                    placeholder="Enter your password"
                     name="password"
-                    className="input input-bordered focus:outline-none focus:border-blue-300"
+                    className="border mt-2 mb-2 w-full px-4 py-2 rounded-md cursor-pointer focus:outline-none focus:border-blue-300"
                     required
                   />
                   <label className="label">
@@ -92,11 +92,11 @@ export default function LoginPage() {
                   <input
                     type="submit"
                     value="Login"
-                    className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary"
+                    className="btn bg-blue-500 border w-full py-2 rounded-md cursor-pointer text-white text-lg hover:bg-blue-500 btn-primary"
                   />
                 </div>
 
-                <div className="divider">OR</div>
+                <div className="my-4 text-center">------ OR ------</div>
 
                 <div
                   className="flex justify-start border gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
@@ -113,7 +113,7 @@ export default function LoginPage() {
                 </p>
               </form>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

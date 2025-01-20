@@ -3,6 +3,7 @@ import regImg from '../assets/register.png'
 import { useContext } from "react";
 import { toast } from 'react-toastify';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { NavLink } from 'react-router-dom';
 
 export default function Register() {
 
@@ -40,7 +41,7 @@ export default function Register() {
              <img src={regImg} className="sm:w-full md:w-96 md:my-6" alt="image" />
             </div>
            
-            <div className="bg-base-100 w-full max-w-sm shrink-0 shadow-md sm:p-8 p-4 border">
+            <div className="bg-[#adc8f3b6] w-full max-w-sm shrink-0 shadow-md sm:p-8 p-4 border">
             <h1 className="md:text-3xl text-2xl font-bold text-center pb-8">Sign Up Now!</h1>
               <form onSubmit={handleSubmit} className="card-body">
                 <div className="text-start">
@@ -81,7 +82,12 @@ export default function Register() {
                     className="btn bg-blue-500 border-0 w-full py-2 cursor-pointer rounded-md mb-4 text-white text-lg hover:bg-blue-500 btn-primary"
                   />
                 </div>
-               
+                <p className="text-md text-center">
+                  New to the Website? Please{" "}
+                  <NavLink to="/login">
+                    <span className="text-[#1B66C9] font-medium">Login</span>
+                  </NavLink>
+                </p>
               </form>
             </div>
         </div>

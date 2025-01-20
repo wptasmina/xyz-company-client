@@ -1,6 +1,8 @@
 import React from 'react'
 import Banner from '../components/Banner'
 import Footer from './../components/Footer';
+import About_section from './About_section';
+import PackagesSection from '../components/PackagesSection';
 
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
     <>
     
       <Banner/>
+      <About_section/>
+      <PackagesSection/> 
       <Footer />
     </>
   )
