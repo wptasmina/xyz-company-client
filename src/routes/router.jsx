@@ -15,10 +15,10 @@ import Join_HR from "../Page/Join-HR-Manager/Join_HR";
 import MainLayouts from "../layouts/MainLayouts";
 import Dashborad from "../Page/Dashborad/Dashborad";
 import Add_Asset from "../Page/HR-Manager/Add_Asset";
-import Add_Employee from "../Page/HR-Manager/Add_Employee";
 import UpdateAsset from "../Page/HR-Manager/UpdateAsset";
 import Admin_dashbord from "../Page/Admin-dashbord/Admin_dashbord";
 import PrivatRoutes from './PrivateRoutes';
+import AddEmployee from "../Page/HR-Manager/AddEmployee";
 
 
 
@@ -82,7 +82,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "add-an-employee",
-        element: <Add_Employee />,
+        element: <AddEmployee />,
       },
       {
         path: "update-asset/:id",

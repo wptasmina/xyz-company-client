@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import useEmployee from "../Hooks/useEmployee";
-import useEmployeeList from "../Hooks/useEmployeeList";
-import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+import useEmployeeList from './../hooks/useEmployeeList';
+import useAxiosPublic from './../hooks/useAxiosPublic';
+import useEmployee from "../Hooks/useEmployee";
 
 
-export default function Add_Employee() {
+
+export default function AddEmployee() {
   const [employee, refetch] = useEmployee();
   const [employeeList, setEmployeeList] = useEmployeeList();
   const [admin, setAdmin] = useState({})

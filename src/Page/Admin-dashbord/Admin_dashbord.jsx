@@ -28,7 +28,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import { IoIosHelpBuoy, IoMdSettings } from "react-icons/io";
 import { HiInboxArrowDown } from "react-icons/hi2";
 import { IoIosPower } from "react-icons/io";
-import { MdSpaceDashboard } from "react-icons/md";
+import { MdAssessment, MdRequestQuote, MdSpaceDashboard } from "react-icons/md";
 
 import { MdAssignmentAdd } from "react-icons/md";
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
@@ -36,6 +36,8 @@ import { HiMiniUserGroup } from "react-icons/hi2";
 import { RiFileList3Fill } from "react-icons/ri";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AiFillDashboard } from "react-icons/ai";
+import { FaAddressCard, FaDatabase } from "react-icons/fa";
 
 export default function Admin_dashbord() {
   const [open, setOpen] = React.useState(false);
@@ -232,7 +234,7 @@ export default function Admin_dashbord() {
               <NavLink to="dashboard">
                 <ListItem className="hover:bg-blue-gray-50">
                   <ListItemPrefix>
-                    <MdSpaceDashboard className="text-xl" />
+                    <FaDatabase className="text-xl" />
                   </ListItemPrefix>
                   Dashboard
                 </ListItem>
@@ -240,12 +242,12 @@ export default function Admin_dashbord() {
               <NavLink to="asset-list">
                 <ListItem>
                   <ListItemPrefix>
-                    <FaClipboardList className="text-xl" />
+                    <MdAssessment className="text-xl" />
                   </ListItemPrefix>
                     Asset List
                   <ListItemSuffix>
                     <Chip
-                      value="5"
+                      value="8"
                       size="sm"
                       color="green"
                       className="rounded-full"
@@ -256,7 +258,7 @@ export default function Admin_dashbord() {
               <NavLink to="add-an-asset">
                 <ListItem>
                   <ListItemPrefix>
-                    <MdAssignmentAdd className="text-xl" />
+                    <FaAddressCard className="text-xl" />
                   </ListItemPrefix>
                     Add an Asset
                 </ListItem>
@@ -264,7 +266,7 @@ export default function Admin_dashbord() {
               <NavLink to="all-request">
                 <ListItem>
                   <ListItemPrefix>
-                    <VscGitPullRequestNewChanges className="text-xl" />
+                    <MdRequestQuote className="text-xl" />
                   </ListItemPrefix>
                     All Request
                 </ListItem>
@@ -272,7 +274,7 @@ export default function Admin_dashbord() {
               <NavLink to="my-employee-list">
                 <ListItem>
                   <ListItemPrefix>
-                    <FaUserTie className="text-xl" />
+                    <RiFileList3Fill className="text-xl" />
                   </ListItemPrefix>
                     My Employee List
                 </ListItem>
@@ -292,7 +294,7 @@ export default function Admin_dashbord() {
               <NavLink to="dashboard">
                 <ListItem>
                   <ListItemPrefix>
-                    <MdSpaceDashboard className="text-xl" />
+                    <AiFillDashboard className="text-xl" />
                   </ListItemPrefix>
                     Dashboard
                 </ListItem>
@@ -300,9 +302,9 @@ export default function Admin_dashbord() {
               <NavLink to="my-requested-assets">
                 <ListItem>
                   <ListItemPrefix>
-                    <RiFileList3Fill className="text-xl" />
+                    <TbBrandDatabricks className="text-xl" />
                   </ListItemPrefix>
-                    My Requested Assets
+                   My Requested Assets
                   <ListItemSuffix>
                     <Chip
                       value="5"
@@ -316,12 +318,12 @@ export default function Admin_dashbord() {
               <NavLink to="my-team">
                 <ListItem>
                   <ListItemPrefix>
-                    <HiMiniUserGroup className="text-xl" />
+                    <FaUsers className="text-xl" />
                   </ListItemPrefix>
                     My Team
                   <ListItemSuffix>
                     <Chip
-                      value="5"
+                      value="6"
                       size="sm"
                       color="green"
                       className="rounded-full"
@@ -332,9 +334,9 @@ export default function Admin_dashbord() {
               <NavLink to="request-for-an-asset">
                 <ListItem>
                   <ListItemPrefix>
-                    <VscGitPullRequestNewChanges className="text-xl" />
+                    <BsHourglassTop className="text-xl" />
                   </ListItemPrefix>
-                    Request for an Asset
+                    Request Asset
                 </ListItem>
               </NavLink>
             </List>
