@@ -5,7 +5,8 @@ import {
    onAuthStateChanged, 
    signInWithEmailAndPassword, 
    signInWithPopup, 
-   signOut } from "firebase/auth";
+   signOut, 
+   updateProfile} from "firebase/auth";
 import auth from '../Firebase/Firebase.init';
 
 
@@ -15,6 +16,14 @@ export default function AuthProvider({children}) {
 
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true);
+
+  const updateUserProfile = (name, photo) => {
+    setLoading(true);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
 
   // Register
   const handleRegister = ( email, password ) =>{
@@ -67,7 +76,8 @@ export default function AuthProvider({children}) {
     handleRegister,
     handleLogin,
     handleGoogleLogin,
-    signOutUser
+    signOutUser,
+    updateUserProfile
   }
   
   return (

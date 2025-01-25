@@ -1,7 +1,6 @@
 import img1 from '../assets/slide-1.jpg'
 import img2 from '../assets/slide-2.webp'
-import img3 from '../assets/slide-3.png'
-import img4 from '../assets/slide-4.jpg'
+
 
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
@@ -13,6 +12,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
+import { Button } from '@material-tailwind/react';
 
 export default function Banner() {
   return (
@@ -32,20 +33,30 @@ export default function Banner() {
       className="mySwiper"
     >
       <SwiperSlide>
-          <img src={img1} className='relative object-cover bg-no-repeat w-full h-[550px] ' alt="slider image" />
-          <div class="absolute top-1/2 left-1/2 border-2  border-orange-700 rounded-md p-1 -translate-x-[50%] ">
-            <button className='bg-blue-950 px-4 py-4 rounded-md text-orange-700 font-bold text-xl'>
-              Join as HR Manager
-            </button>
+          <img src={img1} className='relative  object-cover bg-no-repeat w-full h-[550px] ' alt="slider image" />
+          <div class="absolute bg-black/40 border-2 border-orange-700 rounded-md p-1 top-1/2 left-1/2 -translate-x-[50%] ">
+          <Link to="/employee-register">
+                  <Button
+                    variant="contained"
+                    className="normal-case bg-[#1753c2]"
+                  >
+                    Join as Employee
+                  </Button>
+                </Link>
           </div>
       </SwiperSlide>
 
       <SwiperSlide>
           <img src={img2} className='relative object-cover bg-no-repeat w-full h-[550px] ' alt="slider image" />
           <div class="absolute top-1/2 left-1/2 border-2  border-orange-700 rounded-md p-1 -translate-x-[50%] ">
-            <button className='bg-blue-950 px-4 py-4 rounded-md text-orange-700 font-bold text-xl'>
-            Join as an Employee
-            </button>
+          <Link to="/hr-register">
+                  <Button
+                    variant="contained"
+                    className="normal-case bg-[#1753c2]"
+                  >
+                    Join as HR Manager
+                  </Button>
+                </Link>
           </div>
       </SwiperSlide>
 
