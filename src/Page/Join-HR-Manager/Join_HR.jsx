@@ -8,6 +8,8 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const JoinHR = () => {
+  const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   // navigate user
   const navigate = useNavigate();
@@ -159,7 +161,7 @@ const JoinHR = () => {
               Company Logo
             </label>
             <input
-              type="text"
+              type="file"
               id="logo"
               placeholder="Enter your Company Logo"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
