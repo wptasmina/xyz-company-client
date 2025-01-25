@@ -1,121 +1,140 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import loginImg from "../assets/login.png";
-import gImg from "../assets/google.webp";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-export default function LoginPage() {
-  // Access Auth Context
-  const { handleGoogleLogin, handleLogin } = useContext(AuthContext);
 
-  // React Router hooks
-  const location = useLocation();
+
+const Login = () => {
+  // navigate user
   const navigate = useNavigate();
 
-  // Handle Email/Password Login
-  const handleSignIn = async (event) => {
-    event.preventDefault();
-    const email = event.target.email.value;
-    const password = event.target.password.value;
+  // user auth
+  const { handleLogin } =  useContext(AuthContext);
 
-    try {
-      await handleLogin(email, password);
+  // react form to get data
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-      // Redirect user to home page or the path they were trying to access
-      const redirectPath = location.state?.from?.pathname || "/";
-      navigate(redirectPath);
-      toast.success("Welcome Back!");
-    } catch (error) {
-      toast.error("Sign-in failed");
-      console.error("Sign-in error:", error.message);
-    }
+  // password toggle
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
   };
 
-  // Handle Google Login
-  const handleGoogleSignIn = async () => {
-    try {
-      await handleGoogleLogin();
+  //   submit form
+  const onSubmit = async (data) => {
+    // create user
+    handleLogin(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(handleLogin);
+      Swal.fire({
+        title: "Login Success!",
+        text: "Successfully Register",
+        icon: "success",
+        timer: 1500,
+      });
+      // navigate the user
+      navigate("/dashboard/dashboard");
+    });
 
-      // Redirect user to home page or the path they were trying to access
-      const redirectPath = location.state?.from?.pathname || "/";
-      navigate(redirectPath);
-      toast.success("Welcome Back!");
-    } catch (error) {
-      toast.error("Google Sign-in failed");
-      console.error("Google Sign-in error:", error.message);
-    }
+    // after success fully submit form then reset the form
+    reset();
   };
 
   return (
-    <>
-      <div className="bg-[#dbe6f8b6] ">
-        <div className="w-11/12  min-h-screen  mx-auto flex justify-center items-center sm:gap-10 gap-2">
+    <div className="flex justify-center items-center min-h-screen">
+        <div>
+            <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
+          </div>
 
-            <div className="text-center lg:text-left border">
-              <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
-            </div>
+      {/* Right Form Section */}
+      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">
+          Welcome Back!
+        </h1>
 
-            <div className="card bg-base-100 w-full max-w-sm bg-[#adc8f3b6] p-6  shrink-0 shadow-md">
-              <h1 className="md:text-3xl text-2xl font-bold text-center mb-6">Login now!</h1>
-              <form onSubmit={handleSignIn} className="space-y-4">
-                <div className="">
-                  <label className="">
-                  Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    name="email"
-                    className="border mt-2 w-full py-2 px-4 rounded-md cursor-pointer focus:outline-none focus:border-blue-300"
-                    required
-                  />
-                </div>
-                <div className="">
-                  <label className="pb-2">
-                  Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    name="password"
-                    className="border mt-2 mb-2 w-full px-4 py-2 rounded-md cursor-pointer focus:outline-none focus:border-blue-300"
-                    required
-                  />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link link-hover font-medium text-[#1B66C9]">
-                      Forgot password?
-                    </a>
-                  </label>
-                </div>
-                <div className="form-control mt-6">
-                  <input
-                    type="submit"
-                    value="Login"
-                    className="btn bg-blue-500 border w-full py-2 rounded-md cursor-pointer text-white text-lg hover:bg-blue-500 btn-primary"
-                  />
-                </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
+          {/* Email */}
+          <div className="mb-4">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
+              placeholder="Enter your email address"
+              {...register("email", { required: true })}
+            />
+            {errors.email && (
+              <p className="text-red-600">This field is required</p>
+            )}
+          </div>
 
-                <div className="my-4 text-center">------ OR ------</div>
+          {/* Password */}
+          <div className="mb-4 relative">
+            <label
+              className="block text-sm font-medium text-gray-700 mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              type={passwordVisible ? "text" : "password"}
+              id="password"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
+              placeholder="Enter your password"
+              {...register("password", {
+                required: true,
+                minLength: 6,
+                maxLength: 16,
+                pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+              })}
+            />
+            {errors.password && (
+              <p className="text-red-600">This field is required</p>
+            )}
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute inset-y-0 right-3 top-[40%] flex items-center text-gray-500 hover:text-[#1753c2] focus:outline-none"
+            >
+              {passwordVisible ? <IoEyeOff /> : <IoEye />}
+            </button>
+          </div>
 
-                <div
-                  className="flex justify-start border gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
-                  onClick={handleGoogleSignIn}
-                >
-                  <img src={gImg} className="w-6 ml-4" alt="Google" />
-                  <h4 className="w-full font-medium cursor-pointer">Continue with Google</h4>
-                </div>
-                <p className="text-md text-center">
-                  New to the Website? Please{" "}
-                  <NavLink to="/register">
-                    <span className="text-[#1B66C9] font-medium">Register</span>
-                  </NavLink>
-                </p>
-              </form>
-            </div>
-          {/* </div> */}
-        </div>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-[#1753c2] text-white py-2 px-4 rounded-lg hover:bg-[#1753c2ce] focus:outline-none focus:ring-2 focus:ring-[#1753c2] focus:ring-offset-2"
+          >
+            Login
+          </button>
+        </form>
+
+        <p className="text-sm text-gray-600 my-4">
+          Have already account?
+          <Link
+            to="/employee-register"
+            className="text-[#1753c2] font-medium hover:underline"
+          >
+            Register
+          </Link>
+        </p>
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Login;

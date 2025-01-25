@@ -45,7 +45,6 @@ const JoinEmployee = () => {
     const userInfo = {
       name: data.name,
       email: data.email,
-      // profile: profile,
       password: data.password,
       role: "employee",
       employee_status: false,
@@ -197,8 +196,8 @@ const JoinEmployee = () => {
 
           {/* Submit Button */}
           <input 
-            type="submit" value="Signup"
-            className="w-full bg-blue-400 font-bold text-white py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-700 focus:ring-offset-2"
+            type="submit" value="SignUp"
+            className="w-full bg-blue-400 font-bold cursor-pointer text-white py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-700 focus:ring-offset-2"
           />
         </form>
 
@@ -208,7 +207,7 @@ const JoinEmployee = () => {
             to="/login"
             className="text-blue-600 underline text-md font-bold"
           >
-            Log in
+            Sign In
           </Link>
         </p>
 

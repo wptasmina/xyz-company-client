@@ -11,11 +11,10 @@ export default function Home() {
   return (
     <>
     <Helmet>
-        <title>AssetEase | Home</title>
+        <title>XYZ || Home</title>
     </Helmet>
 
       <Navbar />
-      {/* <Hero /> */}
       <Banner/>
       <About_section/>
       <PackagesSection/> 

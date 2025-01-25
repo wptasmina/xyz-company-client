@@ -8,9 +8,6 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const JoinHR = () => {
-  // Host image
-  // const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-  // const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   // navigate user
   const navigate = useNavigate();
@@ -38,7 +35,6 @@ const JoinHR = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  //   submit form
   const onSubmit = async (data) => {
     const imageFile = { image: data.company_logo[0] };
     // host image
@@ -78,10 +74,10 @@ const JoinHR = () => {
             });
         });
 
-        // after success fully submit form then reset the form
+        // after success then reset the form
         reset();
 
-        // if account create and post data the show the success alert
+        //show the success alert 
         Swal.fire({
           title: "Register Success!",
           text: "Successfully Register",
@@ -110,7 +106,7 @@ const JoinHR = () => {
 
       {/* Right Form Section */}
       <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="md:text-4xl text-2xl sm:font-extrabold font-bold text-gray-800 mb-4 text-center">
+        <h1 className="md:text-4xl text-2xl md:font-extrabold font-bold text-gray-800 mb-4 text-center">
           Join as HR Manager
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
@@ -271,7 +267,7 @@ const JoinHR = () => {
           <input
             type="submit"
             value="Signup"
-            className="w-full bg-blue-400 text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+            className="w-full cursor-pointer bg-blue-400 text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
           />
             
           

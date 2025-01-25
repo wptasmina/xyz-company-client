@@ -37,6 +37,13 @@ export default function AuthProvider({children}) {
    return signInWithEmailAndPassword(auth, email, password)
 
   }
+
+   //LogOut
+   const logOut = () =>{
+    setLoading(true);
+    return signOut(auth)
+  }
+
     // GoogleProvider create
     const Provider = new GoogleAuthProvider(); 
 
@@ -46,11 +53,7 @@ export default function AuthProvider({children}) {
       return signInWithPopup(auth, Provider)
     }
 
-  //LogOut
-  const signOutUser = () =>{
-    setLoading(true);
-    return signOut(auth)
-  }
+ 
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -76,7 +79,7 @@ export default function AuthProvider({children}) {
     handleRegister,
     handleLogin,
     handleGoogleLogin,
-    signOutUser,
+    logOut,
     updateUserProfile
   }
   
