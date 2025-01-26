@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
-import useEmployeeList from './../hooks/useEmployeeList';
-import useAxiosPublic from './../hooks/useAxiosPublic';
-import useEmployee from "../Hooks/useEmployee";
-
+import useEmployeeList from "../hooks/useEmployeeList";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import useEmployee from './../hooks/useEmployee';
+import { Helmet } from "react-helmet-async";
 
 
 export default function AddEmployee() {
+
   const [employee, refetch] = useEmployee();
   const [employeeList, setEmployeeList] = useEmployeeList();
   const [admin, setAdmin] = useState({})
@@ -117,6 +117,9 @@ export default function AddEmployee() {
 
   return (
 <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <Helmet>
+      <title>TrakSmart || Add Employee</title>
+    </Helmet>
   <div className="max-w-7xl mx-auto space-y-8">
     {/* Package Status Card */}
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">

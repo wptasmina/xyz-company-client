@@ -5,6 +5,7 @@ import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -50,6 +51,9 @@ const LoginPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
+  <Helmet>
+    <title>TrakSmart || Login </title>
+  </Helmet>
         <div>
             <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
           </div>

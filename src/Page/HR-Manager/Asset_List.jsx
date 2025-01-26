@@ -7,8 +7,10 @@ import { FaRegPenToSquare } from "react-icons/fa6";
 import { BsSliders } from "react-icons/bs";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import useAsset from './../hooks/useAsset';
+import { Helmet } from "react-helmet-async";
 
 const Asset_List = () => {
+
   const axiosPublic = useAxiosPublic();
 
   const [search, setSearch] = useState("");
@@ -47,6 +49,10 @@ const Asset_List = () => {
 
   return (
     <div className="min-h-screen bg-white rounded-xl py-10 md:px-8 mt-5">
+    <Helmet>
+    <title>TrakSmart || Asset List </title>
+  </Helmet>
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">

@@ -3,8 +3,6 @@ import useAxiosPublic from "./useAxiosPublic";
 
 
 
-
-
 const useEmployee = () => {
     const axiosPublic = useAxiosPublic()
 

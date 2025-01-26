@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 export default function MyTeam() {
+
   const axiosPublic = useAxiosPublic()
   const [meyData, setMyData] = useState({})
   const [myTeam, setMyTeam] = useState([])
@@ -28,17 +30,21 @@ export default function MyTeam() {
   },[axiosPublic, meyData.hr_email, user.email])
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-8">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+    <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg sm:p-6 p-4 mt-8">
+    <Helmet>
+      <title>TrakSmart || My Team</title>
+    </Helmet>
+    
+      <h2 className="text-2xl font-semibold text-[#031278] mb-4">
         Team Members
       </h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-[#1753c2] text-white">
-              <th className="px-4 py-2 text-left">Image</th>
-              <th className="px-4 py-2 text-left">Name</th>
-              <th className="px-4 py-2 text-left">Member Type</th>
+            <tr className="bg-[#031278] text-white rounded-md">
+              <th className="px-4 py-2 text-left sm:text-md text-sm">Image</th>
+              <th className="px-4 py-2 text-left sm:text-md text-sm">Name</th>
+              <th className="px-4 py-2 text-left sm:text-md text-sm">Member Type</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -52,7 +58,7 @@ export default function MyTeam() {
               </td>
               <td className="px-4 py-2 font-medium text-gray-800">{admin.name}</td>
               <td className="px-4 py-2 flex items-center space-x-2">
-                <span className="text-green-500">
+                <span className="text-green-800">
                   {/* <!-- Admin Icon --> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +79,8 @@ export default function MyTeam() {
               </td>
             </tr>
             {/* <!-- Example Row 1 --> */}
-          {myTeam.map(team =>             <tr key={team._id} className="hover:bg-gray-100">
+          {myTeam.map(team =>             
+          <tr key={team._id} className="hover:bg-gray-100">
               <td className="px-4 py-2">
                 <img
                   src={team.profile}

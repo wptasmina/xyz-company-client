@@ -1,12 +1,14 @@
 
+import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const useAllRequest = (searchQuery = "") => {
   const axiosPublic = useAxiosPublic();
-  const {user} = useAuth()
+
+  const {user} = useContext(AuthContext)
 
   const { data: requests = [], refetch, isFetching } = useQuery({
     queryKey: searchQuery ? ["search-requests", searchQuery] : ["requests", user?.email] , 

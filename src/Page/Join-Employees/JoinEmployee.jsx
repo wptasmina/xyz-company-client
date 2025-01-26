@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
-import logo from "../../assets/register.webp"
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
+import logo from "../../assets/register.webp"
+
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-import  { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const JoinEmployee = () => {
-  // Host image
-  // const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-  // const image_hosting_api = https://api.imgbb.com/1/upload?key=${image_hosting_key};
+
+  const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
   // navigate user
   const navigate = useNavigate();
@@ -38,13 +40,20 @@ const JoinEmployee = () => {
 
   //   submit form
   const onSubmit = async (data) => {
-   
-    // const profile = res.data.data.display_url;
+    const imageFile = { image: data.profile[0] };
+    // host image
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
+    const profile = res.data.data.display_url;
 
     // user info
     const userInfo = {
       name: data.name,
       email: data.email,
+      profile: profile,
       password: data.password,
       role: "employee",
       employee_status: false,
@@ -65,11 +74,9 @@ const JoinEmployee = () => {
               console.log(error);
             });
         });
-
-        // after success fully submit form then reset the form
         reset();
 
-        // if account create and post data the show the success alert
+        // Show the success alert
         Swal.fire({
           title: "Register Success!",
           text: "Successfully Register",
@@ -91,16 +98,20 @@ const JoinEmployee = () => {
 
   return (
     <div className="flex min-h-screen">
+  <Helmet>
+    <title>TrakSmart || Join Employee </title>
+  </Helmet>
       {/* Left Animation Section */}
-      <div className="hidden lg:flex w-1/2 items-center justify-center bg-white">
+      <div className="hidden lg:flex w-1/2 items-center justify-center bg-gradient-to-r from-[#1753c2] to-[#1c76e6]">
       <img src={logo} alt="image" />
       </div>
 
       {/* Right Form Section */}
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="md:text-4xl text-2xl md:font-extrabold font-bold text-gray-800 mb-4 text-center">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">
           Join as Employee
         </h1>
+
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           {/* Full Name */}
           <div className="mb-4">
@@ -113,7 +124,7 @@ const JoinEmployee = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-200 focus:border-blue-200 outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
             />
@@ -128,13 +139,12 @@ const JoinEmployee = () => {
               className="block text-sm font-medium text-gray-700 mb-2"
               htmlFor="logo"
             >
-            Photo URL
+              Profile Photo
             </label>
             <input
-              type="text"
+              type="file"
               id="logo"
-              placeholder="Profile Photo URL"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-200 focus:border-blue-200 outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
               {...register("profile", { required: true })}
             />
             {errors.company_logo && (
@@ -153,7 +163,7 @@ const JoinEmployee = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-200 focus:border-blue-200 outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
               placeholder="Enter your email address"
               {...register("email", { required: true })}
             />
@@ -173,7 +183,7 @@ const JoinEmployee = () => {
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-200 focus:border-blue-200 outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,
@@ -188,33 +198,33 @@ const JoinEmployee = () => {
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute inset-y-0 right-3 top-[40%] flex items-center text-gray-500 hover:text-blue-700 focus:outline-none"
+              className="absolute inset-y-0 right-3 top-[40%] flex items-center text-gray-500 hover:text-[#1753c2] focus:outline-none"
             >
-              {passwordVisible ? <IoEyeOff className="text-xl" /> : <IoEye className="text-xl" />}
+              {passwordVisible ? <IoEyeOff /> : <IoEye />}
             </button>
           </div>
 
           {/* Submit Button */}
-          <input 
-            type="submit" value="SignUp"
-            className="w-full bg-blue-400 font-bold cursor-pointer text-white py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-700 focus:ring-offset-2"
+          <input
+            type="submit"
+            value="SignUp"
+            className="w-full bg-[#1753c2] text-white py-2 px-4 rounded-lg hover:bg-[#1753c2ce] focus:outline-none focus:ring-2 focus:ring-[#1753c2] focus:ring-offset-2"
           />
+            
         </form>
 
-        <p className="text-md text-gray-600 my-4">
-          Already have an account?{" "}
+        <p className="text-sm text-gray-600 my-4">
+          Already have an account?
           <Link
             to="/login"
-            className="text-blue-600 underline text-md font-bold"
+            className="text-[#1753c2] font-medium underline"
           >
-            Sign In
+            Log In
           </Link>
         </p>
-
       </div>
     </div>
   );
 };
 
 export default JoinEmployee;
-// api.imgbb.com

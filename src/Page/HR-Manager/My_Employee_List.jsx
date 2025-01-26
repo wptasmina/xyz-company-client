@@ -3,6 +3,7 @@ import useEmployeeList from "../hooks/useEmployeeList";
 import { FaTrash } from 'react-icons/fa'
 
 export default function My_Employee_List() {
+  
   const [employeeList, refetch] = useEmployeeList();
   const axiosPublic = useAxiosPublic();
 
@@ -22,20 +23,23 @@ export default function My_Employee_List() {
   };
 
   return (
-    <div className="p-8 bg-white rounded-2xl shadow-lg">
-      <div className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Employee List</h1>
-          <p className="text-gray-500 mt-1">Manage your team members</p>
+    <div className="sm:p-8 p-4 bg-white rounded-2xl shadow-lg">
+    <Helmet>
+      <title>TrakSmart || Employee List </title>
+    </Helmet>
+      <div className="grid sm:grid-cols-3 grid-cols-1 justify-center items-center sm:gap-4 mb-8">
+        <div className=" col-span-2 items-center">
+          <h1 className="md:text-3xl text-xl font-bold text-[#031278]">Employee List</h1>
+          <p className="text-gray-500 text-sm mt-1">Manage your team members</p>
         </div>
-        <div className="bg-blue-50 px-4 py-2 rounded-lg">
-          <span className="text-blue-600 font-semibold">
+        <div className="bg-blue-50 px-4 py-3 rounded-lg mt-6 sm:mt-0">
+          <span className="text-blue-600 sm:font-medium text-sm">
             Total Members: {employeeList.length}
           </span>
         </div>
       </div>
       
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-xl border border-[#b7c0f7]">
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
             <tr className="bg-gray-50">
@@ -73,7 +77,7 @@ export default function My_Employee_List() {
                       Admin
                     </span>
                   ) : (
-                    <span className="px-3 py-1 inline-flex text-sm font-medium bg-gray-100 text-gray-800 rounded-full">
+                    <span className="px-3 py-1 inline-flex text-sm font-medium bg-gray-200 text-gray-800 rounded-full">
                       Employee
                     </span>
                   )}
@@ -81,7 +85,7 @@ export default function My_Employee_List() {
                 <td className="px-6 py-4 whitespace-nowrap text-right">
                   <button
                     onClick={() => handleRemoveMember(employee)}
-                    className="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    className="inline-flex items-center px-2 py-2 border rounded-lg text-xs font-medium text-white bg-red-600 focus:outline-none focus:ring-red-500"
                   >
                     <FaTrash className="mr-2 h-4 w-4" />
                     Remove

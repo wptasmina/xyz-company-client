@@ -5,6 +5,7 @@ import { FaBox, FaChevronDown, FaFileSignature,} from "react-icons/fa";
 import { GoMultiSelect } from "react-icons/go";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 
 export default function Add_Asset() {
@@ -53,6 +54,9 @@ export default function Add_Asset() {
  
    return (
      <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <Helmet>
+      <title>TrakSmart || Add Asset </title>
+    </Helmet>
        <div className="max-w-lg mx-auto border rounded-2xl">
          {/* Form Card */}
          <div className="bg-[#d0d5faf1] rounded-2xl shadow-lg overflow-hidden">

@@ -10,18 +10,18 @@ import {
 
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 
 const Dashboard = () => {
+
   const [role, setRole] = useState("");
   const [status, setStatus] = useState(false);
   const [pendingAssets, setPendingAssets] = useState([]);
   const [hrPendingAssets, setHrPendingAssets] = useState([]);
   const [mostRequestedAssets, setMostRequestedAssets] = useState([]);
   const [monthlyRequest, setMonthlyRequest] = useState();
-
-  console.log(mostRequestedAssets);
 
   const { user } = useContext(AuthContext);
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
         });
     }
 
-    // Get requests made this month
+    // Get requests this month
     if (role === "employee" && status === true) {
       axiosPublic
         .get(`/requested-asset/monthly/?email=${user.email}`)
@@ -69,7 +69,7 @@ const Dashboard = () => {
     }
   }, [user.email, axiosPublic, role, status]);
 
-  // Find the employee status and then render the data
+  // Find the employee status
   axiosPublic.get(`/employee-account/${user.email}`).then((res) => {
     const employeeStatus = res.data.employee_status;
     setStatus(employeeStatus);
@@ -89,6 +89,10 @@ const Dashboard = () => {
   if (role == "HR") {
     return (
       <div className="min-h-screen">
+    <Helmet>
+      <title>TrakSmart || Dashboard</title>
+    </Helmet>
+
         <div className="lg:px-8 py-8">
           {/* Stats Overview */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -315,6 +319,9 @@ const Dashboard = () => {
   if (role == "employee" && status == true) {
     return (
       <div className="min-h-screen">
+    <Helmet>
+      <title>TrakSmart || Dashboard</title>
+    </Helmet>
         {/* <!-- Main Content --> */}
         <main className="lg:px-8 py-8">
           {/* <!-- Employee Sections --> */}
@@ -441,6 +448,9 @@ const Dashboard = () => {
         id="affiliation-message"
         className="bg-yellow-100 text-yellow-800 p-4 rounded-lg mb-6"
       >
+    <Helmet>
+      <title>TrakSmart || Dashboard</title>
+    </Helmet>
         <p className="text-lg">
           ⚠ You are not affiliated with any company. Please contact your HR to
           complete the affiliation process.

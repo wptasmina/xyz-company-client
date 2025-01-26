@@ -3,8 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 export default function RequestAsset() {
+
   const { user } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAsset, setSelectedAsset] = useState(null);
@@ -126,7 +128,11 @@ export default function RequestAsset() {
 
   if (status === true) {
     return (
+     
       <div className="max-w-6xl mx-auto p-6">
+      <Helmet>
+        <title>TrakSmart | Request Assets </title>
+      </Helmet>
         {/* Filters Section */}
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <input
@@ -180,14 +186,14 @@ export default function RequestAsset() {
               </tr>
             </thead>
             <tbody>
-              {filteredAssets.length === 0 ? (
+              {filteredAssets?.length === 0 ? (
                 <tr>
                   <td colSpan="4" className="text-center py-4 text-gray-500">
                     No assets found.
                   </td>
                 </tr>
               ) : (
-                filteredAssets.map((asset) => (
+                filteredAssets?.map((asset) => (
                   <tr key={asset._id} className="border-b hover:bg-gray-50">
                     <td className="px-4 py-2">{asset.product_name}</td>
                     <td className="px-4 py-2">{asset.product_type}</td>

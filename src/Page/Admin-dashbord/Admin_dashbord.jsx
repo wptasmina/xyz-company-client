@@ -36,8 +36,10 @@ import { RiFileList3Fill } from "react-icons/ri";
 
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 export default function Admin_dashbord() {
+
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -105,6 +107,9 @@ export default function Admin_dashbord() {
 
   return (
     <div className="w-full">
+    <Helmet>
+      <title>TrakSmart | Admin dashbord</title>
+    </Helmet>
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
@@ -146,7 +151,7 @@ export default function Admin_dashbord() {
                 {user && user.photoURL ? (
                   <img
                     src={user.photoURL}
-                    className="rounded-full w-11 h-11 object-cover cursor-pointer border-2"
+                    className="rounded-full w-11 h-11 object-cover cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
                   />
                 ) : (
                   <IconButton size="md" className="rounded-full bg-transparent">

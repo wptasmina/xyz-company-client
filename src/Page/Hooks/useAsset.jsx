@@ -7,13 +7,13 @@ import useAxiosPublic from './useAxiosPublic';
 const useAsset = (queryParams = {}) => {
     const axiosPublic = useAxiosPublic();
 
-    const { search = '', sort = '', product_type = 'all' } = queryParams; // Destructure query parameters with defaults
+    const { search = '', sort = '', product_type = 'all' } = queryParams; //Destructure query defaults
 
     const { data: assets = [], refetch } = useQuery({
-        queryKey: ['assets', search, sort, product_type], // Include query parameters in the query key
+        queryKey: ['assets', search, sort, product_type], // Include query key
         queryFn: async () => {
             const res = await axiosPublic.get('/assets', {
-                params: { search, sort, product_type }, // Pass query parameters to the GET request
+                params: { search, sort, product_type }, //GET request
             });
             return res.data;
         },

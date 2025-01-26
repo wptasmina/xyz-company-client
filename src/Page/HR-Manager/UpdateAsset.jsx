@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 export default function UpdateAsset() {
   const assets = useLoaderData();
@@ -51,6 +52,9 @@ export default function UpdateAsset() {
   
   return (
     <div className="max-w-lg mx-auto bg-gray-100 border border-[#d2d7f8] shadow-lg rounded-lg p-6 mt-8">
+      <Helmet>
+      <title>TrakSmart | Update Asset </title>
+    </Helmet>
       <h2 className="text-2xl font-semibold text-[#031278] mb-4">
         Update Asset
       </h2>

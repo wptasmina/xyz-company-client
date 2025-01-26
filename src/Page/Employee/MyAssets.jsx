@@ -9,8 +9,10 @@ import { AiOutlineReload } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 export default function MyAssets() {
+
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
     const options = {
@@ -69,6 +71,11 @@ export default function MyAssets() {
   if (status) {
     return (
       <div className="p-6 bg-gray-100 min-h-screen">
+
+    <Helmet>
+      <title>TrakSmart | My Assets </title>
+    </Helmet>
+    
         {/* Search and Filter Section */}
         <div className="bg-white p-4 rounded-md shadow-md mb-6 flex flex-wrap gap-4 items-center">
           <div className="flex items-center w-full md:w-1/2 border rounded-lg shadow-sm">
