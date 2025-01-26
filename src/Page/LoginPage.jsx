@@ -8,14 +8,15 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 
-const Login = () => {
+
+const LoginPage = () => {
   // navigate user
   const navigate = useNavigate();
 
   // user auth
   const { handleLogin } =  useContext(AuthContext);
 
-  // react form to get data
+
   const {
     register,
     handleSubmit,
@@ -33,7 +34,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     // create user
     handleLogin(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
+      const handleLogin = result.user;
       console.log(handleLogin);
       Swal.fire({
         title: "Login Success!",
@@ -44,8 +45,6 @@ const Login = () => {
       // navigate the user
       navigate("/dashboard/dashboard");
     });
-
-    // after success fully submit form then reset the form
     reset();
   };
 
@@ -127,7 +126,7 @@ const Login = () => {
           Have already account?
           <Link
             to="/employee-register"
-            className="text-[#1753c2] font-medium hover:underline"
+            className="text-[#1753c2] font-medium underline"
           >
             Register
           </Link>
@@ -137,4 +136,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

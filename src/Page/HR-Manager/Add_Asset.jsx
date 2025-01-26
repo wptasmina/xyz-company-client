@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { FaBox, FaChevronDown, FaClipboardList, FaPlus } from "react-icons/fa";
+import { FaBox, FaChevronDown,} from "react-icons/fa";
+import { GoMultiSelect } from "react-icons/go";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 
 export default function Add_Asset() {
@@ -36,7 +38,7 @@ export default function Add_Asset() {
        .then((res) => {
          if (res.data.insertedId) {
            Swal.fire({
-             title: "Good job!",
+             title: "Asset Added SuccessFull!",
              text: "Asset Added",
              icon: "success",
            });
@@ -50,16 +52,16 @@ export default function Add_Asset() {
    };
  
    return (
-     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-       <div className="max-w-lg mx-auto">
+     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+       <div className="max-w-lg mx-auto border rounded-2xl">
          {/* Form Card */}
-         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+         <div className="bg-[#d0d5faf1] rounded-2xl shadow-lg overflow-hidden">
            {/* Header */}
-           <div className="bg-blue-100 px-8 py-6">
-             <h2 className="text-2xl font-bold text-blue-800 text-center">
+           <div className="bg-[#d0d5faee] px-8 py-6">
+             <h2 className="text-2xl font-bold text-[#031278] text-center">
                Add New Asset
              </h2>
-             <p className="text-blue-600 text-center mt-1">
+             <p className="text-gray-600 text-center mt-1">
                Enter the details of your new asset
              </p>
            </div>
@@ -86,7 +88,7 @@ export default function Add_Asset() {
                        required: "Product name is required",
                      })}
                      placeholder="Enter product name"
-                     className="block w-full pl-10 pr-4 py-3 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+                     className="block w-full pl-10 pr-4 py-3 border-gray-300 rounded-md border focus:border-blue-500 duration-300 focus:outline-none outline-none "
                    />
                  </div>
                  {errors.product_name && (
@@ -104,16 +106,16 @@ export default function Add_Asset() {
                  >
                    Product Type
                  </label>
-                 <div className="relative rounded-md shadow-sm">
+                 <div className="relative rounded-md shadow-sm ">
                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                     <FaClipboardList className="h-5 w-5 text-gray-400" />
+                     <GoMultiSelect className="h-5 w-5 text-gray-700" />
                    </div>
                    <select
                      id="productType"
                      {...register("product_type", {
                        required: "Product type is required",
                      })}
-                     className="block w-full pl-10 pr-10 py-3 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out appearance-none"
+                     className="block w-full pl-10 pr-10 py-3 rounded-md border focus:border-blue-500 duration-300 focus:outline-none outline-none appearance-none"
                    >
                      <option value="" disabled selected>
                        Select product type
@@ -141,7 +143,7 @@ export default function Add_Asset() {
                    Product Quantity
                  </label>
                  <div className="relative rounded-md shadow-sm">
-                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ">
                      <span className="text-gray-400 font-medium">#</span>
                    </div>
                    <input
@@ -152,7 +154,7 @@ export default function Add_Asset() {
                        min: { value: 1, message: "Quantity must be at least 1" },
                      })}
                      placeholder="Enter quantity"
-                     className="block w-full pl-10 pr-4 py-3 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out"
+                     className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:border-blue-500 duration-300 focus:outline-none outline-none"
                    />
                  </div>
                  {errors.product_quantity && (
@@ -166,9 +168,9 @@ export default function Add_Asset() {
                <div className="pt-4">
                  <button
                    type="submit"
-                   className="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-150 shadow-lg hover:shadow-xl"
+                   className="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#031278] focus:bg-blue-700 focus:outline-none focus:ring-2  shadow-lg hover:shadow-xl"
                  >
-                   <FaPlus className="mr-2 h-5 w-5" />
+                   <IoMdAddCircleOutline className="mr-2 h-5 w-5" />
                    Add Asset
                  </button>
                </div>

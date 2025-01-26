@@ -10,6 +10,7 @@ import {
 import auth from '../Firebase/Firebase.init';
 
 
+
 export const AuthContext = createContext()
 
 export default function AuthProvider({children}) {
@@ -31,6 +32,7 @@ export default function AuthProvider({children}) {
     setLoading(true);
     return createUserWithEmailAndPassword( auth, email, password )
   }
+
   //Login
   const handleLogin = ( email, password) =>{
     setLoading(true);
