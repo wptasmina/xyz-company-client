@@ -19,25 +19,23 @@ import logo from "../../assets/logo.jpg";
 
 import {
   FaCircleUser,
-  FaClipboardList,
+  FaFileContract,
+  FaHourglassHalf,
   FaUserPlus,
-  FaUserTie,
+  FaUsers,
 } from "react-icons/fa6";
 
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { IoIosHelpBuoy, IoMdSettings } from "react-icons/io";
 import { HiInboxArrowDown } from "react-icons/hi2";
 import { IoIosPower } from "react-icons/io";
-import { MdAssessment, MdRequestQuote, MdSpaceDashboard } from "react-icons/md";
-
-import { MdAssignmentAdd } from "react-icons/md";
-import { VscGitPullRequestNewChanges } from "react-icons/vsc";
-import { HiMiniUserGroup } from "react-icons/hi2";
+import { MdAssessment, MdLocalLibrary } from "react-icons/md";
+import { FaAddressCard, FaDatabase } from "react-icons/fa";
+import { AiFillDashboard } from "react-icons/ai";
 import { RiFileList3Fill } from "react-icons/ri";
+
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { AiFillDashboard } from "react-icons/ai";
-import { FaAddressCard, FaDatabase } from "react-icons/fa";
 
 export default function Admin_dashbord() {
   const [open, setOpen] = React.useState(false);
@@ -266,7 +264,7 @@ export default function Admin_dashbord() {
               <NavLink to="all-request">
                 <ListItem>
                   <ListItemPrefix>
-                    <MdRequestQuote className="text-xl" />
+                    <MdLocalLibrary className="text-xl" />
                   </ListItemPrefix>
                     All Request
                 </ListItem>
@@ -302,7 +300,7 @@ export default function Admin_dashbord() {
               <NavLink to="my-requested-assets">
                 <ListItem>
                   <ListItemPrefix>
-                    <TbBrandDatabricks className="text-xl" />
+                    <FaFileContract className="text-xl" />
                   </ListItemPrefix>
                    My Requested Assets
                   <ListItemSuffix>
@@ -334,7 +332,7 @@ export default function Admin_dashbord() {
               <NavLink to="request-for-an-asset">
                 <ListItem>
                   <ListItemPrefix>
-                    <BsHourglassTop className="text-xl" />
+                    <FaHourglassHalf className="text-xl" />
                   </ListItemPrefix>
                     Request Asset
                 </ListItem>
