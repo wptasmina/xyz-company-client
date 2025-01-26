@@ -52,7 +52,7 @@ const Asset_List = () => {
         <div className="mb-8">
           <h2 className="sm:text-4xl text-2xl font-bold text-[#031278]">Asset Management</h2>
           <p className="mt-2 sm:text-md text-sm text-gray-600">
-            Manage and track your company assets
+            Manage and track your company assets (Asset List)
           </p>
         </div>
 

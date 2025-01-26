@@ -104,11 +104,11 @@ export default function Admin_dashbord() {
   );
 
   return (
-    <div className="px-5 md:px-10 py-6">
+    <div className="w-full">
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center shadow-md py-1 px-5 md:px-10">
           {/* logo */}
           <div className="flex items-center gap-3">
             <Button
@@ -122,17 +122,17 @@ export default function Admin_dashbord() {
               <img
                 src={hrCompanyLogo}
                 alt={hrCompanyName}
-                className="w-[150px] lg:w-[180px]"
+                className="w-[50px] lg:w-[80px] rounded-md "
               />
             ) : employeeData?.company_logo ? (
               <img
                 src={company_logo}
                 alt={company_name}
-                className="w-[130px] lg:w-[160px]"
+                className="w-[130px] lg:w-[160px] border"
               />
             ) : (
               <div className="flex gap-2 justify-center items-center">
-                <img src={logo} alt="" className="w-[55px] lg:w-[70px]" />
+                <img src={logo} alt="logo" className="w-[55px] lg:w-[70px]" />
                 <h1 className="text-2xl font-bold text-[#1f4283] sm:block hidden">
                   TrakSmart
                 </h1>
@@ -146,7 +146,7 @@ export default function Admin_dashbord() {
                 {user && user.photoURL ? (
                   <img
                     src={user.photoURL}
-                    className="rounded-full w-11 h-11 object-cover cursor-pointer"
+                    className="rounded-full w-11 h-11 object-cover cursor-pointer border-2"
                   />
                 ) : (
                   <IconButton size="md" className="rounded-full bg-transparent">

@@ -105,7 +105,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "request-for-an-asset",
-        element: <RequestAsset></RequestAsset>,
+        element: <RequestAsset/>,
         loader: () => fetch("http://localhost:5000/assets"),
       },
 

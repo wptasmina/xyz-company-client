@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { FaBox, FaChevronDown,} from "react-icons/fa";
+import { FaBox, FaChevronDown, FaFileSignature,} from "react-icons/fa";
 import { GoMultiSelect } from "react-icons/go";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { IoMdAddCircleOutline } from "react-icons/io";
@@ -59,11 +59,8 @@ export default function Add_Asset() {
            {/* Header */}
            <div className="bg-[#d0d5faee] px-8 py-6">
              <h2 className="text-2xl font-bold text-[#031278] text-center">
-               Add New Asset
+               Add a New Asset
              </h2>
-             <p className="text-gray-600 text-center mt-1">
-               Enter the details of your new asset
-             </p>
            </div>
  
            {/* Form Content */}
@@ -79,7 +76,7 @@ export default function Add_Asset() {
                  </label>
                  <div className="relative rounded-md shadow-sm">
                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                     <FaBox className="h-5 w-5 text-gray-400" />
+                     <FaFileSignature className="h-5 w-5 text-gray-500" />
                    </div>
                    <input
                      type="text"
