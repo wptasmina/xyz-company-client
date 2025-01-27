@@ -7,12 +7,12 @@ export default function Footer() {
 
   <footer class="text-gray-600 body-font bg-[#eff1fdc9]">
   <div class="w-10/12 pt-20 mx-auto flex justify-between md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+    <div class="w-64 md:text-left">
       <Link class="flex title-font font-medium items-center justify-start text-gray-900">
        <img src={logo} alt="logo"className='w-10' />
         <span class="ml-1 text-xl text-[#031278] font-bold">TrakSmart.</span>
       </Link>
-      <p class="mt-2 text-sm text-gray-500 mb-7 text-left">Air plant banjo lyft occupy retro adaptogen indego</p>
+      <p class="mt-2 text-sm text-gray-500 mb-7 text-left pr-2">Air plant banjo lyft occupy retro adaptogen indego</p>
     </div>
     <div class="flex flex-wrap">
       <div class="">
