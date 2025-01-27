@@ -11,7 +11,7 @@ const PackagesSection = () => {
   return (
     <section className="py-12 bg-white">
       <div className="w-10/12 mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Our Packages</h2>
+        <h2 className="text-3xl font-bold mb-6 text-[#131c58] ">Our Packages</h2>
         <p className="text-lg text-gray-600 mb-10">
           Choose the package that best fits your business needs. Manage your team and assets efficiently with flexible plans.
         </p>
@@ -21,7 +21,7 @@ const PackagesSection = () => {
               key={pkg.id}
               className="border border-gray-300 rounded-lg shadow-sm p-6 hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-2xl font-semibold mb-4">
+              <h3 className="sm:text-2xl text-lg font-semibold mb-4">
                 Maximum {pkg.employees} Employees
               </h3>
               <p className="text-xl font-bold text-green-600 mb-6">${pkg.price}</p>
