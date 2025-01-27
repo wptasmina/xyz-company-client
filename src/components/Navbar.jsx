@@ -11,8 +11,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-2 shadow-md sticky z-50 top-0 bg-white">
-      <div className="md:w-10/12  mx-auto flex items-center justify-between">
+    <nav className="py-2 px-4 md:px-0 shadow-md sticky z-50 top-0 bg-white">
+      <div className="md:w-10/12 mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
           <div className="flex items-center">

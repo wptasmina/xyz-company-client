@@ -123,15 +123,15 @@ const JoinHR = () => {
     
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex sm:w-11/12 w-full mx-auto min-h-screen">
       {/* Left Section */}
       <div className="hidden md:flex w-1/2 items-center justify-center bg-white">
         <img src={img} alt="Image" />
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="md:text-4xl text-2xl md:font-extrabold font-bold text-gray-800 mb-4 text-center">
+      <div className="flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 bg-white my-12">
+        <h1 className="md:text-4xl text-3xl pt-6 md:font-extrabold font-bold text-gray-800 mb-4 text-center">
           Join as HR Manager
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
@@ -298,7 +298,7 @@ const JoinHR = () => {
           <input
             type="submit"
             value="Signup"
-            className="w-full cursor-pointer bg-[#031278]  text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-800 focus:ring-offset-2"
+            className="w-full cursor-pointer bg-[#031278] text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-[#031278]"
           />
 
           {/* GoogleSignIn  */}
@@ -316,15 +316,11 @@ const JoinHR = () => {
           
         </form>
 
-
-  
-
-
         <p className="text-md text-gray-600 my-4">
           Already have an account?
           <Link
             to="/login"
-            className="text-[#142f61] font-bold underline"
+            className="text-[#142f61] ml-1 font-bold underline"
           >
             Log in
           </Link>

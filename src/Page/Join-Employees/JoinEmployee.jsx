@@ -96,22 +96,6 @@ const JoinEmployee = () => {
     });
   };
 
-  // Handle Google Login
-  // const handleGoogleSignIn = async () => {
-  //   try {
-  //     await handleGoogleLogin();
-
-  //     // Redirect user to home page or the path they were trying to access
-  //     const redirectPath = location.state?.from?.pathname || "/dashboard/dashboard";
-  //     navigate(redirectPath);
-  //     toast.success("Welcome Back!");
-  //   } catch (error) {
-  //     toast.error("Google Sign-in failed");
-  //     console.error("Google Sign-in error:", error.message);
-  //   }
-  // };
-
-
   const handleGoogleSignIn = () => {
     handleGoogleLogin().then((result) => {
       const user = result.user;
@@ -131,7 +115,7 @@ const JoinEmployee = () => {
   
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex sm:w-11/12 w-full mx-auto min-h-screen">
   <Helmet>
     <title>TrakSmart || Join Employee </title>
   </Helmet>
@@ -141,8 +125,8 @@ const JoinEmployee = () => {
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">
+      <div className="flex flex-col w-full lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white my-12">
+        <h1 className="sm:text-4xl text-3xl pt-6 font-bold text-gray-800 mb-4 text-center">
           Join as Employee
         </h1>
 
@@ -265,7 +249,7 @@ const JoinEmployee = () => {
           Already have an account?
           <Link
             to="/login"
-            className="text-[#031378ee] font-bold underline"
+            className="text-[#031378ee] ml-1 font-bold underline"
           >
             Log In
           </Link>
