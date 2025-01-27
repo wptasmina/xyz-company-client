@@ -70,18 +70,21 @@ const LoginPage = () => {
     
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex md:flex-row flex-col justify-center items-center min-h-screen">
+
   <Helmet>
     <title>TrakSmart || Login </title>
   </Helmet>
-        <div>
-            <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
-          </div>
+
+        <div className="mt-10">
+          <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
+        </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4 text-center">
-          Welcome Back!
+      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white shadow-md rounded-md  py-6">
+
+        <h1 className="md:text-4xl text-2xl font-extrabold text-[#031278] mb-4 text-center">
+          Welcome To Login!
         </h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
@@ -141,7 +144,7 @@ const LoginPage = () => {
           <input
             type="submit"
             value=" Login"
-            className="w-full bg-[#031278] text-white py-2 px-4 rounded-lg hover:bg-[#1753c2ce] focus:outline-none focus:ring-2 focus:ring-[#1753c2] focus:ring-offset-2"
+            className="w-full bg-[#031278] text-white py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#031278] focus:ring-offset-2"
           />
 
           <div className="text-center py-4 text-gray-600">____________OR____________</div>
@@ -159,10 +162,10 @@ const LoginPage = () => {
         </form>
 
         <p className="text-sm text-gray-600 my-4">
-          Create a New account?
+          Create a New account? 
           <Link
             to="/employee-register"
-            className="text-[#031278] font-medium underline"
+            className="text-[#031278] font-bold ml-1 underline"
           >
             Register
           </Link>
