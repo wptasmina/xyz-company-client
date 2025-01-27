@@ -102,7 +102,7 @@ const JoinEmployee = () => {
       await handleGoogleLogin();
 
       // Redirect user to home page or the path they were trying to access
-      const redirectPath = location.state?.from?.pathname || "/";
+      const redirectPath = location.state?.from?.pathname || "/dashboard";
       navigate(redirectPath);
       toast.success("Welcome Back!");
     } catch (error) {

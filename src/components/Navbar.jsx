@@ -12,23 +12,24 @@ const Navbar = () => {
 
   return (
     <nav className="py-2 shadow-md sticky z-50 top-0 bg-white">
-      <div className="w-11/12 md:w-10/12 mx-auto flex items-center justify-between">
+      <div className="md:w-10/12  mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
           <div className="flex items-center">
             <img src={logo} className="w-14" alt="Logo" />
+            <p className="text-[#031278] font-semibold text-xl">TrakSmart</p>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6 items-center">
-          <NavLink to="/" className="font-semibold text-gray-700">
+          <NavLink to="/" className="font-semibold text-gray-700 hover:text-[#031278]">
             Home
           </NavLink>
-          <NavLink to="/employee-register" className="font-semibold text-gray-700">
+          <NavLink to="/employee-register" className="font-semibold text-gray-700 hover:text-[#031278]">
             Join as Employee
           </NavLink>
-          <NavLink to="/hr-register" className="font-semibold text-gray-700">
+          <NavLink to="/hr-register" className="font-semibold text-gray-700 hover:text-[#031278]">
             Join as HR Manager
           </NavLink>
         </div>

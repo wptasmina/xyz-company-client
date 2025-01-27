@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PackagesSection = () => {
   const packages = [
@@ -9,7 +10,7 @@ const PackagesSection = () => {
 
   return (
     <section className="py-12 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="w-10/12 mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">Our Packages</h2>
         <p className="text-lg text-gray-600 mb-10">
           Choose the package that best fits your business needs. Manage your team and assets efficiently with flexible plans.
@@ -24,9 +25,11 @@ const PackagesSection = () => {
                 Maximum {pkg.employees} Employees
               </h3>
               <p className="text-xl font-bold text-green-600 mb-6">${pkg.price}</p>
-              <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors">
+             <Link to="/hr-register">
+             <button className="bg-[#031278] text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors">
                 Choose Plan
               </button>
+             </Link>
             </div>
           ))}
         </div>

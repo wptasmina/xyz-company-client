@@ -8,7 +8,7 @@ import useAxiosPublic from "./useAxiosPublic";
 
 const useEmployeeList = () => {
     const axiosPublic = useAxiosPublic()
-  const {user} =useContext(AuthContext);; //   useAuth hook
+  const {user} = useContext(AuthContext);; //   useAuth hook
 
   // TanStack query
   const { refetch, data: employeeList = [] } = useQuery({

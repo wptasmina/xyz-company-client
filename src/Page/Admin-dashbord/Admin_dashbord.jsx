@@ -108,7 +108,7 @@ export default function Admin_dashbord() {
   return (
     <div className="w-full">
     <Helmet>
-      <title>TrakSmart | Admin dashbord</title>
+      <title>TrakSmart || Admin dashbord</title>
     </Helmet>
       {/* Sidebar and Navbar */}
       <React.Fragment>
