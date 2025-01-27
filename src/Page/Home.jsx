@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
     <Helmet>
-        <title>XYZ || Home</title>
+        <title>TrakSmart || Home</title>
     </Helmet>
 
       <Navbar />

@@ -79,31 +79,31 @@ export default function All_Requests() {
           : "No asset requests found. Check back later."}
       </p>
     ) : (
-      <table className="w-full border-collapse bg-white">
+      <table className="w-full border-collapse bg-[#031278]">
         <thead>
-          <tr className="bg-gray-100">
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+          <tr className="bg-[#031278] text-white">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Asset Name
             </th>
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Asset Type
             </th>
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Requester Email
             </th>
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Requester Name
             </th>
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Request Date
             </th>
-            <th className="px-6 py-4 text-left text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-left text-sm font-medium text-white uppercase">
               Additional Note
             </th>
-            <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-center text-sm font-medium text-white uppercase">
               Status
             </th>
-            <th className="px-6 py-4 text-center text-sm font-medium text-gray-600 uppercase">
+            <th className="px-6 py-4 text-center text-sm font-medium text-white uppercase">
               Actions
             </th>
           </tr>
@@ -140,7 +140,7 @@ export default function All_Requests() {
                       : request.status === "Approved"
                       ? "bg-green-100 text-green-800"
                       : request.status === "Rejected"
-                      ? "bg-red-100 text-red-800"
+                      ? "bg-red-100 text-red-600"
                       : request.status === "Canceled"
                       ? "bg-gray-100 text-gray-800"
                       : request.status === "Returned"
@@ -167,7 +167,7 @@ export default function All_Requests() {
                       {request.status !== "Rejected" && (
                         <button
                           onClick={() => rejectRequest(request)}
-                          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
+                          className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-600 transition"
                           title="Reject"
                         >
                           <FaTimes />

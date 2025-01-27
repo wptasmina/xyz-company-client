@@ -116,22 +116,22 @@ const Asset_List = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-[#031278] ">
                   <th
                     scope="col"
-                    className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider"
                   >
                     Product Name
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider"
                   >
                     Product Type
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    className="px-6 py-4 text-center text-xs font-semibold text-gray-50 uppercase tracking-wider"
                   >
                     Quantity
                   </th>
@@ -174,7 +174,7 @@ const Asset_List = () => {
                       <div className="flex items-center justify-center space-x-3">
                         <Link
                           to={`/dashboard/update-asset/${asset._id}`}
-                          className="inline-flex items-center px-3 py-1.5 border border-blue-300 text-blue-800 rounded-lg hover:bg-blue-50 transition-colors"
+                          className="inline-flex items-center px-3 py-1.5 border border-blue-300 text-blue-900 rounded-lg hover:bg-blue-50 transition-colors"
                         >
                           <FaRegPenToSquare className="w-4 h-4" />
                           

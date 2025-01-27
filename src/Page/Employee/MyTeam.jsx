@@ -40,11 +40,11 @@ export default function MyTeam() {
       </h2>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-[#031278] text-white rounded-md">
-              <th className="px-4 py-2 text-left sm:text-md text-sm">Image</th>
-              <th className="px-4 py-2 text-left sm:text-md text-sm">Name</th>
-              <th className="px-4 py-2 text-left sm:text-md text-sm">Member Type</th>
+          <thead className="">
+            <tr className="bg-[#031278] text-white">
+              <th className="px-4 py-2 sm:text-md ">Image</th>
+              <th className="px-4 py-2 sm:text-md ">Name</th>
+              <th className="px-4 py-2 sm:text-md ">Member Type</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">

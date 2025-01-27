@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import useEmployeeList from "../hooks/useEmployeeList";
 import { FaTrash } from 'react-icons/fa'
@@ -23,7 +24,7 @@ export default function My_Employee_List() {
   };
 
   return (
-    <div className="sm:p-8 p-4 bg-white rounded-2xl shadow-lg">
+    <div className="sm:p-6 p-4 bg-white rounded-2xl shadow-lg">
     <Helmet>
       <title>TrakSmart || Employee List </title>
     </Helmet>
@@ -42,22 +43,22 @@ export default function My_Employee_List() {
       <div className="overflow-x-auto rounded-xl border border-[#b7c0f7]">
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
-            <tr className="bg-gray-50">
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">
+            <tr className="bg-[#031278]">
+              <th className="px-6 py-4 text-left text-sm font-semibold text-white">
                 Employee
               </th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-600">
+              <th className="px-6 py-4 text-left text-sm font-semibold text-white">
                 Type
               </th>
-              <th className="px-6 py-4 text-right text-sm font-semibold text-gray-600">
+              <th className="px-6 py-4 text-right text-sm font-semibold text-white">
                 Actions
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {employeeList.map((employee) => (
-              <tr key={employee.id} className="hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 whitespace-nowrap">
+              <tr key={employee.id} className="hover:bg-[#e9ebf8] transition-colors">
+                <td className="px-6 py-2 whitespace-nowrap">
                   <div className="flex items-center space-x-4">
                     <img
                       src={employee.profile}

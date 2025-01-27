@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
       {
         path: "update-asset/:id",
         element: <UpdateAsset />,
-        loader: ({params}) => fetch(`http://localhost:5000/assets/${params.id}`)
+        loader: ({params}) => fetch(`https://xyz-company-server.vercel.app/assets/${params.id}`)
       },
       {
         path: "my_profile",
@@ -106,7 +106,7 @@ export const router = createBrowserRouter([
       {
         path: "request-for-an-asset",
         element: <RequestAsset/>,
-        loader: () => fetch("http://localhost:5000/assets"),
+        loader: () => fetch("https://xyz-company-server.vercel.app/assets"),
       },
 
     ],

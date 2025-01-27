@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import loginImg from "../assets/login.png";
+import gImg from "../assets/google.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
@@ -15,7 +16,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   // user auth
-  const { handleLogin } =  useContext(AuthContext);
+  const { handleGoogleLogin, handleLogin } =  useContext(AuthContext);
 
 
   const {
@@ -49,6 +50,22 @@ const LoginPage = () => {
     reset();
   };
 
+    // Handle Google Login
+    const handleGoogleSignIn = async () => {
+      try {
+        await handleGoogleLogin();
+  
+        // Redirect user to home page or the path they were trying to access
+        const redirectPath = location.state?.from?.pathname || "/";
+        navigate(redirectPath);
+        toast.success("Welcome Back!");
+      } catch (error) {
+        toast.error("Google Sign-in failed");
+        console.error("Google Sign-in error:", error.message);
+      }
+    };
+    
+
   return (
     <div className="flex justify-center items-center min-h-screen">
   <Helmet>
@@ -76,7 +93,7 @@ const LoginPage = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]   focus:outline-none outline-none"
               placeholder="Enter your email address"
               {...register("email", { required: true })}
             />
@@ -96,7 +113,7 @@ const LoginPage = () => {
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none outline-none"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,
@@ -118,19 +135,31 @@ const LoginPage = () => {
           </div>
 
           {/* Submit Button */}
-          <button
+          <input
             type="submit"
-            className="w-full bg-[#1753c2] text-white py-2 px-4 rounded-lg hover:bg-[#1753c2ce] focus:outline-none focus:ring-2 focus:ring-[#1753c2] focus:ring-offset-2"
-          >
-            Login
-          </button>
+            value=" Login"
+            className="w-full bg-[#031278] text-white py-2 px-4 rounded-lg hover:bg-[#1753c2ce] focus:outline-none focus:ring-2 focus:ring-[#1753c2] focus:ring-offset-2"
+          />
+
+          <div className="text-center py-4 text-gray-600">____________OR____________</div>
+
+          <div
+            className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
+            onClick={handleGoogleSignIn}>
+
+            <img src={gImg} className="w-6" alt="Google" />
+            <div>
+              <h4 className="w-full font-medium cursor-pointer text-center">Continue with Google</h4>
+            </div>
+          </div>
+
         </form>
 
         <p className="text-sm text-gray-600 my-4">
-          Have already account?
+          Create a New account?
           <Link
             to="/employee-register"
-            className="text-[#1753c2] font-medium underline"
+            className="text-[#031278] font-medium underline"
           >
             Register
           </Link>

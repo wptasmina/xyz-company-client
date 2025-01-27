@@ -96,13 +96,13 @@ const Dashboard = () => {
         <div className="lg:px-8 py-8">
           {/* Stats Overview */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-[#031278] rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-500">
+                  <p className="text-sm font-medium text-white">
                     Pending Requests
                   </p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">
+                  <p className="text-2xl font-bold text-white mt-2">
                     {hrPendingAssets.length}
                   </p>
                 </div>
@@ -118,13 +118,13 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-orange-400 rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-500">
+                  <p className="text-sm font-medium text-gray-50">
                     Active Users
                   </p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">20</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-2">20</p>
                 </div>
                 <div className="bg-green-50 p-3 rounded-lg">
                   <Users className="w-6 h-6 text-green-600" />
@@ -137,13 +137,13 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-red-50 rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-500">
                     Low Stock Items
                   </p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">8</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-2">8</p>
                 </div>
                 <div className="bg-red-50 p-3 rounded-lg">
                   <AlertTriangle className="w-6 h-6 text-red-600" />
@@ -156,20 +156,20 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-purple-500 rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-500">
+                  <p className="text-sm font-medium text-gray-50">
                     Total Assets
                   </p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">124</p>
+                  <p className="text-2xl font-bold text-[#031278] mt-2">124</p>
                 </div>
                 <div className="bg-purple-50 p-3 rounded-lg">
-                  <Activity className="w-6 h-6 text-purple-600" />
+                  <Activity className="w-6 h-6 text-purple-900" />
                 </div>
               </div>
               <div className="mt-4">
-                <div className="flex items-center text-sm text-purple-600">
+                <div className="flex items-center text-sm text-purple-50">
                   <span>Updated recently</span>
                 </div>
               </div>
@@ -341,9 +341,9 @@ const Dashboard = () => {
                   pendingAssets.map((asset) => (
                     <div
                       key={asset._id}
-                      className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      className="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
-                      <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                      <div className="bg-blue-100 p-3 rounded-lg mr-4">
                         <Box className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
@@ -379,9 +379,9 @@ const Dashboard = () => {
                   monthlyRequest.map((asset) => (
                     <div
                       key={asset._id}
-                      className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      className="flex items-center p-4 bg-green-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
-                      <div className="bg-green-50 p-3 rounded-lg mr-4">
+                      <div className="bg-green-100 p-3 rounded-lg mr-4">
                         <Clock className="w-6 h-6 text-green-600" />
                       </div>
                       <div>
@@ -413,8 +413,8 @@ const Dashboard = () => {
                 </button>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                  <div className="bg-purple-50 p-3 rounded-lg mr-4">
+                <div className="flex items-center p-4 bg-purple-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="bg-purple-100 p-3 rounded-lg mr-4">
                     <Activity className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
@@ -424,8 +424,8 @@ const Dashboard = () => {
                     <p className="text-xs text-gray-500 mt-1">Jan 25, 2025</p>
                   </div>
                 </div>
-                <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                  <div className="bg-red-50 p-3 rounded-lg mr-4">
+                <div className="flex items-center p-4 bg-red-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className="bg-red-100 p-3 rounded-lg mr-4">
                     <AlertTriangle className="w-6 h-6 text-red-600" />
                   </div>
                   <div>

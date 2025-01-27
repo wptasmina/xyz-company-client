@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import img from "../../assets/register.png"
+import gImg from "../../assets/google.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
@@ -24,7 +25,7 @@ const JoinHR = () => {
   const axiosPublic = useAxiosPublic();
 
   // user auth
-  const { handleRegister, updateUserProfile } = useContext(AuthContext)
+  const { handleGoogleLogin, handleRegister, updateUserProfile } = useContext(AuthContext)
 
   // payment status
   const paymentStatus = false;
@@ -105,10 +106,26 @@ const JoinHR = () => {
     });
   };
 
+    // Handle Google Login
+    const handleGoogleSignIn = async () => {
+      try {
+        await handleGoogleLogin();
+  
+        // Redirect user to home page or the path they were trying to access
+        const redirectPath = location.state?.from?.pathname || "/dashboard";
+        navigate(redirectPath);
+        toast.success("Welcome Back!");
+      } catch (error) {
+        toast.error("Google Sign-in failed");
+        console.error("Google Sign-in error:", error.message);
+      }
+    };
+    
+
   return (
     <div className="flex min-h-screen">
       {/* Left Section */}
-      <div className="hidden lg:flex w-1/2 items-center justify-center bg-white">
+      <div className="hidden md:flex w-1/2 items-center justify-center bg-white">
         <img src={img} alt="Image" />
       </div>
 
@@ -129,7 +146,8 @@ const JoinHR = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none
+               outline-none focus:border-[#7789fd]"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
             />
@@ -149,7 +167,7 @@ const JoinHR = () => {
             <input
               type="text"
               id="company"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your company name"
               {...register("company_name", { required: true })}
             />
@@ -170,7 +188,7 @@ const JoinHR = () => {
               type="file"
               id="logo"
               placeholder="Enter your Company Logo"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("company_logo", { required: true })}
             />
             {errors.company_logo && (
@@ -189,7 +207,7 @@ const JoinHR = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your email address"
               {...register("email", { required: true })}
             />
@@ -200,35 +218,40 @@ const JoinHR = () => {
 
           {/* Password */}
           <div className="mb-4 relative">
-            <label
-              className="block text-sm font-medium text-gray-700 mb-2"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"
-              placeholder="Enter your password"
-              {...register("password", {
-                required: true,
-                minLength: 6,
-                maxLength: 16,
-                pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
-              })}
-            />
-            {errors.password && (
-              <p className="text-red-600">This field is required</p>
-            )}
-            <button
-              type="button"
-              onClick={togglePasswordVisibility}
-              className="absolute inset-y-0 right-3 top-[40%] flex items-center text-gray-500 hover:text-[#1753c2] focus:outline-none"
-            >
-              {passwordVisible ? <IoEyeOff className="text-xl" /> : <IoEye className="text-xl" />}
-            </button>
-          </div>
+      <label
+        className="block text-sm font-medium text-gray-700 mb-2"
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        type={passwordVisible ? "text" : "password"} // Toggle between text and password
+        id="password"
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#7789fd]"
+        placeholder="Enter your password"
+        {...register("password", {
+          required: true,
+          minLength: 6,
+          maxLength: 16,
+          pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+        })}
+      />
+      {errors.password && (
+        <p className="text-red-600 text-sm">This field is required</p>
+      )}
+
+      <button
+        type="button"
+        onClick={togglePasswordVisibility} // Trigger the toggle function
+        className="absolute inset-y-0 right-5 top-[30%] flex items-center text-gray-500 hover:text-[#1753c2] focus:outline-none"
+      >
+        {passwordVisible ? (
+          <IoEyeOff className="text-xl" />
+        ) : (
+          <IoEye className="text-xl" />
+        )}
+      </button>
+    </div>
 
           {/* Date of Birth */}
           <div className="mb-4">
@@ -241,7 +264,7 @@ const JoinHR = () => {
             <input
               type="date"
               id="dob"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-400 focus:border-blue-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("dob", { required: true })}
             />
             {errors.dob && (
@@ -275,17 +298,30 @@ const JoinHR = () => {
           <input
             type="submit"
             value="Signup"
-            className="w-full cursor-pointer bg-blue-400 text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+            className="w-full cursor-pointer bg-[#031278]  text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-800 focus:ring-offset-2"
           />
+
+          {/* GoogleSignIn  */}
+            <div className="text-center py-4 text-gray-600">____________OR____________</div>
+  
+            <div
+              className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
+              onClick={handleGoogleSignIn}>
+  
+              <img src={gImg} className="w-6" alt="Google" />
+              <div>
+                <h4 className="w-full font-medium cursor-pointer text-center">Continue with Google</h4>
+              </div>
+            </div>               
             
           
         </form>
 
         <p className="text-md text-gray-600 my-4">
-          Already have an account?{" "}
+          Already have an account?
           <Link
             to="/login"
-            className="text-[#1753c2] font-bold underline"
+            className="text-[#142f61] font-bold underline"
           >
             Log in
           </Link>

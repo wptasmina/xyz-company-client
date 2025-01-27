@@ -126,7 +126,7 @@ export default function AddEmployee() {
       <div className="p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-gray-900">Team Package</h2>
+            <h2 className="text-2xl font-bold text-[#031278]">Team Package</h2>
             <div className="flex items-center space-x-2">
               <div className="flex -space-x-2">
                 {employeeList.slice(0, 3).map((employee, index) => (
@@ -173,7 +173,7 @@ export default function AddEmployee() {
     <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Available Members</h2>
+          <h2 className="text-2xl font-bold text-[#031278]">Available Members</h2>
           <p className="mt-1 text-sm text-gray-500">Select members to add to your team</p>
         </div>
         <button
@@ -227,10 +227,10 @@ export default function AddEmployee() {
                   </h3>
                   <button
                     onClick={() => handleAddMember(member)}
-                    className="mt-2 inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-700 group-hover:underline"
+                    className="mt-1 inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-700 group-hover:underline"
                   >
                     Add to Team
-                    <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    
                   </button>
                 </div>
               </div>

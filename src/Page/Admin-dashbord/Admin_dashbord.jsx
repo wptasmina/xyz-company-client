@@ -113,7 +113,7 @@ export default function Admin_dashbord() {
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
-        <div className="flex justify-between items-center shadow-md py-1 px-5 md:px-10">
+        <div className="flex justify-between items-center shadow-md py-2 px-5 md:px-10">
           {/* logo */}
           <div className="flex items-center gap-3">
             <Button
@@ -133,7 +133,7 @@ export default function Admin_dashbord() {
               <img
                 src={company_logo}
                 alt={company_name}
-                className="w-[130px] lg:w-[160px] border"
+                className="w-[70px] md:w-[90px]"
               />
             ) : (
               <div className="flex gap-2 justify-center items-center">
