@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet-async";
 const JoinHR = () => {
 
 <Helmet>
-  <title>TrakSmart | Join HR </title>
+  <title>TrakSmart || Join HR </title>
 </Helmet>
 
   const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -82,8 +82,6 @@ const JoinHR = () => {
               console.log(error);
             });
         });
-
-        // after success then reset the form
         reset();
 
         //show the success alert 
@@ -106,20 +104,22 @@ const JoinHR = () => {
     });
   };
 
-    // Handle Google Login
-    const handleGoogleSignIn = async () => {
-      try {
-        await handleGoogleLogin();
-  
-        // Redirect user to home page or the path they were trying to access
-        const redirectPath = location.state?.from?.pathname || "/dashboard";
-        navigate(redirectPath);
-        toast.success("Welcome Back!");
-      } catch (error) {
-        toast.error("Google Sign-in failed");
-        console.error("Google Sign-in error:", error.message);
+  const handleGoogleSignIn = () => {
+    handleGoogleLogin().then((result) => {
+      const user = result.user;
+      navigate("/dashboard/dashboard");
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        profile: user.photoURL,
+        role: 'employee',
+        employee_status: false
       }
-    };
+      axiosPublic.post('/employee-account', userInfo).then(res => {
+        res.data
+      })
+    });
+  };
     
 
   return (
@@ -302,20 +302,23 @@ const JoinHR = () => {
           />
 
           {/* GoogleSignIn  */}
-            <div className="text-center py-4 text-gray-600">____________OR____________</div>
-  
+          <div className="text-center py-4 text-gray-600">____________OR____________</div>
+            
             <div
               className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
               onClick={handleGoogleSignIn}>
-  
+
               <img src={gImg} className="w-6" alt="Google" />
               <div>
                 <h4 className="w-full font-medium cursor-pointer text-center">Continue with Google</h4>
               </div>
             </div>               
-            
           
         </form>
+
+
+  
+
 
         <p className="text-md text-gray-600 my-4">
           Already have an account?

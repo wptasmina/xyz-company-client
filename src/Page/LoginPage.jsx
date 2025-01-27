@@ -51,18 +51,21 @@ const LoginPage = () => {
   };
 
     // Handle Google Login
-    const handleGoogleSignIn = async () => {
-      try {
-        await handleGoogleLogin();
-  
-        // Redirect user to home page or the path they were trying to access
-        const redirectPath = location.state?.from?.pathname || "/";
-        navigate(redirectPath);
-        toast.success("Welcome Back!");
-      } catch (error) {
-        toast.error("Google Sign-in failed");
-        console.error("Google Sign-in error:", error.message);
-      }
+    const handleGoogleSignIn = () => {
+      handleGoogleLogin().then((result) => {
+        const user = result.user;
+        navigate("/dashboard/dashboard");
+        const userInfo = {
+          name: user.displayName,
+          email: user.email,
+          profile: user.photoURL,
+          role: 'employee',
+          employee_status: false
+        }
+        axiosPublic.post('/employee-account', userInfo).then(res => {
+          res.data
+        })
+      });
     };
     
 
