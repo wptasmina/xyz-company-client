@@ -125,7 +125,7 @@ const JoinEmployee = () => {
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white my-12">
+      <div className="flex flex-col w-full rounded-md lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white my-12">
         <h1 className="sm:text-4xl text-3xl pt-6 font-bold text-gray-800 mb-4 text-center">
           Join as Employee
         </h1>

@@ -4,6 +4,7 @@ import Footer from './../components/Footer';
 import About_section from './About_section';
 import PackagesSection from '../components/PackagesSection';
 import Navbar from "../components/Navbar";
+import Payment from "../Payment component/Payment/Payment";
 
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Banner/>
       <About_section/>
       <PackagesSection/> 
+      <Payment />
       <Footer />
     </>
   )

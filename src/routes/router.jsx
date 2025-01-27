@@ -19,6 +19,7 @@ import UpdateAsset from "../Page/HR-Manager/UpdateAsset";
 import Admin_dashbord from "../Page/Admin-dashbord/Admin_dashbord";
 import PrivatRoutes from './PrivateRoutes';
 import AddEmployee from "../Page/HR-Manager/AddEmployee";
+import Payment from "../Payment component/Payment/Payment";
 
 
 
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "/hr-register",
         element: <Join_HR />
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
       {
         path: "/login",
