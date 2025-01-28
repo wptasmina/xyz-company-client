@@ -115,6 +115,24 @@ export default function AddEmployee() {
       .catch((err) => console.error("Error adding selected members:", err));
   };
 
+
+    // Pagination logic
+    const [currentPage, setCurrentPage] = useState(1);
+    const employeesPerPage = 6;
+  
+    const indexOfLastEmployee = currentPage * employeesPerPage;
+    const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
+    const currentEmployees = employee.slice(
+      indexOfFirstEmployee,
+      indexOfLastEmployee
+    );
+  
+    const totalPages = Math.ceil(employee.length / employeesPerPage);
+  
+    const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
+
   return (
 <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <Helmet>
@@ -237,6 +255,30 @@ export default function AddEmployee() {
             </div>
           </div>
         ))}
+      </div>
+
+       {/* Pagination Footer */}
+       <div className="flex justify-center gap-8 items-center p-4 mt-4 mb-6 border border-[#354ef059] shadow-md rounded-md py-2 bg-gray-50 border-t">
+          <p className="text-sm text-gray-600">
+            Showing {indexOfFirstEmployee + 1}-
+            {Math.min(indexOfFirstEmployee, employeeList.length)} of{" "}
+            {employeeList.length} employeeList
+          </p>
+            <div className="flex space-x-2">
+                {[...Array(totalPages)].map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handlePageChange(index + 1)}
+                    className={`px-4 py-2 rounded-md ${
+                      currentPage === index + 1
+                        ? "bg-[#031278] text-white"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+          </div>        
       </div>
 
       {employee.length === 0 && (

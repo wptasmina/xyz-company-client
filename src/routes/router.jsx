@@ -9,7 +9,6 @@ import Asset_List from "../Page/HR-Manager/Asset_List";
 import My_Employee_List from "../Page/HR-Manager/My_Employee_List";
 import Profile from "../Page/HR-Manager/Profile";
 import LoginPage from "../Page/LoginPage";
-import Register from "../Page/Register";
 import Home from "../Page/Home";
 import Join_HR from "../Page/Join-HR-Manager/Join_HR";
 import MainLayouts from "../layouts/MainLayouts";
@@ -48,10 +47,6 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
     ],
   },

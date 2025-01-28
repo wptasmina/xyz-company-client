@@ -2,15 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import { FaEdit, FaTrashAlt, FaSearch, FaSort, FaFilter } from "react-icons/fa";
+import { FaTrashAlt, FaSearch, FaFilter } from "react-icons/fa";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { BsSliders } from "react-icons/bs";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-import useAsset from './../hooks/useAsset';
+import useAsset from "./../hooks/useAsset";
 import { Helmet } from "react-helmet-async";
 
 const Asset_List = () => {
-
   const axiosPublic = useAxiosPublic();
 
   const [search, setSearch] = useState("");
@@ -23,6 +22,20 @@ const Asset_List = () => {
     product_type: productType,
   });
 
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const assetsPerPage = 10;
+
+  // Calculate the indices for the current page
+  const indexOfLastAsset = currentPage * assetsPerPage;
+  const indexOfFirstAsset = indexOfLastAsset - assetsPerPage;
+  const currentAssets = assets.slice(indexOfFirstAsset, indexOfLastAsset);
+  const totalPages = Math.ceil(assets.length / assetsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   const handleDelete = (id) => {
     axiosPublic
       .delete(`/assets/${id}`)
@@ -30,33 +43,33 @@ const Asset_List = () => {
         if (res.data.deletedCount > 0) {
           refetch();
           Swal.fire({
-            title: "Good job!",
-            text: "Asset Delete SuccessFull",
+            title: "Success",
+            text: "Asset deleted successfully!",
             icon: "success",
           });
         } else {
           Swal.fire({
             title: "Error",
-            text: "Asset Delete Unsuccess",
+            text: "Failed to delete asset.",
             icon: "error",
           });
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
   };
 
   return (
     <div className="min-h-screen bg-white rounded-xl py-10 md:px-8 mt-5">
-    <Helmet>
-    <title>TrakSmart || Asset List </title>
-  </Helmet>
+      <Helmet>
+        <title>TrakSmart || Asset List</title>
+      </Helmet>
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
-          <h2 className="sm:text-4xl text-2xl font-bold text-[#031278]">Asset Management</h2>
+          <h2 className="sm:text-4xl text-2xl font-bold text-[#031278]">
+            Asset Management
+          </h2>
           <p className="mt-2 sm:text-md text-sm text-gray-600">
             Manage and track your company assets (Asset List)
           </p>
@@ -116,35 +129,23 @@ const Asset_List = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
-                <tr className="bg-[#031278] ">
-                  <th
-                    scope="col"
-                    className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider"
-                  >
+                <tr className="bg-[#031278]">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Product Name
                   </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider"
-                  >
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Product Type
                   </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-4 text-center text-xs font-semibold text-gray-50 uppercase tracking-wider"
-                  >
+                  <th className="px-6 py-4 text-center text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Quantity
                   </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                  >
+                  <th className="px-6 py-4 text-center text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {assets.map((asset) => (
+                {currentAssets.map((asset) => (
                   <tr
                     key={asset._id}
                     className="hover:bg-gray-100 transition-colors"
@@ -177,14 +178,12 @@ const Asset_List = () => {
                           className="inline-flex items-center px-3 py-1.5 border border-blue-300 text-blue-900 rounded-lg hover:bg-blue-50 transition-colors"
                         >
                           <FaRegPenToSquare className="w-4 h-4" />
-                          
                         </Link>
                         <button
                           onClick={() => handleDelete(asset._id)}
                           className="inline-flex items-center px-3 py-1.5 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors"
                         >
                           <FaTrashAlt className="w-4 h-4" />
-                          
                         </button>
                       </div>
                     </td>
@@ -194,6 +193,32 @@ const Asset_List = () => {
             </table>
           </div>
         </div>
+
+        {/* Pagination */}
+        {assets.length > 0 && (
+          <div className="flex justify-evenly items-center my-6 duration-300 border border-[#354ef059] shadow-md rounded-md py-2 px-8">
+            <p className="text-sm text-left text-gray-600">
+              Showing {indexOfFirstAsset + 1}-
+              {Math.min(indexOfLastAsset, assets.length)} of {assets.length}{" "}
+              assets
+            </p>
+            <div className="flex space-x-2 duration-300 ">
+              {[...Array(totalPages)].map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handlePageChange(index + 1)}
+                  className={`px-4 py-2 rounded-lg ${
+                    currentPage === index + 1
+                      ? "bg-[#031278] text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Empty State */}
         {assets.length === 0 && (

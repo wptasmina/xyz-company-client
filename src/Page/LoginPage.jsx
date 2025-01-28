@@ -9,15 +9,12 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 
-
-
 const LoginPage = () => {
   // navigate user
   const navigate = useNavigate();
 
   // user auth
   const { handleGoogleLogin, handleLogin } =  useContext(AuthContext);
-
 
   const {
     register,
@@ -37,7 +34,7 @@ const LoginPage = () => {
     // create user
     handleLogin(data.email, data.password).then((result) => {
       const handleLogin = result.user;
-      console.log(handleLogin);
+      // console.log(handleLogin);
       Swal.fire({
         title: "Login Success!",
         text: "Successfully Register",
@@ -144,7 +141,7 @@ const LoginPage = () => {
           <input
             type="submit"
             value=" Login"
-            className="w-full bg-[#031278] text-white py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#031278] focus:ring-offset-2"
+            className="w-full bg-[#031278] text-white cursor-pointer py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#031278] focus:ring-offset-2"
           />
 
           <div className="text-center py-4 text-gray-600">____________OR____________</div>

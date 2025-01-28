@@ -65,7 +65,7 @@ const JoinEmployee = () => {
         // create user
         handleRegister(data.email, data.password).then((result) => {
           const loggedUser = result.user;
-          console.log(loggedUser);
+          // console.log(loggedUser);
 
           // update user
           updateUserProfile(data.name, profile)

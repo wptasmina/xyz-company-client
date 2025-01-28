@@ -14,13 +14,13 @@ import {
   Menu,
   MenuItem,
 } from "@material-tailwind/react";
-import { IoMenu } from "react-icons/io5";
 import logo from "../../assets/logo.jpg";
 
 import {
   FaCircleUser,
   FaFileContract,
   FaHourglassHalf,
+  FaSliders,
   FaUserPlus,
   FaUsers,
 } from "react-icons/fa6";
@@ -106,14 +106,14 @@ export default function Admin_dashbord() {
   );
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
     <Helmet>
       <title>TrakSmart || Admin dashbord</title>
     </Helmet>
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
-        <div className="flex justify-between items-center shadow-md py-2 px-5 md:px-10">
+        <div className="flex justify-between items-center bg-white/90 backdrop:blur-md sticky top-0 z-50 shadow-md py-2 px-5 md:px-10">
           {/* logo */}
           <div className="flex items-center gap-3">
             <Button
@@ -121,7 +121,7 @@ export default function Admin_dashbord() {
               size="sm"
               className="bg-white text-black shadow-none hover:shadow-none p-0"
             >
-              <IoMenu className="text-2xl" />
+              <FaSliders className="text-2xl" />
             </Button>
             {role === "HR" ? (
               <img
@@ -202,6 +202,7 @@ export default function Admin_dashbord() {
             </Menu>
           </div>
         </div>
+
         {/* Sidebar */}
         <Drawer open={open} onClose={closeDrawer}>
           <div className="mb-2 flex items-center justify-between p-4">
