@@ -4,25 +4,26 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { FaSearch } from "react-icons/fa";
 
 export default function RequestAsset() {
-
   const { user } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [status, setStatus] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [availabilityFilter, setAvailabilityFilter] = useState("all"); 
-  const [assetTypeFilter, setAssetTypeFilter] = useState("all"); 
-  const [sortOption, setSortOption] = useState("asc"); 
+  const [availabilityFilter, setAvailabilityFilter] = useState("all");
+  const [assetTypeFilter, setAssetTypeFilter] = useState("all");
+  const [sortOption, setSortOption] = useState("asc");
   const [filteredAssets, setFilteredAssets] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Number of items per page
   const [hr, setHr] = useState();
 
   const axiosPublic = useAxiosPublic();
-  const assets = useLoaderData(); 
+  const assets = useLoaderData();
 
   useEffect(() => {
-    
     axiosPublic.get(`/employee-account/${user.email}`).then((res) => {
       const employeeStatus = res.data.employee_status;
       setStatus(employeeStatus);
@@ -35,7 +36,6 @@ export default function RequestAsset() {
   }, [user.email, axiosPublic, hr]);
 
   useEffect(() => {
-    
     let filtered = assets.filter((asset) =>
       asset.product_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -53,7 +53,6 @@ export default function RequestAsset() {
       );
     }
 
-    // Apply sorting by product_quantity (ascending or descending)
     if (sortOption === "asc") {
       filtered = filtered.sort(
         (a, b) => a.product_quantity - b.product_quantity
@@ -67,33 +66,26 @@ export default function RequestAsset() {
     setFilteredAssets(filtered);
   }, [assets, searchQuery, availabilityFilter, assetTypeFilter, sortOption]);
 
-  // modal open func
   const handleRequest = (asset) => {
     setSelectedAsset(asset);
     setIsModalOpen(true);
   };
 
-  // modal close func
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedAsset(null);
   };
 
-  // handle sending asset request
   const handleRequestSubmit = async (e) => {
     e.preventDefault();
-
-    // get additional note data
     const form = e.target;
     const additional_notes = form.additional_notes.value;
 
-    // destructure posted info
     const requester_name = user.displayName;
     const requester_email = user.email;
     const request_date = new Date().toISOString();
     const asset_id = selectedAsset._id;
 
-    // posted info
     const requestedAsset = {
       asset_id,
       requester_name,
@@ -104,20 +96,15 @@ export default function RequestAsset() {
       hr_email: hr,
     };
 
-    // post request api
     const response = await axiosPublic.post("/requested-asset", requestedAsset);
-    // after send request then close modal
     handleModalClose();
-    // after successfully send request then open this modal
     if (response.data.insertedId) {
       Swal.fire({
         title: "Request",
         text: "Asset request submitted successfully!",
         icon: "success",
       });
-    }
-    // when failed request then open then modal
-    else {
+    } else {
       Swal.fire({
         title: "Failed",
         text: "Failed to submit asset request. Please try again.",
@@ -126,58 +113,61 @@ export default function RequestAsset() {
     }
   };
 
+  const paginatedAssets = filteredAssets.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const totalPages = Math.ceil(filteredAssets.length / itemsPerPage);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   if (status === true) {
     return (
-     
-      <div className="max-w-6xl mx-auto p-6">
-      <Helmet>
-        <title>TrakSmart | Request Assets </title>
-      </Helmet>
-        {/* Filters Section */}
-        <div className="flex flex-wrap items-center gap-4 mb-6">
-          <input
-            type="text"
-            placeholder="Search assets..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="border border-[#1753c2] p-2 rounded w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-[#1753c2]"
-          />
-          <select
-            className="border border-[#1753c2] p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#1753c2]"
-            onChange={(e) => {
-              const value = e.target.value;
-              setAvailabilityFilter(value);
+      <div className="w-full md:w-10/12 mx-auto p-6">
+        <Helmet>
+          <title>TrakSmart | Request Assets</title>
+        </Helmet>
+        <div className="flex justify-between flex-wrap items-center gap-4 mb-6 ">
+          <div className="flex items-center w-full sm:w-1/2 md:w-1/3 border border-[#1753c2] rounded-md cursor-pointer shadow-sm">
+            <FaSearch className="text-gray-500 ml-3" />
+            <input
+              type="text"
+              placeholder="Search assets..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="p-2 rounded w-full focus:outline-none outline-none"
+            />
+          </div>
 
-              // Automatically set sort option based on availability filter
-              if (value === "Available") {
-                setSortOption("desc");
-              } else if (value === "Out of stock") {
-                setSortOption("asc");
-              } else {
-                setSortOption("asc"); // Default to ascending for "All"
-              }
-            }}
-          >
-            <option value="all">All Availability</option>
-            <option value="Available">Available</option>
-            <option value="Out of stock">Out of stock</option>
-          </select>
+          <div className="w-full sm:w-auto md:w-1/4">
+            <select
+              className="border border-[#1753c2] p-2 rounded focus:outline-none outline-none w-full"
+              onChange={(e) => setAvailabilityFilter(e.target.value)}
+            >
+              <option value="all">All Availability</option>
+              <option value="Available">Available</option>
+              <option value="Out of stock">Out of stock</option>
+            </select>
+          </div>
 
-          {/* Asset Type Filter Dropdown */}
-          <select
-            className="border border-[#1753c2] p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#1753c2]"
-            onChange={(e) => setAssetTypeFilter(e.target.value)}
-          >
-            <option value="all">All Asset Types</option>
-            <option value="Returnable">Returnable</option>
-            <option value="Non-Returnable">Non-Returnable</option>
-          </select>
+          <div className="w-full sm:w-auto md:w-1/4">
+            <select
+              className="border border-[#1753c2] p-2 rounded focus:outline-none outline-none w-full"
+              onChange={(e) => setAssetTypeFilter(e.target.value)}
+            >
+              <option value="all">All Asset Types</option>
+              <option value="Returnable">Returnable</option>
+              <option value="Non-Returnable">Non-Returnable</option>
+            </select>
+          </div>
         </div>
 
-        {/* Assets Table */}
         <div className="bg-white shadow-md rounded overflow-hidden">
           <table className="table-auto w-full">
-            <thead className="bg-[#1753c2] text-white">
+            <thead className="bg-[#031278] text-white">
               <tr>
                 <th className="px-4 py-2 text-left">Asset Name</th>
                 <th className="px-4 py-2 text-left">Asset Type</th>
@@ -186,18 +176,18 @@ export default function RequestAsset() {
               </tr>
             </thead>
             <tbody>
-              {filteredAssets?.length === 0 ? (
+              {paginatedAssets?.length === 0 ? (
                 <tr>
                   <td colSpan="4" className="text-center py-4 text-gray-500">
                     No assets found.
                   </td>
                 </tr>
               ) : (
-                filteredAssets?.map((asset) => (
+                paginatedAssets?.map((asset) => (
                   <tr key={asset._id} className="border-b hover:bg-gray-50">
                     <td className="px-4 py-2">{asset.product_name}</td>
                     <td className="px-4 py-2">{asset.product_type}</td>
-                    <td className="px-4 py-2">
+                    <td className=" text-sm">
                       <span
                         className={`px-2 py-1 rounded ${
                           asset.product_quantity > 0
@@ -212,7 +202,7 @@ export default function RequestAsset() {
                     </td>
                     <td className="px-4 py-2">
                       <button
-                        className={`px-4 py-2 text-white rounded ${
+                        className={`px-3 py-1 text-sm text-white rounded ${
                           asset.product_quantity === 0
                             ? "bg-gray-400 cursor-not-allowed"
                             : "bg-[#1753c2] hover:bg-[#144b9c]"
@@ -230,26 +220,70 @@ export default function RequestAsset() {
           </table>
         </div>
 
-        {/* Modal Section */}
+        {/* Pagination Start */}
+        <div className="flex justify-center gap-4 sm:gap-0 mt-6 border rounded-md p-2">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 sm:mr-32 rounded ${
+              currentPage === 1
+                ? "bg-gray-200 cursor-not-allowed"
+                : "bg-[#031278] text-white hover:bg-[#144b9c]"
+            }`}
+          >
+            Prev
+          </button>
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              className={`px-4 py-2 mx-1 rounded ${
+                currentPage === index + 1
+                  ? "bg-[#031278] text-white"
+                  : "bg-gray-200 hover:bg-gray-300"
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 sm:ml-32 rounded ${
+              currentPage === totalPages
+                ? "bg-gray-200 cursor-not-allowed"
+                : "bg-[#031278] text-white hover:bg-[#144b9c]"
+            }`}
+          >
+            Next
+          </button>
+        </div>
+        {/* Pagination End */}
+
         {isModalOpen && selectedAsset && (
           <form onSubmit={handleRequestSubmit}>
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-              <div className="bg-white p-6 rounded shadow-lg w-1/3">
-                <h2 className="text-2xl font-semibold mb-4">Request Asset</h2>
+              <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+                <h2 className="text-xl font-semibold mb-4">
+                  Request Asset: {selectedAsset.product_name}
+                </h2>
                 <textarea
-                  className="border p-2 w-full rounded mb-4"
-                  placeholder="Add any additional notes..."
                   name="additional_notes"
-                />
-                <div className="flex justify-between">
+                  placeholder="Enter additional notes (optional)"
+                  className="w-full border border-gray-300 p-2 rounded mb-4"
+                ></textarea>
+                <div className="flex justify-end gap-2">
                   <button
                     type="button"
-                    className="bg-gray-500 text-white px-4 py-2 rounded"
+                    className="bg-gray-300 px-4 py-2 rounded"
                     onClick={handleModalClose}
                   >
-                    Close
+                    Cancel
                   </button>
-                  <button className="bg-[#1753c2] text-white px-4 py-2 rounded">
+                  <button
+                    type="submit"
+                    className="bg-[#1753c2] text-white px-4 py-2 rounded"
+                  >
                     Submit Request
                   </button>
                 </div>
@@ -261,14 +295,8 @@ export default function RequestAsset() {
     );
   } else {
     return (
-      <div
-        id="affiliation-message"
-        className="bg-yellow-100 text-yellow-800 p-4 rounded-lg mb-6"
-      >
-        <p className="text-lg">
-          ⚠ You are not affiliated with any company. Please contact your HR to
-          complete the affiliation process.
-        </p>
+      <div className="text-center p-6">
+        <p>You are not authorized to access this page.</p>
       </div>
     );
   }
