@@ -64,7 +64,7 @@ const Asset_List = () => {
         <title>TrakSmart || Asset List</title>
       </Helmet>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="w-11/12 mx-auto rounded-md">
         {/* Header Section */}
         <div className="mb-8">
           <h2 className="sm:text-4xl text-2xl font-bold text-[#031278]">
@@ -125,7 +125,7 @@ const Asset_List = () => {
         </div>
 
         {/* Table Section */}
-        <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm overflow-hidden border">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>

@@ -62,7 +62,7 @@ export default function All_Requests() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg md:p-6 p-2 mt-8 border border-gray-200">
+    <div className="w-11/12 mx-auto bg-white rounded-lg mt-8 md:p-6 border-gray-200">
       <Helmet>
         <title>TrakSmart || All Requests </title>
       </Helmet>

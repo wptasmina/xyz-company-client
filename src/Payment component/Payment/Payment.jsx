@@ -5,11 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+
 export default function Payment() {
-    const [age, setAge] = React.useState('');
+    const [pay, setPay] = React.useState('');
 
     const handleChange = (event) => {
-      setAge(event.target.value);
+      setPay(event.target.value);
     };
 
   return (
@@ -27,12 +28,12 @@ export default function Payment() {
     {/* select button  */}
     <div className='my-10'>
     <FormControl sx={{ m: 1, minWidth: 250 }} size="small">
-      <InputLabel id="demo-select-small-label">Age</InputLabel>
+      <InputLabel id="demo-select-small-label">Pay</InputLabel>
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={age}
-        label="Age"
+        value={pay}
+        label="Pay"
         onChange={handleChange}
       >
         <MenuItem value="">

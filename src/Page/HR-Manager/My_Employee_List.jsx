@@ -40,7 +40,7 @@ export default function My_Employee_List() {
   };
 
   return (
-    <div className="sm:p-6 p-4 bg-white rounded-2xl shadow-lg">
+    <div className="sm:p-6 p-4 w-11/12 mx-auto bg-white rounded-2xl shadow-lg">
       <Helmet>
         <title>TrakSmart || Employee List</title>
       </Helmet>

@@ -151,7 +151,7 @@ export default function Admin_dashbord() {
                 {user && user.photoURL ? (
                   <img
                     src={user.photoURL}
-                    className="rounded-full w-11 h-11 object-cover cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
+                    className="rounded-full md:w-14 w-11 md:h-14 h-11 object-cover cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
                   />
                 ) : (
                   <IconButton size="md" className="rounded-full bg-transparent">

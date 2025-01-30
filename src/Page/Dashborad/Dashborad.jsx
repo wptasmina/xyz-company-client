@@ -93,7 +93,7 @@ const Dashboard = () => {
       <title>TrakSmart || Dashboard</title>
     </Helmet>
 
-        <div className="lg:px-8 py-8">
+        <div className="md:px-10 py-8 px-4">
           {/* Stats Overview */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div className="bg-[#031278] rounded-xl shadow-sm p-6">
@@ -192,9 +192,9 @@ const Dashboard = () => {
                 {hrPendingAssets.map((asset) => (
                   <div
                     key={asset._id}
-                    className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    className="flex items-center p-4 bg-gray-100 rounded-lg hover:bg-gray-100 transition-colors"
                   >
-                    <Box className="w-5 h-5 text-gray-400 mr-3" />
+                    <Box className="w-5 h-5 text-[#031278] mr-3" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">
                         Request for {asset.asset_name}
@@ -323,11 +323,11 @@ const Dashboard = () => {
       <title>TrakSmart || Dashboard</title>
     </Helmet>
         {/* <!-- Main Content --> */}
-        <main className="lg:px-8 py-8">
+        <main className="md:px-10 px-4 py-8">
           {/* <!-- Employee Sections --> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* My Pending Requests */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-blue-50 rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">
                   My Pending Requests
@@ -341,7 +341,7 @@ const Dashboard = () => {
                   pendingAssets.map((asset) => (
                     <div
                       key={asset._id}
-                      className="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      className="flex items-center p-4 bg-blue-50 border border-blue-600 shadow-md rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <div className="bg-blue-100 p-3 rounded-lg mr-4">
                         <Box className="w-6 h-6 text-blue-600" />
@@ -365,12 +365,12 @@ const Dashboard = () => {
             </div>
 
             {/* My Monthly Requests */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="bg-green-50 rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">
                   My Monthly Requests
                 </h2>
-                <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                <span className="bg-green-100  text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                   {monthlyRequest?.length || 0} This Month
                 </span>
               </div>
@@ -379,7 +379,7 @@ const Dashboard = () => {
                   monthlyRequest.map((asset) => (
                     <div
                       key={asset._id}
-                      className="flex items-center p-4 bg-green-50 rounded-lg hover:bg-gray-100 transition-colors"
+                      className="flex items-center p-4 border shadow-md border-green-600 bg-green-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <div className="bg-green-100 p-3 rounded-lg mr-4">
                         <Clock className="w-6 h-6 text-green-600" />
