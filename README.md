@@ -1,7 +1,10 @@
 # Asset Management System
 
+![Uploading xyzCompany.png…]()
+
+
 ## 🚀 Live Site URL
-[https://xyzcompany-9211e.web.app](#)
+[xyz_company](https://xyzcompany-9211e.web.app)
 
 ## 🛠 Admin Credentials
 - **HR Email:** `admin@xyz.com`
