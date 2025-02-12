@@ -80,8 +80,8 @@ The **Asset Management System** is a web application designed to help companies 
 
 ### Steps
 1. Clone the repositories:
-   - **Client Side:** [GitHub Client Repo](#)
-   - **Server Side:** [GitHub Server Repo](#)
+   - **Client Side:** [GitHub Client Repo](https://github.com/wptasmina/xyz-company-client)
+   - **Server Side:** [GitHub Server Repo](https://github.com/wptasmina/xyz-company-server)
 
 2. **Setup Backend**:
    - Navigate to the server directory:
