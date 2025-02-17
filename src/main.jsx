@@ -10,6 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { router } from "./routes/router.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(

@@ -19,7 +19,7 @@ export default function Banner() {
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       }}
       pagination={{
@@ -29,8 +29,8 @@ export default function Banner() {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper "
     >
-      <SwiperSlide >
-        <section className='relative bg-bannerImg bg-no-repeat bg-cover bg-center w-full' >
+      <SwiperSlide>
+        <section className='relative bg-bannerImg bg-no-repeat bg-cover md:bg-top bg-center w-full' >
           <div class="w-full h-screen flex justify-center items-center bg-blackOvrtlay">
             <div class="p-2 flex justify-center items-center flex-col gap-4"> 
               <h1 className='text-white text-4xl font-bold text-center'>Smart Asset Managment for HR Excellence</h1>
