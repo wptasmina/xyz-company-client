@@ -1,7 +1,9 @@
+![xyzCompany](https://github.com/user-attachments/assets/8b49f975-d55d-4b7f-8f14-ac9c505f3af0)
+
 # Asset Management System
 
 ## 🚀 Live Site URL
-[https://xyzcompany-9211e.web.app](#)
+[xyz_company](https://xyzcompany-9211e.web.app)
 
 ## 🛠 Admin Credentials
 - **HR Email:** `admin@xyz.com`
@@ -78,8 +80,8 @@ The **Asset Management System** is a web application designed to help companies 
 
 ### Steps
 1. Clone the repositories:
-   - **Client Side:** [GitHub Client Repo](#)
-   - **Server Side:** [GitHub Server Repo](#)
+   - **Client Side:** [GitHub Client Repo](https://github.com/wptasmina/xyz-company-client)
+   - **Server Side:** [GitHub Server Repo](https://github.com/wptasmina/xyz-company-server)
 
 2. **Setup Backend**:
    - Navigate to the server directory:
