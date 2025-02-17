@@ -1,5 +1,5 @@
 
-// **@type {import('tailwindcss').Config} 
+//**@type {import('tailwindcss').Config} 
 import withMT from "@material-tailwind/react/utils/withMT";
 // eslint-disable-next-line no-undef
 module.exports = withMT ({
@@ -8,8 +8,13 @@ module.exports = withMT ({
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        bannerImg: "url('/slide-1.jpg')",
+        bannerImg2: "url('/slide-2.webp')",
+        blackOvrtlay: "linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(12, 40, 87) 100%)"
+      },
+    },
   },
   plugins: [ ],
 })
-

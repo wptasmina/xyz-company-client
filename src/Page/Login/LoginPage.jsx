@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
-import loginImg from "../assets/login.png";
-import gImg from "../assets/google.webp";
+// import loginImg from "../assets/login.png";
+import Lottie from "lottie-react";
+import loginAm from "./login.json";
+import gImg from "../../assets/google.webp";
+
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 
@@ -73,9 +77,11 @@ const LoginPage = () => {
     <title>TrakSmart || Login </title>
   </Helmet>
 
-        <div className="mt-10">
-          <img src={loginImg} className="sm:w-96 w-40 md:my-6" alt="image" />
+        {/* <div className="mt-10"> */}
+        <div className="hidden md:block w-3/6">
+          <Lottie animationData={loginAm} />
         </div>
+        {/* </div> */}
 
       {/* Right Form Section */}
       <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white shadow-md rounded-md  py-6">

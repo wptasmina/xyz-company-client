@@ -8,7 +8,6 @@ import All_Requests from "../Page/HR-Manager/All_Requests";
 import Asset_List from "../Page/HR-Manager/Asset_List";
 import My_Employee_List from "../Page/HR-Manager/My_Employee_List";
 import Profile from "../Page/HR-Manager/Profile";
-import LoginPage from "../Page/LoginPage";
 import Home from "../Page/Home";
 import Join_HR from "../Page/Join-HR-Manager/Join_HR";
 import MainLayouts from "../layouts/MainLayouts";
@@ -19,6 +18,7 @@ import Admin_dashbord from "../Page/Admin-dashbord/Admin_dashbord";
 import PrivatRoutes from './PrivateRoutes';
 import AddEmployee from "../Page/HR-Manager/AddEmployee";
 import Payment from "../Payment component/Payment/Payment";
+import LoginPage from './../Page/Login/LoginPage';
 
 
 

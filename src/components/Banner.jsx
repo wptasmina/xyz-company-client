@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-tailwind/react';
+// import { Button } from '@material-tailwind/react';
 
 export default function Banner() {
   return (
@@ -28,36 +28,53 @@ export default function Banner() {
       pagination={{
         clickable: true,
       }}
-      navigation={true}
+      // navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
+      className="mySwiper "
     >
-      <SwiperSlide>
-          <img src={img1} className='relative  object-cover bg-no-repeat w-full h-[550px] ' alt="slider image" />
-          <div class="absolute bg-black/40 border-2 border-orange-700 rounded-md p-1 top-1/2 left-1/2 -translate-x-[50%] ">
-          <Link to="/employee-register">
-                  <Button
-                    variant="contained"
-                    className="normal-case bg-[#1753c2]"
+      <SwiperSlide >
+        <section className='relative bg-bannerImg bg-no-repeat bg-cover bg-center w-full' >
+          <div class="w-full h-screen flex justify-center items-center bg-blackOvrtlay">
+            <div class="p-2 flex justify-center items-center flex-col gap-4"> 
+              <h1 className='text-white text-4xl font-bold text-center'>Smart Asset Managment for HR Excellence</h1>
+              <p className='text-white/70 font-bold md:w-2/3 mx-auto text-center'>
+              TakeSmart simplifies asset tracking and allocation for HR
+                managers. Efficiently manage returnable and non-returnable
+                items, streamline processes, and keep your workforce organized
+                with ease.
+              </p>
+                <div className='border-2 border-orange-700 rounded-md p-1'> 
+                <button
+                    className="px-8 text-white py-2 bg-[#0c2757] rounded-md "
                   >
-                    Join as Employee
-                  </Button>
+               <Link to="/hr-register">
+                    Join As HR Manager
                 </Link>
+                  </button>
+                </div>
+            </div>
           </div>
+          </section>
       </SwiperSlide>
 
-      <SwiperSlide>
-          <img src={img2} className='relative object-cover bg-no-repeat w-full h-[550px] ' alt="slider image" />
-          <div class="absolute top-1/2 left-1/2 border-2  border-orange-700 rounded-md p-1 -translate-x-[50%] ">
-          <Link to="/hr-register">
-                  <Button
-                    variant="contained"
-                    className="normal-case bg-[#1753c2]"
+      <SwiperSlide >
+        <section className='bg-bannerImg2 bg-no-repeat bg-cover  bg-center w-full' >
+          <div class="w-full h-screen flex justify-center items-center bg-blackOvrtlay">
+            <div class="p-2 flex justify-center items-center flex-col gap-4"> 
+              <h1 className='text-white text-4xl font-bold text-center'>Stay productive and organized with TakeSmart!</h1>
+              <p className='text-white/70 font-bold md:w-2/3 mx-auto text-center'>Seamlessly request, track, and manage company-provided assets with ease. Say goodbye to confusion and enjoy a hassle-free experience, ensuring every employee gets what they need—efficiently and effortlessly.</p>
+                <div className='border-2 border-orange-700 rounded-md p-1'> 
+                <button
+                    className="px-8 text-white py-2 bg-[#0c2757] rounded-md "
                   >
-                    Join as HR Manager
-                  </Button>
+                <Link to="/employee-register">
+                    Join As Employee
                 </Link>
+                  </button>
+                </div>
+            </div>
           </div>
+          </section>
       </SwiperSlide>
 
     </Swiper>
