@@ -29,7 +29,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import { IoIosHelpBuoy, IoMdSettings } from "react-icons/io";
 import { HiInboxArrowDown } from "react-icons/hi2";
 import { IoIosPower } from "react-icons/io";
-import { MdAssessment, MdLocalLibrary } from "react-icons/md";
+import { MdAssessment, MdLocalLibrary, MdMenuOpen } from "react-icons/md";
 import { FaAddressCard, FaDatabase } from "react-icons/fa";
 import { AiFillDashboard } from "react-icons/ai";
 import { RiFileList3Fill } from "react-icons/ri";
@@ -37,6 +37,8 @@ import { RiFileList3Fill } from "react-icons/ri";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Admin_dashbord() {
 
@@ -75,6 +77,23 @@ export default function Admin_dashbord() {
     }
   }, [user?.email, axiosPublic]);
 
+
+   // Dark mode state
+   const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+    // Apply theme class
+    useEffect(() => {
+      if (darkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    }, [darkMode]);
+
   // Nav List
   const profile = (
     <>
@@ -106,14 +125,14 @@ export default function Admin_dashbord() {
   );
 
   return (
-    <div className="w-full ">
+    <div className="w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <Helmet>
       <title>TrakSmart || Admin dashbord</title>
     </Helmet>
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
-        <div className="flex justify-between items-center bg-white/90 backdrop:blur-md sticky top-0 z-50 shadow-md py-2 px-5 md:px-10">
+        <div className="flex justify-between items-center dark:bg-[#292929]/60 bg-white/90 backdrop:blur-md sticky top-0 z-50 shadow-md py-2 px-5 md:px-10">
           {/* logo */}
           <div className="flex items-center gap-3">
             <Button
@@ -121,23 +140,24 @@ export default function Admin_dashbord() {
               size="sm"
               className="bg-white text-black shadow-none hover:shadow-none p-0"
             >
-              <FaSliders className="text-2xl" />
+              <MdMenuOpen className="text-2xl" />
             </Button>
+
             {role === "HR" ? (
               <img
                 src={hrCompanyLogo}
                 alt={hrCompanyName}
-                className="w-[50px] lg:w-[80px] rounded-md "
+                className="w-[40px] lg:w-[60px] rounded-md  object-fill "
               />
             ) : employeeData?.company_logo ? (
               <img
                 src={company_logo}
                 alt={company_name}
-                className="w-[70px] md:w-[90px]"
+                className="w-[40px] md:w-[60px] object-fill"
               />
             ) : (
               <div className="flex gap-2 justify-center items-center">
-                <img src={logo} alt="logo" className="w-[55px] lg:w-[70px]" />
+                <img src={logo} alt="logo" className="w-[55px] md:w-12" />
                 <h1 className="text-2xl font-bold text-[#1f4283] sm:block hidden">
                   TrakSmart
                 </h1>
@@ -145,13 +165,20 @@ export default function Admin_dashbord() {
             )}
           </div>
           {/* Profile Icon */}
-          <div>
+           
+          <div className="inline-flex items-center gap-4">
+            <div>
+              {/* Dark Mode Toggle */}
+           <button onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+          </button>
+            </div>
             <Menu placement="bottom-start">
               <MenuHandler>
                 {user && user.photoURL ? (
                   <img
                     src={user.photoURL}
-                    className="rounded-full md:w-14 w-11 md:h-14 h-11 object-cover cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
+                    className="rounded-full md:w-10  md:h-10 w-8 h-8 object-fill cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
                   />
                 ) : (
                   <IconButton size="md" className="rounded-full bg-transparent">
@@ -165,7 +192,7 @@ export default function Admin_dashbord() {
                     {user && user.photoURL ? (
                       <img
                         src={user.photoURL}
-                        className="w-9 h-9 object-cover rounded-full"
+                        className="w-10 h-10  border p-0.5 rounded-full"
                       />
                     ) : (
                       <FaCircleUser className="text-3xl text-black"></FaCircleUser>
@@ -205,7 +232,7 @@ export default function Admin_dashbord() {
 
         {/* Sidebar */}
         <Drawer open={open} onClose={closeDrawer}>
-          <div className="mb-2 flex items-center justify-between p-4">
+          <div className="dark:bg-gray-800 mb-2 flex items-center justify-between p-4">
             {role === "HR" ? (
               <Typography variant="h5" color="blue-gray">
                 {hrCompanyName}
@@ -236,7 +263,7 @@ export default function Admin_dashbord() {
             // HR Nav
             <List>
               <NavLink to="dashboard">
-                <ListItem className="hover:bg-blue-gray-50">
+                <ListItem className="hover:bg-blue-gray-50 dark:hover:bg-gray-700">
                   <ListItemPrefix>
                     <FaDatabase className="text-xl" />
                   </ListItemPrefix>
