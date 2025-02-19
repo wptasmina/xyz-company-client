@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import img from "../../assets/register.png"
+import logo from "../../assets/logo.png"
 import gImg from "../../assets/google.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -125,20 +126,28 @@ const JoinHR = () => {
   return (
     <div className="flex sm:w-11/12 w-full mx-auto min-h-screen">
       {/* Left Section */}
-      <div className="hidden md:flex w-1/2 items-center justify-center bg-white">
+      <div className="hidden md:flex w-1/2 items-center justify-center bg-white dark:bg-[#161f2c]">
         <img src={img} alt="Image" />
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 bg-white my-12">
-        <h1 className="md:text-4xl text-3xl pt-6 md:font-extrabold font-bold text-gray-800 mb-4 text-center">
+      <div className="bg-white dark:bg-[#29354985] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 my-12">
+        {/* <h1 className="md:text-4xl text-3xl pt-6 md:font-extrabold font-bold text-gray-800 mb-4 text-center">
           Join as HR Manager
-        </h1>
+        </h1> */}
+        <div className="inline-flex items-center justify-center gap-4 mb-4">
+                <Link to="/">
+                  <img src={logo} alt="Logo" className="w-12" />
+                </Link>
+                  <h1 className="sm:text-3xl text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
+                  Join as HR Manager
+                  </h1>
+                </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           {/* Full Name */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="name"
             >
               Full Name
@@ -159,7 +168,7 @@ const JoinHR = () => {
           {/* Company Name */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="company"
             >
               Company Name
@@ -179,7 +188,7 @@ const JoinHR = () => {
           {/* Company Logo */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="logo"
             >
               Company Logo
@@ -199,7 +208,7 @@ const JoinHR = () => {
           {/* Email */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="email"
             >
               Email
@@ -219,7 +228,7 @@ const JoinHR = () => {
           {/* Password */}
           <div className="mb-4 relative">
       <label
-        className="block text-sm font-medium text-gray-700 mb-2"
+        className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
         htmlFor="password"
       >
         Password
@@ -243,7 +252,7 @@ const JoinHR = () => {
       <button
         type="button"
         onClick={togglePasswordVisibility} // Trigger the toggle function
-        className="absolute inset-y-0 right-5 top-[30%] flex items-center text-gray-500 hover:text-[#1753c2] focus:outline-none"
+        className="absolute inset-y-0 right-5 top-[30%] flex items-center text-gray-500 dark:text-gray-200 hover:text-[#1753c2] focus:outline-none"
       >
         {passwordVisible ? (
           <IoEyeOff className="text-xl" />
@@ -256,7 +265,7 @@ const JoinHR = () => {
           {/* Date of Birth */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="dob"
             >
               Date of Birth
@@ -275,7 +284,7 @@ const JoinHR = () => {
           {/* Package Selection */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="package"
             >
               Select a Package
@@ -302,7 +311,7 @@ const JoinHR = () => {
           />
 
           {/* GoogleSignIn  */}
-          <div className="text-center py-4 text-gray-600">____________OR____________</div>
+          <div className="text-center py-4 text-gray-600 dark:text-gray-200">____________OR____________</div>
             
             <div
               className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
@@ -316,13 +325,13 @@ const JoinHR = () => {
           
         </form>
 
-        <p className="text-md text-gray-600 my-4">
+        <p className="text-md text-gray-600 dark:text-gray-200 my-4">
           Already have an account?
           <Link
             to="/login"
-            className="text-[#142f61] ml-1 font-bold underline"
+            className="text-[#142f61] dark:text-gray-400 ml-1 font-bold underline"
           >
-            Log in
+            Login
           </Link>
         </p>
       </div>

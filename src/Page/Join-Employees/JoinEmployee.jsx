@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { useForm } from "react-hook-form";
-import logo from "../../assets/register.webp"
+import img from "../../assets/em-register.png"
+import logo from "../../assets/logo.png"
 import gImg from "../../assets/google.webp";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
@@ -115,26 +116,30 @@ const JoinEmployee = () => {
   
 
   return (
-    <div className="flex sm:w-11/12 w-full mx-auto min-h-screen">
+    <div className=" flex sm:w-11/12 w-full mx-auto min-h-screen">
   <Helmet>
     <title>TrakSmart || Join Employee </title>
   </Helmet>
       {/* Left Animation Section */}
-      <div className="hidden md:flex w-1/2 items-center justify-center bg-white">
-      <img src={logo} alt="image" />
+      <div className="hidden md:flex w-1/2 items-center justify-center bg-white dark:bg-[#161f2c]">
+      <img src={img} alt="image" />
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full rounded-md lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white my-12">
-        <h1 className="sm:text-4xl text-3xl pt-6 font-bold text-gray-800 mb-4 text-center">
-          Join as Employee
-        </h1>
-
+      <div className="flex flex-col w-full rounded-md lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white dark:bg-[#29354985] dark:text-white my-12">
+       <div className="inline-flex items-center justify-center gap-4 mb-4">
+        <Link to="/">
+          <img src={logo} alt="Logo" className="w-12" />
+        </Link>
+          <h1 className="sm:text-3xl text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
+            Join as Employee
+          </h1>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           {/* Full Name */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="name"
             >
               Full Name
@@ -154,7 +159,7 @@ const JoinEmployee = () => {
           {/* Company Logo */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="logo"
             >
               Profile Photo
@@ -173,7 +178,7 @@ const JoinEmployee = () => {
           {/* Email */}
           <div className="mb-4">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="email"
             >
               Email
@@ -194,7 +199,7 @@ const JoinEmployee = () => {
           {/* Password */}
           <div className="mb-4 relative">
             <label
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="password"
             >
               Password
@@ -217,7 +222,7 @@ const JoinEmployee = () => {
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className="absolute inset-y-0 right-4 top-[40%] flex items-center text-gray-500 hover:text-[#203a6b] focus:outline-none"
+              className="absolute inset-y-0 right-4 top-[40%] flex items-center text-gray-500 dark:text-gray-200 hover:text-[#203a6b] focus:outline-none"
             >
               {passwordVisible ? <IoEyeOff className="text-xl" /> : <IoEye className="text-xl" />}
             </button>

@@ -76,7 +76,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex md:flex-row flex-col justify-center items-center min-h-screen">
+    <div className="bg-white dark:bg-[#161f2c] flex md:flex-row flex-col justify-center items-center min-h-screen">
       <Helmet>
         <title>TrakSmart || Login</title>
       </Helmet>
@@ -86,7 +86,7 @@ const LoginPage = () => {
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white shadow-md rounded-md py-6">
+      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white dark:bg-[#25314485] shadow-md rounded-md py-6">
         <div className="flex sm:gap-6 gap-2 mb-4 pt-4">
           <div>
             <Link to="/">
@@ -101,7 +101,7 @@ const LoginPage = () => {
           </button>
         </div>
 
-        <h1 className="md:text-4xl text-2xl font-extrabold text-[#031278] mb-4 text-center">
+        <h1 className="md:text-4xl text-2xl font-extrabold text-[#031278] dark:text-white mb-4 text-center">
           Welcome To Login!
         </h1>
 

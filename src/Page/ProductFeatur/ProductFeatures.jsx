@@ -37,7 +37,7 @@ const ProductFeatures = () => {
       </Helmet>
 
       <Navbar />
-      <div className="max-w-6xl mx-auto p-6 mt-10">
+    <div className="bg-white dark:bg-[#1e293b] max-w-6xl mx-auto p-6 mt-10">
         {/* Title & Description */}
         <div data-aos="fade-up"
              ata-aos="zoom-in-left"
@@ -46,7 +46,7 @@ const ProductFeatures = () => {
           <h2 data-aos="fade-up"
             ata-aos="zoom-in-left"
             data-aos-duration="1000" 
-            className="text-4xl font-bold text-[#031278] ">Why Choose Our Asset Management System?</h2>
+            className="dark:text-white text-4xl font-bold text-[#031278] ">Why Choose Our Asset Management System?</h2>
           <p data-aos="fade-up"
             ata-aos="zoom-in-left"
             data-aos-duration="1000" 
@@ -79,7 +79,7 @@ const ProductFeatures = () => {
       {/* Title & Description */}
       <h3 data-aos="fade-up"
              ata-aos="zoom-in-left"
-            data-aos-duration="1000"  className="text-3xl font-bold text-[#131c58]">Business Benefits</h3>
+            data-aos-duration="1000"  className="dark:text-white text-3xl font-bold text-[#131c58]">Business Benefits</h3>
       <p data-aos="fade-up"
              ata-aos="zoom-in-left"
             data-aos-duration="1000"  className="text-gray-600 mt-2 text-lg">

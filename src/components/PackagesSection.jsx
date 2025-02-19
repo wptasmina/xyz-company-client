@@ -9,12 +9,12 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white dark:bg-[#1e293b]">
       <div className="w-10/12 mx-auto text-center">
         <h2 data-aos="fade-up"
                         ata-aos="zoom-in-left"
                         data-aos-duration="1000" 
-                        className="text-3xl font-bold mb-6 text-[#131c58] ">Our Packages</h2>
+                        className="text-3xl font-bold mb-6 text-[#131c58] dark:text-white ">Our Packages</h2>
         <p data-aos="fade-up"
            ata-aos="zoom-in-left"
           data-aos-duration="1000" 
