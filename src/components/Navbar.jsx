@@ -68,19 +68,22 @@ const Navbar = () => {
             Contact
           </NavLink>
         </div>
-         {/* Dark Mode Toggle */}
+         <div className="flex items-center"> 
+          {/* Dark Mode Toggle */}
          <button
           onClick={toggleDarkMode}
-          className="ml-4 text-2xl text-black dark:text-white"
+          className="mr-4 text-2xl text-black dark:text-white"
         >
           {isDarkMode ? <MdOutlineLightMode /> : <MdDarkMode  />}
         </button>
+        
         {/* Login Button */}
         <Link to="/login" className="hidden md:block">
           <button className="bg-[#1a3566ee] text-white px-6 py-2 rounded-md">
             Login
           </button>
         </Link>
+         </div>
 
         {/* Mobile Menu Toggle */}
         <button

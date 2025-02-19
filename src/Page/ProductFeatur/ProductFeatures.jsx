@@ -60,21 +60,27 @@ const ProductFeatures = () => {
           {features.map((feature, index) => (
             <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
               <div data-aos="fade-right"
-                        ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-[#131c58] dark:text-[#131c58] text-2xl mr-3">{feature.icon}</div>
+                    ata-aos="zoom-in-left"
+                    data-aos-duration="1000" 
+
+                    className="text-[#131c58] dark:text-[#131c58] text-2xl mr-3">
+                      {feature.icon}
+                </div>
               <div>
                 <h3 data-aos="fade-up"
                         ata-aos="zoom-in-left"
                         data-aos-duration="1000" className="text-lg dark:text-[#131c58] font-semibold">{feature.title}</h3>
                 <p data-aos="fade-up"
-                        ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-gray-600 text-sm">{feature.description}</p>
+                    ata-aos="zoom-in-left"
+                    data-aos-duration="1000" className="text-gray-600 text-sm">
+                    {feature.description}
+                  </p>
               </div>
             </div>
           ))}
         </div>
 
-
+        {/* Business Benefits section */}
     <section className="mt-12 text-center">
       {/* Title & Description */}
       <h3 data-aos="fade-up"
