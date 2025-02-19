@@ -14,7 +14,7 @@ import {
   Menu,
   MenuItem,
 } from "@material-tailwind/react";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo.png";
 
 import {
   FaCircleUser,

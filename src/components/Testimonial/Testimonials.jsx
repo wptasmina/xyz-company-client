@@ -25,9 +25,9 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">What Our Clients Say</h2>
-        <div className="grid md:grid-cols-3 gap-8 px-4">
+      <div className="w-10/12 mx-auto text-center">
+        <h2 className="text-3xl font-bold text-[#131c58] mb-8">What Our Clients Say</h2>
+        <div  className="grid md:grid-cols-3 gap-8 ">
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
@@ -36,7 +36,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <FaQuoteLeft className="text-blue-500 text-3xl mb-4" />
+              <FaQuoteLeft className="text-gray-400 text-3xl mb-4" />
               <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
               <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full border-2 border-blue-500 mb-2" />
               <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>

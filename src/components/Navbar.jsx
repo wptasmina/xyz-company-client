@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { useState } from "react";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 

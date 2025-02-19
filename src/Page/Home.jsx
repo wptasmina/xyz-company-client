@@ -17,13 +17,16 @@ export default function Home() {
         <title>TrakSmart || Home</title>
     </Helmet>
 
-      <Navbar />
+    <div className="dark:bg-gray-900 text-gray-800 dark:text-white">
+    <Navbar />
       <Banner/>
       <About_section/>
       <PackagesSection/> 
       <Testimonials />
       {/* <FeaturesSection /> */}
       <Footer />
+    </div>
+     
     </>
   )
 }
