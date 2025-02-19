@@ -5,14 +5,19 @@ const About_section = () => {
     return (
         <div className="bg-gray-100 dark:bg-[#1e293b]">
             {/* Hero Section */}
-            <section className="bg-[#031278] text-black dark:text-white text-center py-12 px-2 ">
+            <section className="bg-[#031278] text-center py-12 px-2 ">
                 <h1 data-aos="fade-right"
                 data-aos-duration="1000"
-                data-aos-easing="ease-in-sine" className="text-black dark:text-white sm:text-4xl text-2xl font-bold mb-4">About Our Service</h1>
+                data-aos-easing="ease-in-sine" 
+                className="text-white dark:text-white sm:text-4xl text-2xl font-bold mb-4">
+                    About Our Service
+                </h1>
                 <p data-aos="fade-left"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-sine" 
-                className="text-md sm:text-lg">The ultimate solution for managing returnable and non-returnable company assets.</p>
+                className="text-md sm:text-lg text-white">
+                    The ultimate solution for managing returnable and non-returnable company assets.
+                </p>
             </section>
 
             {/* Features Section */}
