@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../components/Navbar";
-// import { FaCheckCircle } from "react-icons/fa";
 import { FaCheckCircle, FaTools, FaShieldAlt, FaChartPie, FaBell, FaSearch, FaMoneyBillWave, FaLock, FaPrint, FaMobileAlt } from "react-icons/fa";
 import Footer from "../../components/Footer";
 
@@ -38,11 +37,20 @@ const ProductFeatures = () => {
       </Helmet>
 
       <Navbar />
-      <div className="max-w-6xl mx-auto p-6">
+      <div className="max-w-6xl mx-auto p-6 mt-10">
         {/* Title & Description */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#031278]">Why Choose Our Asset Management System?</h2>
-          <p className="text-gray-600 mt-2 text-lg">
+        <div data-aos="fade-up"
+             ata-aos="zoom-in-left"
+            data-aos-duration="1000" 
+            className="text-center mb-12">
+          <h2 data-aos="fade-up"
+            ata-aos="zoom-in-left"
+            data-aos-duration="1000" 
+            className="text-4xl font-bold text-[#031278] ">Why Choose Our Asset Management System?</h2>
+          <p data-aos="fade-up"
+            ata-aos="zoom-in-left"
+            data-aos-duration="1000" 
+            className="text-gray-600 mt-2 text-lg">
             Manage and track your company's assets effortlessly with our feature-rich solution.
           </p>
         </div>
@@ -51,10 +59,16 @@ const ProductFeatures = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
-              <div className="text-[#131c58] text-2xl mr-3">{feature.icon}</div>
+              <div data-aos="fade-right"
+                        ata-aos="zoom-in-left"
+                        data-aos-duration="1000" className="text-[#131c58] text-2xl mr-3">{feature.icon}</div>
               <div>
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 data-aos="fade-up"
+                        ata-aos="zoom-in-left"
+                        data-aos-duration="1000" className="text-lg font-semibold">{feature.title}</h3>
+                <p data-aos="fade-up"
+                        ata-aos="zoom-in-left"
+                        data-aos-duration="1000" className="text-gray-600 text-sm">{feature.description}</p>
               </div>
             </div>
           ))}
@@ -63,13 +77,17 @@ const ProductFeatures = () => {
 
     <section className="mt-12 text-center">
       {/* Title & Description */}
-      <h3 className="text-3xl font-bold text-[#131c58]">Business Benefits</h3>
-      <p className="text-gray-600 mt-2 text-lg">
+      <h3 data-aos="fade-up"
+             ata-aos="zoom-in-left"
+            data-aos-duration="1000"  className="text-3xl font-bold text-[#131c58]">Business Benefits</h3>
+      <p data-aos="fade-up"
+             ata-aos="zoom-in-left"
+            data-aos-duration="1000"  className="text-gray-600 mt-2 text-lg">
         Unlock the advantages of smarter asset management.
       </p>
 
       {/* Benefits Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 my-6">
         {benefits.map((benefit, index) => (
           <div
             key={index}

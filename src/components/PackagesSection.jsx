@@ -13,10 +13,12 @@ const PackagesSection = () => {
       <div className="w-10/12 mx-auto text-center">
         <h2 data-aos="fade-up"
                         ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-3xl font-bold mb-6 text-[#131c58] ">Our Packages</h2>
+                        data-aos-duration="1000" 
+                        className="text-3xl font-bold mb-6 text-[#131c58] ">Our Packages</h2>
         <p data-aos="fade-up"
-                        ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-lg text-gray-600 mb-10">
+           ata-aos="zoom-in-left"
+          data-aos-duration="1000" 
+          className="text-lg text-gray-600 mb-10">
           Choose the package that best fits your business needs. Manage your team and assets efficiently with flexible plans.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

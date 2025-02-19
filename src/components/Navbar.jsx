@@ -83,6 +83,9 @@ const Navbar = () => {
           >
             Join as HR Manager
           </NavLink>
+          <NavLink to="/contact" className="font-semibold text-gray-700 hover:text-[#031278]">
+            Contact
+          </NavLink>
           <Link
             to="/login"
             className="block bg-[#1a3566ee] text-white text-center py-2 rounded-md mt-2"
