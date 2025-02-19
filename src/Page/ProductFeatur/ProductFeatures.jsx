@@ -37,7 +37,7 @@ const ProductFeatures = () => {
       </Helmet>
 
       <Navbar />
-    <div className="bg-white dark:bg-[#1e293b] max-w-6xl mx-auto p-6 mt-10">
+    <div className="bg-white dark:bg-[#161f2c] max-w-6xl mx-auto p-6 mt-10">
         {/* Title & Description */}
         <div data-aos="fade-up"
              ata-aos="zoom-in-left"
@@ -61,11 +61,11 @@ const ProductFeatures = () => {
             <div key={index} className="flex items-center bg-gray-100 p-4 rounded-lg shadow-sm">
               <div data-aos="fade-right"
                         ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-[#131c58] text-2xl mr-3">{feature.icon}</div>
+                        data-aos-duration="1000" className="text-[#131c58] dark:text-[#131c58] text-2xl mr-3">{feature.icon}</div>
               <div>
                 <h3 data-aos="fade-up"
                         ata-aos="zoom-in-left"
-                        data-aos-duration="1000" className="text-lg font-semibold">{feature.title}</h3>
+                        data-aos-duration="1000" className="text-lg dark:text-[#131c58] font-semibold">{feature.title}</h3>
                 <p data-aos="fade-up"
                         ata-aos="zoom-in-left"
                         data-aos-duration="1000" className="text-gray-600 text-sm">{feature.description}</p>
