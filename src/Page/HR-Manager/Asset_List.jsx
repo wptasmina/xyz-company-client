@@ -59,7 +59,8 @@ const Asset_List = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white rounded-xl py-10 md:px-8 mt-5">
+    <div className="min-h-screen bg-white dark:bg-[#212121] 
+     rounded-xl py-10 md:px-8 mt-5">
       <Helmet>
         <title>TrakSmart || Asset List</title>
       </Helmet>
@@ -67,16 +68,16 @@ const Asset_List = () => {
       <div className="w-11/12 mx-auto rounded-md">
         {/* Header Section */}
         <div className="mb-8">
-          <h2 className="sm:text-4xl text-2xl font-bold text-[#031278]">
+          <h2 className="sm:text-4xl text-2xl font-bold text-[#031278] dark:text-gray-100">
             Asset Management
           </h2>
-          <p className="mt-2 sm:text-md text-sm text-gray-600">
+          <p className="mt-2 sm:text-md text-sm text-gray-600 dark:text-gray-400">
             Manage and track your company assets (Asset List)
           </p>
         </div>
 
         {/* Filters Section */}
-        <div className="bg-white rounded-xl shadow-sm mb-6 space-y-4 md:space-y-0 md:flex md:items-center md:space-x-4">
+        <div className="bg-white dark:bg-gray-900 dark:text-gray-900 rounded-xl shadow-sm mb-6 space-y-4 md:space-y-0 md:flex md:items-center md:space-x-4">
           {/* Search */}
           <div className="flex-1">
             <div className="relative">
@@ -125,15 +126,15 @@ const Asset_List = () => {
         </div>
 
         {/* Table Section */}
-        <div className="bg-white rounded-xl shadow-sm overflow-hidden border">
+        <div className="bg-white dark:bg-gray-200 backdrop:blur-lg rounded-xl shadow-sm overflow-hidden border">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
                 <tr className="bg-[#031278]">
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
+                  <th className="dark:text-gray-50 px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Product Name
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
+                  <th className="dark:text-gray-50 px-6 py-4 text-left text-xs font-semibold text-gray-50 uppercase tracking-wider">
                     Product Type
                   </th>
                   <th className="px-6 py-4 text-center text-xs font-semibold text-gray-50 uppercase tracking-wider">
@@ -144,20 +145,20 @@ const Asset_List = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-200 ">
                 {currentAssets.map((asset) => (
                   <tr
                     key={asset._id}
-                    className="hover:bg-gray-100 transition-colors"
+                    className="hover:bg-gray-100 dark:hover:bg-black transition-colors"
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-sm font-medium text-gray-900 dark:text-gray-800">
                         {asset.product_name}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium  ${
                           asset.product_type === "Returnable"
                             ? "bg-green-100 text-green-800"
                             : "bg-blue-100 text-blue-800"
@@ -167,7 +168,7 @@ const Asset_List = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-center">
-                      <div className="text-sm text-gray-900 font-medium">
+                      <div className="text-sm text-gray-900 font-medium dark:text-gray-800">
                         {asset.product_quantity}
                       </div>
                     </td>

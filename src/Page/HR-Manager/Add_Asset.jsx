@@ -53,13 +53,13 @@ export default function Add_Asset() {
    };
  
    return (
-     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
     <Helmet>
       <title>TrakSmart || Add Asset </title>
     </Helmet>
        <div className="max-w-lg mx-auto border rounded-2xl">
          {/* Form Card */}
-         <div className="bg-[#d0d5faf1] rounded-2xl shadow-lg overflow-hidden">
+         <div className="bg-[#ebedf8] rounded-2xl shadow-lg overflow-hidden">
            {/* Header */}
            <div className="bg-[#d0d5faee] px-8 py-6">
              <h2 className="text-2xl font-bold text-[#031278] text-center">
@@ -109,14 +109,14 @@ export default function Add_Asset() {
                  </label>
                  <div className="relative rounded-md shadow-sm ">
                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                     <GoMultiSelect className="h-5 w-5 text-gray-700" />
+                     <GoMultiSelect className="h-5 w-5 text-gray-700 dark:text-gray-900" />
                    </div>
                    <select
                      id="productType"
                      {...register("product_type", {
                        required: "Product type is required",
                      })}
-                     className="block w-full pl-10 pr-10 py-3 rounded-md border focus:border-blue-500 duration-300 focus:outline-none outline-none appearance-none"
+                     className="dark:text-gray-900 block w-full pl-10 pr-10 py-3 rounded-md border focus:border-blue-500 duration-300 focus:outline-none outline-none appearance-none"
                    >
                      <option value="" disabled selected>
                        Select product type

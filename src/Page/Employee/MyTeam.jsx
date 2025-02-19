@@ -38,13 +38,13 @@ export default function MyTeam() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg sm:p-6 p-4 mt-8">
+    <div className="max-w-4xl mx-auto bg-white dark:bg-[#000] shadow-md rounded-lg sm:p-6 p-4 mt-8">
       <Helmet>
         <title>TrakSmart || My Team</title>
       </Helmet>
 
-      <h2 className="text-2xl font-semibold text-[#031278] mb-4">Team Members</h2>
-      <div className="overflow-x-auto">
+      <h2 className="text-2xl font-semibold text-[#031278] dark:text-white mb-4">Team Members</h2>
+      <div className="overflow-x-auto border rounded-md">
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-[#031278] text-white">
@@ -119,7 +119,7 @@ export default function MyTeam() {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center gap-4 sm:gap-0 mt-6 border rounded-md p-2">
+      <div className="flex justify-center gap-4 sm:gap-0 mt-6 border dark:text-gray-800 rounded-md p-2">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}

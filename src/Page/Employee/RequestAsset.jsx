@@ -126,11 +126,11 @@ export default function RequestAsset() {
 
   if (status === true) {
     return (
-      <div className="w-full md:w-10/12 mx-auto p-6">
+      <div className="w-full md:w-10/12 mx-auto p-6 dark:bg-[#000]">
         <Helmet>
           <title>TrakSmart | Request Assets</title>
         </Helmet>
-        <div className="flex justify-between flex-wrap items-center gap-4 mb-6 ">
+        <div className="flex justify-between flex-wrap items-center gap-4 mb-6 dark:text-gray-800">
           <div className="flex items-center w-full sm:w-1/2 md:w-1/3 border border-[#1753c2] rounded-md cursor-pointer shadow-sm">
             <FaSearch className="text-gray-500 ml-3" />
             <input
@@ -138,7 +138,7 @@ export default function RequestAsset() {
               placeholder="Search assets..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="p-2 rounded w-full focus:outline-none outline-none"
+              className="p-2 rounded w-full focus:outline-none outline-none dark:text-white dark:bg-transparent"
             />
           </div>
 
@@ -165,7 +165,7 @@ export default function RequestAsset() {
           </div>
         </div>
 
-        <div className="bg-white shadow-md rounded overflow-hidden">
+        <div className="bg-white dark:text-gray-800 shadow-md rounded overflow-hidden">
           <table className="table-auto w-full">
             <thead className="bg-[#031278] text-white">
               <tr>
@@ -178,7 +178,7 @@ export default function RequestAsset() {
             <tbody>
               {paginatedAssets?.length === 0 ? (
                 <tr>
-                  <td colSpan="4" className="text-center py-4 text-gray-500">
+                  <td colSpan="4" className="text-center py-4 text-gray-500 dark:text-gray-800">
                     No assets found.
                   </td>
                 </tr>
@@ -221,7 +221,7 @@ export default function RequestAsset() {
         </div>
 
         {/* Pagination Start */}
-        <div className="flex justify-center gap-4 sm:gap-0 mt-6 border rounded-md p-2">
+        <div className="flex justify-center gap-4 sm:gap-0 mt-6 border rounded-md p-2 dark:text-gray-800">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}

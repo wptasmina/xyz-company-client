@@ -62,20 +62,20 @@ export default function All_Requests() {
   };
 
   return (
-    <div className="w-11/12 mx-auto bg-white rounded-lg mt-8 md:p-6 border-gray-200">
+    <div className="w-11/12 mx-auto bg-white dark:bg-[#212121] rounded-lg mt-8 md:p-6 border-gray-200">
       <Helmet>
         <title>TrakSmart || All Requests </title>
       </Helmet>
       {/* Search Section */}
       <div className="mb-10">
-        <h2 className="md:text-4xl text-2xl font-bold text-[#031278] mb-6">
+        <h2 className="md:text-4xl text-2xl font-bold text-[#031278] dark:text-white mb-6">
           Search Requests
         </h2>
         <div className="relative">
           <input
             type="text"
             placeholder="Search by name, email & asset..."
-            className="w-full pl-10 py-2 sm:py-3 rounded-full shadow-sm border border-gray-300 focus:border-[#9ea9f1] focus:outline-none duration-300"
+            className="w-full pl-10 py-2 sm:py-3 rounded-full shadow-sm border dark:text-gray-800 border-gray-300 focus:border-[#9ea9f1] focus:outline-none duration-300"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -84,7 +84,7 @@ export default function All_Requests() {
       </div>
 
       {/* Request List Section */}
-      <h2 className="sm:text-3xl text-2xl font-semibold text-[#031278] mb-6">
+      <h2 className="sm:text-3xl text-2xl font-semibold text-[#031278] dark:text-white mb-6">
         Request List
       </h2>
       <div className="overflow-x-auto rounded-lg shadow border border-[#9ea9f167]">
@@ -96,7 +96,7 @@ export default function All_Requests() {
           </p>
         ) : (
           <>
-            <table className="w-full border-collapse bg-[#031278]">
+            <table className="w-full border-collapse bg-[#031278] dark:text-gray-800">
               <thead>
                 <tr className="bg-[#031278] text-white">
                   <th className="px-6 py-4 text-left text-sm font-medium uppercase">

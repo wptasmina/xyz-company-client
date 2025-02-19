@@ -83,21 +83,21 @@ export default function MyAssets() {
 
   if (status) {
     return (
-      <div className=" bg-gray-100 min-h-screen">
+      <div className=" bg-gray-100 dark:bg-[#000] min-h-screen">
         <Helmet>
           <title>TrakSmart || My Assets</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Helmet>
 
-      <div className="bg-white">
+      <div className="bg-white dark:bg-[#000]">
         {/* Search and Filter Section */}
-        <div className="flex items-center justify-between flex-wrap w-10/12 mx-auto gap-4 bg-white my-8">
+        <div className="flex items-center justify-between flex-wrap w-10/12 mx-auto gap-4 bg-white dark:bg-[#000] dark:text-[#000] my-8">
           <div className="flex items-center w-full md:w-1/3 border border-[#76a5fda8] outline-none focus:outline-none  rounded-md shadow-sm">
             <FaSearch className="text-gray-500 ml-3" />
             <input
               type="text"
               placeholder="Search by Asset Name..."
-              className="flex-grow p-2 border-0 focus:ring-0 focus:outline-none"
+              className="flex-grow p-2 border-0 focus:ring-0 focus:outline-none dark:bg-transparent dark:text-white"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -149,7 +149,7 @@ export default function MyAssets() {
         </div>
 
         {/* Asset List Section */}
-        <div className="bg-white w-10/12 mx-auto pb-8 rounded-t-lg shadow-sm overflow-hidden overflow-x-auto">
+        <div className="bg-white dark:text-[#000] w-10/12 mx-auto pb-8 rounded-t-lg shadow-sm overflow-hidden overflow-x-auto">
           <table className="w-full border-collapse">
             <thead className="p-8">
               <tr className="bg-[#031278]  text-white rounded-lg">

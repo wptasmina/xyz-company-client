@@ -125,14 +125,14 @@ export default function Admin_dashbord() {
   );
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="w-full bg-white dark:bg-[#000] text-gray-900 dark:text-gray-100">
     <Helmet>
       <title>TrakSmart || Admin dashbord</title>
     </Helmet>
       {/* Sidebar and Navbar */}
       <React.Fragment>
         {/* Navbar */}
-        <div className="flex justify-between items-center dark:bg-[#292929]/60 bg-white/90 backdrop:blur-md sticky top-0 z-50 shadow-md py-2 px-5 md:px-10">
+        <div className="flex justify-between items-center dark:bg-[#292929]/90 bg-white/90 backdrop:blur-md sticky top-0 z-50 shadow-md py-2 px-5 md:px-10">
           {/* logo */}
           <div className="flex items-center gap-3">
             <Button
@@ -158,7 +158,7 @@ export default function Admin_dashbord() {
             ) : (
               <div className="flex gap-2 justify-center items-center">
                 <img src={logo} alt="logo" className="w-[55px] md:w-12" />
-                <h1 className="text-2xl font-bold text-[#1f4283] sm:block hidden">
+                <h1 className="text-2xl font-bold text-[#1f4283] dark:text-white sm:block hidden">
                   TrakSmart
                 </h1>
               </div>
