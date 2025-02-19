@@ -1,6 +1,7 @@
-![xyzCompany](https://github.com/user-attachments/assets/8b49f975-d55d-4b7f-8f14-ac9c505f3af0)
+
 
 # Asset Management System
+![xyz-company](https://github.com/user-attachments/assets/a7d45f86-ff56-4dc8-a8ea-0803828f6023)
 
 ## 🚀 Live Site URL
 [xyz_company](https://xyzcompany-9211e.web.app)
@@ -78,8 +79,8 @@ The **Asset Management System** is a web application designed to help companies 
 - MongoDB connection URI
 - Firebase project setup for authentication
 
-### Steps
-1. Clone the repositories:
+### Steps 
+1. Clone the repositories and Link **Server Side:
    - **Client Side:** [GitHub Client Repo](https://github.com/wptasmina/xyz-company-client)
    - **Server Side:** [GitHub Server Repo](https://github.com/wptasmina/xyz-company-server)
 
