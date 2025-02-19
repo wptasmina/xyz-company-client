@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useState } from "react";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md"; // Icons for theme switch
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
