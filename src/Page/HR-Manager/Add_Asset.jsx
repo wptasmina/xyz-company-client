@@ -89,7 +89,7 @@ export default function Add_Asset() {
                        required: "Product name is required",
                      })}
                      placeholder="Enter product name"
-                     className="block w-full pl-10 pr-4 py-3 border-gray-300 rounded-md border focus:border-blue-500 duration-300 focus:outline-none outline-none "
+                     className="block w-full pl-10 pr-4 py-3 border-gray-300 rounded-md border dark:text-gray-900 focus:border-blue-500 duration-300 focus:outline-none outline-none "
                    />
                  </div>
                  {errors.product_name && (
@@ -125,11 +125,11 @@ export default function Add_Asset() {
                      <option value="Non-Returnable">Non-Returnable</option>
                    </select>
                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                     <FaChevronDown className="h-4 w-4 text-gray-400" />
+                     <FaChevronDown className="h-4 w-4 text-gray-400 dark:text-gray-900" />
                    </div>
                  </div>
                  {errors.product_type && (
-                   <p className="text-sm text-red-600 mt-1">
+                   <p className="text-sm text-red-600 mt-1 dark:text-gray-900">
                      {errors.product_type.message}
                    </p>
                  )}
@@ -139,13 +139,13 @@ export default function Add_Asset() {
                <div className="space-y-1">
                  <label
                    htmlFor="productQuantity"
-                   className="block text-sm font-medium text-gray-700"
+                   className="block text-sm font-medium text-gray-700 dark:text-gray-900"
                  >
                    Product Quantity
                  </label>
                  <div className="relative rounded-md shadow-sm">
                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ">
-                     <span className="text-gray-400 font-medium">#</span>
+                     <span className="text-gray-400 font-medium dark:text-gray-700">#</span>
                    </div>
                    <input
                      type="number"
@@ -155,7 +155,7 @@ export default function Add_Asset() {
                        min: { value: 1, message: "Quantity must be at least 1" },
                      })}
                      placeholder="Enter quantity"
-                     className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:border-blue-500 duration-300 focus:outline-none outline-none"
+                     className="block w-full pl-10 pr-4 py-3 border border-gray-300 dark:text-gray-900 rounded-md focus:border-blue-500 duration-300 focus:outline-none outline-none"
                    />
                  </div>
                  {errors.product_quantity && (
