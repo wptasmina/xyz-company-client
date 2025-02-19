@@ -81,15 +81,15 @@ export default function Admin_dashbord() {
       <MenuItem>
         <div className="flex gap-2">
           <FaCircleUser></FaCircleUser> 
-          <Link to="/my_profile">
-            My Profile
+          <Link to="my_profile">
+            Profile
           </Link>
         </div>
       </MenuItem>
       <MenuItem>
         <div className="flex gap-2">
           <IoMdSettings />
-          <Link to="/my_profile/update_profile">Edit Profile</Link>
+          <Link to="update_profile">Edit Profile</Link>
         </div>
       </MenuItem>
       <MenuItem>

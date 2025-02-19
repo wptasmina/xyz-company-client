@@ -7,11 +7,12 @@ const About_section = () => {
             {/* Hero Section */}
             <section className="bg-[#031278] text-white text-center py-12 px-2 ">
                 <h1 data-aos="fade-right"
-      data-aos-duration="1000"
-     data-aos-easing="ease-in-sine" className="sm:text-4xl text-2xl font-bold mb-4">About Our Service</h1>
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-sine" className="sm:text-4xl text-2xl font-bold mb-4">About Our Service</h1>
                 <p data-aos="fade-left"
-      data-aos-duration="1000"
-     data-aos-easing="ease-in-sine" className="text-md sm:text-lg">The ultimate solution for managing returnable and non-returnable company assets.</p>
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-sine" 
+                className="text-md sm:text-lg">The ultimate solution for managing returnable and non-returnable company assets.</p>
             </section>
 
             {/* Features Section */}

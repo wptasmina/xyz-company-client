@@ -18,6 +18,11 @@ import Admin_dashbord from "../Page/Admin-dashbord/Admin_dashbord";
 import PrivatRoutes from './PrivateRoutes';
 import AddEmployee from "../Page/HR-Manager/AddEmployee";
 import LoginPage from './../Page/Login/LoginPage';
+import ContactPage from "../Page/ContactPage/ContactPage";
+import EditProfile from "../Page/Employee/EditProfile";
+import ProductFeatures from './../Page/ProductFeatur/ProductFeatures';
+
+
 
 
 
@@ -32,12 +37,20 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/product-featur",
+        element: <ProductFeatures />,
+      },
+      {
         path: "/employee-register",
         element: <JoinEmployee />
       },
       {
         path: "/hr-register",
         element: <Join_HR />
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />
       },
       {
         path: "/login",
@@ -87,6 +100,10 @@ export const router = createBrowserRouter([
       {
         path: "my_profile",
         element: <Profile />,
+      },
+      {
+        path: "update_profile",
+        element: <EditProfile />,
       },
 
       // Employee Routes

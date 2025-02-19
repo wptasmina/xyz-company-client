@@ -26,11 +26,17 @@ const Navbar = () => {
           <NavLink to="/" className="font-semibold text-gray-700 hover:text-[#031278]">
             Home
           </NavLink>
+          <NavLink to="/product-featur" className="font-semibold text-gray-700 hover:text-[#031278]">
+            Product_Features
+          </NavLink>
           <NavLink to="/employee-register" className="font-semibold text-gray-700 hover:text-[#031278]">
             Join as Employee
           </NavLink>
           <NavLink to="/hr-register" className="font-semibold text-gray-700 hover:text-[#031278]">
             Join as HR Manager
+          </NavLink>
+          <NavLink to="/contact" className="font-semibold text-gray-700 hover:text-[#031278]">
+            Contact
           </NavLink>
         </div>
 
@@ -59,6 +65,9 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Home
+          </NavLink>
+          <NavLink to="/product-featur" className="font-semibold text-gray-700 hover:text-[#031278]">
+            Product_Features
           </NavLink>
           <NavLink
             to="/employee-register"
