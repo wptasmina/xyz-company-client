@@ -19,8 +19,8 @@ import PrivatRoutes from './PrivateRoutes';
 import AddEmployee from "../Page/HR-Manager/AddEmployee";
 import LoginPage from './../Page/Login/LoginPage';
 import ContactPage from "../Page/ContactPage/ContactPage";
-import EditProfile from "../Page/Employee/EditProfile";
 import ProductFeatures from './../Page/ProductFeatur/ProductFeatures';
+import EditProfile from "../Page/HR-Manager/EditProfile";
 
 
 
@@ -102,9 +102,10 @@ export const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "update_profile",
+        path: "update-profile",
         element: <EditProfile />,
       },
+    
 
       // Employee Routes
       {

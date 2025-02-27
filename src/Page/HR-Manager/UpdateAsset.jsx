@@ -47,7 +47,7 @@ export default function UpdateAsset() {
       });
     reset();
     navigate("/dashboard/asset-list");
-    console.log(data);
+    // console.log(data);
   };
   
   return (

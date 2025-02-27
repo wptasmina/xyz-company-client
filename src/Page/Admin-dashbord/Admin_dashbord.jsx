@@ -30,7 +30,7 @@ import { IoIosHelpBuoy, IoMdSettings } from "react-icons/io";
 import { HiInboxArrowDown } from "react-icons/hi2";
 import { IoIosPower } from "react-icons/io";
 import { MdAssessment, MdLocalLibrary, MdMenuOpen } from "react-icons/md";
-import { FaAddressCard, FaDatabase } from "react-icons/fa";
+import { FaAddressCard, FaDatabase, FaRegUserCircle } from "react-icons/fa";
 import { AiFillDashboard } from "react-icons/ai";
 import { RiFileList3Fill } from "react-icons/ri";
 
@@ -108,7 +108,7 @@ export default function Admin_dashbord() {
       <MenuItem>
         <div className="flex gap-2">
           <IoMdSettings />
-          <Link to="update_profile">Edit Profile</Link>
+          <Link to="update-profile">Edit Profile</Link>
         </div>
       </MenuItem>
       <MenuItem>
@@ -316,6 +316,14 @@ export default function Admin_dashbord() {
                     <FaUserPlus className="text-xl" />
                   </ListItemPrefix>
                     Add Employee
+                </ListItem>
+              </NavLink>
+              <NavLink to="my_profile">
+                <ListItem>
+                  <ListItemPrefix>
+                    <FaRegUserCircle className="text-xl" />
+                  </ListItemPrefix>
+                    Profile
                 </ListItem>
               </NavLink>
             </List>
