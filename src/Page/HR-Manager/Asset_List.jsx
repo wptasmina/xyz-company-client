@@ -59,13 +59,12 @@ const Asset_List = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#212121] 
-     rounded-xl py-10 md:px-8 mt-5">
+    <div className="min-h-screen bg-white dark:bg-[#212121] py-10 mt-5">
       <Helmet>
         <title>TrakSmart || Asset List</title>
       </Helmet>
 
-      <div className="w-11/12 mx-auto rounded-md">
+      <div className="w-11/12 mx-auto sm:p-6 p-4 rounded-md">
         {/* Header Section */}
         <div className="mb-8">
           <h2 className="sm:text-4xl text-2xl font-bold text-[#031278] dark:text-gray-100">

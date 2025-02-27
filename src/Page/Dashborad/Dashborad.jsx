@@ -88,14 +88,14 @@ const Dashboard = () => {
 
   if (role == "HR") {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen w-11/12 mx-auto sm:p-6 p-4">
     <Helmet>
       <title>TrakSmart || Dashboard</title>
     </Helmet>
 
-        <div className="md:px-10 py-8 px-4">
+        <div className="shadow-sm">
           {/* Stats Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 ">
             <div className="bg-[#031278] rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -458,6 +458,7 @@ const Dashboard = () => {
       </div>
     );
   }
+
 };
 
 export default Dashboard;

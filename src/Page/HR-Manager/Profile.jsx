@@ -10,7 +10,7 @@ export default function Profile() {
 
 
   return (
-    <section className='w-11/12 mx-auto md:py-16'>
+    <section className='w-11/12 mx-auto sm:p-6 p-4 md:py-16'>
       <Helmet>
       <title>TrakSmart || Profile </title>
     </Helmet>

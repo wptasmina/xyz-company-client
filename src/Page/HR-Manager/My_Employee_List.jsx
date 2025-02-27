@@ -40,11 +40,11 @@ export default function My_Employee_List() {
   };
 
   return (
-    <div className="sm:p-6 p-4 w-11/12 mx-auto bg-white rounded-2xl shadow-lg">
+    <div className=" bg-white rounded-2xl shadow-lg">
       <Helmet>
         <title>TrakSmart || Employee List</title>
       </Helmet>
-      <div className="grid sm:grid-cols-6 grid-cols-1 justify-center items-center sm:gap-4 mb-8">
+      <div className="sm:p-6 p-4 w-11/12 mx-auto grid sm:grid-cols-6 grid-cols-1 justify-center items-center sm:gap-4 mb-8">
         <div className=" lg:col-span-5 col-span-4 items-center">
           <h1 className="md:text-3xl text-xl font-bold text-[#031278]">Employee List</h1>
           <p className="text-gray-500 text-sm mt-1">Manage your team members</p>
@@ -56,6 +56,7 @@ export default function My_Employee_List() {
         </div>
       </div>
 
+      <div className="w-11/12 mx-auto sm:p-6 p-4">
       <div className="overflow-x-auto rounded-xl border border-[#b7c0f7]">
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
@@ -135,6 +136,8 @@ export default function My_Employee_List() {
           <p className="text-gray-500">No employees found</p>
         </div>
       )}
+      </div>
+
     </div>
   );
 }

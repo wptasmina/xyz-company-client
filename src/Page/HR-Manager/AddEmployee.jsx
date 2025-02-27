@@ -134,14 +134,14 @@ export default function AddEmployee() {
     };
 
   return (
-<div className="min-h-screen bg-gray-50 dark:bg-[#000] py-12 px-4 sm:px-6 lg:px-8">
+<div className="min-h-screen bg-gray-50 dark:bg-[#000] py-12">
     <Helmet>
       <title>TrakSmart || Add Employee</title>
     </Helmet>
-  <div className="max-w-7xl mx-auto space-y-8">
+  <div className="w-11/12 mx-auto sm:p-6 p-4 space-y-8">
     {/* Package Status Card */}
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-      <div className="p-6 sm:p-8">
+      <div className="p-6">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-[#031278]">Team Package</h2>
@@ -188,7 +188,7 @@ export default function AddEmployee() {
     </div>
 
     {/* Available Members Section */}
-    <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+    <div className="bg-white rounded-2xl shadow-lg p-6">
       <div className="flex justify-between items-center mb-6">
         <div>
           <h2 className="text-2xl font-bold text-[#031278]">Available Members</h2>
