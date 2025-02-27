@@ -14,8 +14,8 @@ export default function Profile() {
       <Helmet>
       <title>TrakSmart || Profile </title>
     </Helmet>
-      <div className='bg-[#f5f8fd] shadow-xl rounded-md'>
-      <div className='bg-gray-100 flex md:flex-row flex-col justify-between gap-10 px-10'>
+      <div className='bg-gray-100 shadow-xl rounded-md'>
+      <div className=' bg-[#e5eefd]  flex md:flex-row flex-col justify-between gap-10 px-10'>
         <h2 className='pt-10 text-2xl text-[#16305f] font-bold'>Welcome Back!</h2>
           <div>
           <img src={bgImage} alt="Backgorund image" className='w-full h-[250px] object-cover bg-no-repeat bg-center' />

@@ -132,9 +132,7 @@ const JoinHR = () => {
 
       {/* Right Form Section */}
       <div className="bg-white dark:bg-[#29354985] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 my-12">
-        {/* <h1 className="md:text-4xl text-3xl pt-6 md:font-extrabold font-bold text-gray-800 mb-4 text-center">
-          Join as HR Manager
-        </h1> */}
+
         <div className="inline-flex items-center justify-center gap-4 mb-4">
                 <Link to="/">
                   <img src={logo} alt="Logo" className="w-12" />

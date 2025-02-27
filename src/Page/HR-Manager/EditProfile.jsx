@@ -7,6 +7,9 @@ const EditProfile = () => {
   const { user } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
 
+  const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -25,33 +28,32 @@ const EditProfile = () => {
 
   // Handle input change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   // Handle image upload
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
-    const formData = new FormData();
-    formData.append("image", file);
+    const imageFormData = new FormData();
+    imageFormData.append("image", file);
 
     try {
-      const response = await axiosPublic.post("/update-image", formData, {
+      const response = await axiosPublic.post(image_hosting_api, imageFormData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      setFormData({ ...formData, profilePic: response.data.photoURL });
+      setFormData((prev) => ({ ...prev, profilePic: response.data.data.url }));
       toast.success("Image uploaded successfully!");
     } catch (error) {
       toast.error("Image upload failed");
     }
-    reset();
   };
 
   // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosPublic.put(`/update-profile/${user.email}`, formData);
+      await axiosPublic.put(`/update-profile/${user._id}`, formData);
       toast.success("Profile updated successfully!");
     } catch (error) {
       toast.error("Failed to update profile");
@@ -74,8 +76,16 @@ const EditProfile = () => {
           type="email"
           name="email"
           value={user.email}
+          placeholder="Email"
+          className="w-full p-2 border rounded"
+          readOnly
+        />
+        <input
+          type="text"
+          name="phone"
+          value={formData.phone}
           onChange={handleChange}
-          placeholder="Phone"
+          placeholder="Phone number"
           className="w-full p-2 border rounded"
         />
         <input
@@ -87,6 +97,12 @@ const EditProfile = () => {
           className="w-full p-2 border rounded"
         />
         <input type="file" onChange={handleImageUpload} />
+
+        {/* Profile Image Preview */}
+        {formData.profilePic && (
+          <img src={formData.profilePic} alt="Profile" className="w-20 h-20 rounded-full mx-auto" />
+        )}
+
         <button type="submit" className="bg-[#193a77] px-4 text-white py-2 rounded">
           Update
         </button>

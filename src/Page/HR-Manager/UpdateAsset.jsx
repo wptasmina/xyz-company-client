@@ -2,8 +2,8 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-toastify";
 
 export default function UpdateAsset() {
   const assets = useLoaderData();
@@ -29,17 +29,9 @@ export default function UpdateAsset() {
       .patch(`/assets/${assets._id}`, asset)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
-          Swal.fire({
-            title: "Update Successfull",
-            text: "Asset Update Success",
-            icon: "success",
-          });
+          toast.success("update success")
         } else {
-          Swal.fire({
-            title: "Error",
-            text: "Asset Update Unsuccess",
-            icon: "error",
-          });
+          toast.error("update is error")
         }
       })
       .catch((error) => {
