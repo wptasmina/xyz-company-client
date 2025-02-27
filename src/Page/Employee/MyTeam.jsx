@@ -38,7 +38,7 @@ export default function MyTeam() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white dark:bg-[#000] shadow-md rounded-lg sm:p-6 p-4 mt-8">
+    <div className="w-10/12 mx-auto dark:bg-[#000] p-6 mt-8">
       <Helmet>
         <title>TrakSmart || My Team</title>
       </Helmet>
@@ -62,7 +62,7 @@ export default function MyTeam() {
                   className="w-10 h-10 rounded-full object-cover"
                 />
               </td>
-              <td className="px-4 py-2 font-medium text-gray-800">{admin.name}</td>
+              <td className="px-4 py-2 font-medium text-gray-800 text-center">{admin.name}</td>
               <td className="px-4 py-2 flex items-center space-x-2">
                 <span className="text-green-800">
                   <svg
@@ -80,7 +80,7 @@ export default function MyTeam() {
                     />
                   </svg>
                 </span>
-                <span className="text-gray-700">{admin.role}</span>
+                <span className="text-gray-700 text-center">{admin.role}</span>
               </td>
             </tr>
             {paginatedTeam.map((team) => (
@@ -92,7 +92,7 @@ export default function MyTeam() {
                     className="w-10 h-10 rounded-full object-cover"
                   />
                 </td>
-                <td className="px-4 py-2 font-medium text-gray-800">{team.name}</td>
+                <td className="px-4 py-2 font-medium text-gray-800 text-center">{team.name}</td>
                 <td className="px-4 py-2 flex items-center space-x-2">
                   <span className="text-green-500">
                     <svg
@@ -110,7 +110,7 @@ export default function MyTeam() {
                       />
                     </svg>
                   </span>
-                  <span className="text-gray-700">{team.role}</span>
+                  <span className="text-gray-700 text-center">{team.role}</span>
                 </td>
               </tr>
             ))}

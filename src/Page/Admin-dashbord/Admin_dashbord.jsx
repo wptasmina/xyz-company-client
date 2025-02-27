@@ -117,9 +117,9 @@ export default function Admin_dashbord() {
         </div>
       </MenuItem>
       <MenuItem>
-        <div className="flex gap-2">
-          <IoIosHelpBuoy /> Help
-        </div>
+        <Link to="/contact" className="inline-flex gap-2">
+            <IoIosHelpBuoy /> Help
+        </Link>
       </MenuItem>
     </>
   );

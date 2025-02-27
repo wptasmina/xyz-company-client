@@ -88,7 +88,7 @@ const Dashboard = () => {
 
   if (role == "HR") {
     return (
-      <div className="min-h-screen w-11/12 mx-auto sm:p-6 p-4">
+      <div className="min-h-screen w-11/12 mx-auto p-4">
     <Helmet>
       <title>TrakSmart || Dashboard</title>
     </Helmet>
@@ -323,7 +323,7 @@ const Dashboard = () => {
       <title>TrakSmart || Dashboard</title>
     </Helmet>
         {/* <!-- Main Content --> */}
-        <main className="md:px-10 px-4 py-8">
+        <main className="py-8 w-11/12 mx-auto p-6">
           {/* <!-- Employee Sections --> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* My Pending Requests */}

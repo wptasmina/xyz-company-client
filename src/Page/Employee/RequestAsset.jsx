@@ -126,7 +126,7 @@ export default function RequestAsset() {
 
   if (status === true) {
     return (
-      <div className="w-full md:w-10/12 mx-auto p-6 dark:bg-[#000]">
+      <div className="w-10/12 mx-auto p-4 dark:bg-[#000]">
         <Helmet>
           <title>TrakSmart | Request Assets</title>
         </Helmet>

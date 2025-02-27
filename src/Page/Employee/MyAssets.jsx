@@ -91,7 +91,7 @@ export default function MyAssets() {
 
       <div className="bg-white dark:bg-[#000]">
         {/* Search and Filter Section */}
-        <div className="flex items-center justify-between flex-wrap w-10/12 mx-auto gap-4 bg-white dark:bg-[#000] dark:text-[#000] my-8">
+        <div className="flex items-center justify-between flex-wrap w-10/12 mx-auto p-6 gap-4 bg-white dark:bg-[#000] dark:text-[#000] my-6">
           <div className="flex items-center w-full md:w-1/3 border border-[#76a5fda8] outline-none focus:outline-none  rounded-md shadow-sm">
             <FaSearch className="text-gray-500 ml-3" />
             <input
@@ -149,9 +149,9 @@ export default function MyAssets() {
         </div>
 
         {/* Asset List Section */}
-        <div className="bg-white dark:text-[#000] w-10/12 mx-auto pb-8 rounded-t-lg shadow-sm overflow-hidden overflow-x-auto">
+        <div className="bg-none dark:text-[#000] w-10/12 mx-auto p-6 pb-8 rounded-t-lg shadow-sm overflow-hidden overflow-x-auto">
           <table className="w-full border-collapse">
-            <thead className="p-8">
+            <thead className="p-10">
               <tr className="bg-[#031278]  text-white rounded-lg">
                 <th className="p-3 text-left text-sm font-semibold">Asset Name</th>
                 <th className="p-3 text-left text-sm font-semibold">Asset Type</th>
