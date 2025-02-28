@@ -38,7 +38,7 @@ export default function MyTeam() {
   };
 
   return (
-    <div className="w-10/12 mx-auto dark:bg-[#000] p-6 mt-8">
+    <div className="w-10/12 mx-auto dark:bg-[#000] md:p-6 mt-8">
       <Helmet>
         <title>TrakSmart || My Team</title>
       </Helmet>

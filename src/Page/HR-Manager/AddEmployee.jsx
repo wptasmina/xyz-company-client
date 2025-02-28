@@ -138,7 +138,7 @@ export default function AddEmployee() {
     <Helmet>
       <title>TrakSmart || Add Employee</title>
     </Helmet>
-  <div className="w-11/12 mx-auto sm:p-6 p-4 space-y-8">
+  <div className="w-11/12 mx-auto md:p-4 space-y-8">
     {/* Package Status Card */}
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <div className="p-6">

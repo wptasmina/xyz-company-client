@@ -62,12 +62,14 @@ export default function All_Requests() {
   };
 
   return (
-    <div className="w-11/12 mx-auto bg-white dark:bg-[#212121] rounded-lg mt-8 md:p-6 border-gray-200">
+    <div className="mt-8 border-gray-200">
       <Helmet>
         <title>TrakSmart || All Requests </title>
       </Helmet>
-      {/* Search Section */}
-      <div className="mb-10">
+     
+     <div className="w-11/12 mx-auto md:p-4">
+       {/* Search Section */}
+       <div className="mb-10">
         <h2 className="md:text-4xl text-2xl font-bold text-[#031278] dark:text-white mb-6">
           Search Requests
         </h2>
@@ -214,6 +216,7 @@ export default function All_Requests() {
           </>
         )}
       </div>
+     </div>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Profile() {
 
 
   return (
-    <section className='w-11/12 mx-auto sm:p-6 p-4 md:py-16'>
+    <section className='w-11/12 mx-auto md:p-4 md:py-16'>
       <Helmet>
       <title>TrakSmart || Profile </title>
     </Helmet>
@@ -18,14 +18,14 @@ export default function Profile() {
       <div className=' bg-[#e5eefd]  flex md:flex-row flex-col justify-between gap-10 px-10'>
         <h2 className='pt-10 text-2xl text-[#16305f] font-bold'>Welcome Back!</h2>
           <div>
-          <img src={bgImage} alt="Backgorund image" className='w-full h-[250px] object-cover bg-no-repeat bg-center' />
+          <img src={bgImage} alt="Backgorund image" className='w-full md:h-[250px] object-cover bg-no-repeat bg-center' />
           </div>
         </div>
       
       <div >
-        <img src={user.photoURL} alt={user.displayName} className='w-36 h-36 rounded-full -mt-16 border-2 shadow-sm mx-10' />
-       <div className='px-14 py-6 '>
-        <h3 className='text-xl font-medium'>{user.displayName}</h3>
+        <img src={user.photoURL} alt={user.displayName} className='md:w-36 md:h-36 w-24 h-24 rounded-full -mt-16 border-2 shadow-sm mx-10' />
+       <div className='md:px-14 px-10 pt-4 pb-8'>
+        <h3 className='text-xl font-medium dark:text-black'>{user.displayName}</h3>
         <p className='text-gray-600'>{user.email}</p>
        </div>
       </div>

@@ -40,23 +40,23 @@ export default function My_Employee_List() {
   };
 
   return (
-    <div className=" bg-white rounded-2xl shadow-lg">
+    <div className="w-11/12 mx-auto md:p-4">
       <Helmet>
         <title>TrakSmart || Employee List</title>
       </Helmet>
-      <div className="sm:p-6 p-4 w-11/12 mx-auto grid sm:grid-cols-6 grid-cols-1 justify-center items-center sm:gap-4 mb-8">
+      <div className=" grid sm:grid-cols-6 grid-cols-1 justify-center items-center sm:gap-4 mt-4">
         <div className=" lg:col-span-5 col-span-4 items-center">
-          <h1 className="md:text-3xl text-xl font-bold text-[#031278]">Employee List</h1>
-          <p className="text-gray-500 text-sm mt-1">Manage your team members</p>
+          <h1 className="md:text-3xl text-xl font-bold text-[#031278] dark:text-white">Employee List</h1>
+          <p className="text-gray-500 text-sm mt-1 mb-3">Manage your team members</p>
         </div>
-        <div className="bg-blue-50 lg:col-span-1 col-span-2 px-4 py-3 rounded-lg mt-6 sm:mt-0">
+        <div className="bg-blue-50 lg:col-span-1 col-span-2 px-4 py-3 rounded-lg ">
           <span className="text-[#031278] sm:font-medium text-sm">
             Total Members: {employeeList.length}
           </span>
         </div>
       </div>
 
-      <div className="w-11/12 mx-auto sm:p-6 p-4">
+      <div className="pt-4">
       <div className="overflow-x-auto rounded-xl border border-[#b7c0f7]">
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
