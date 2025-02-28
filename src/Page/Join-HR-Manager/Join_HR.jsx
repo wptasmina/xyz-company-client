@@ -133,17 +133,19 @@ const JoinHR = () => {
       {/* Right Form Section */}
       <div className="bg-white dark:bg-[#29354985] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 my-12">
 
-        <div className="inline-flex items-center justify-center gap-4 mb-4">
-                <Link to="/">
-                  <img src={logo} alt="Logo" className="w-12" />
-                </Link>
-                  <h1 className="sm:text-3xl text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
-                  Join as HR Manager
-                  </h1>
-                </div>
+        <div className="inline-flex items-center justify-center gap-2 mb-4">
+          <Link to="/">
+            <img src={logo} alt="Logo" className="w-12" />
+          </Link>
+            <h1 className="text-2xl md:text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
+              Join as HR Manager
+            </h1>
+          </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
-          {/* Full Name */}
-          <div className="mb-4">
+          
+        <div className="md:flex gap-4">
+             {/* Full Name */}
+          <div className="mb-4  md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="name"
@@ -153,7 +155,7 @@ const JoinHR = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none
                outline-none focus:border-[#7789fd]"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
@@ -164,7 +166,7 @@ const JoinHR = () => {
           </div>
 
           {/* Company Name */}
-          <div className="mb-4">
+          <div className="mb-4  md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="company"
@@ -174,7 +176,7 @@ const JoinHR = () => {
             <input
               type="text"
               id="company"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your company name"
               {...register("company_name", { required: true })}
             />
@@ -182,29 +184,11 @@ const JoinHR = () => {
               <p className="text-red-600">This field is required</p>
             )}
           </div>
+        </div>
 
-          {/* Company Logo */}
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
-              htmlFor="logo"
-            >
-              Company Logo
-            </label>
-            <input
-              type="file"
-              id="logo"
-              placeholder="Enter your Company Logo"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
-              {...register("company_logo", { required: true })}
-            />
-            {errors.company_logo && (
-              <p className="text-red-600">This field is required</p>
-            )}
-          </div>
-
+        <div className="md:flex gap-4">
           {/* Email */}
-          <div className="mb-4">
+          <div className="mb-4 md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="email"
@@ -214,7 +198,7 @@ const JoinHR = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your email address"
               {...register("email", { required: true })}
             />
@@ -224,17 +208,16 @@ const JoinHR = () => {
           </div>
 
           {/* Password */}
-          <div className="mb-4 relative">
-      <label
-        className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
-        htmlFor="password"
-      >
-        Password
-      </label>
+          <div className="mb-4 relative md:w-1/2">
+          <label
+          className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+         htmlFor="password">
+         Password
+          </label>
       <input
         type={passwordVisible ? "text" : "password"} // Toggle between text and password
         id="password"
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#7789fd]"
+        className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none focus:border-[#7789fd]"
         placeholder="Enter your password"
         {...register("password", {
           required: true,
@@ -258,10 +241,11 @@ const JoinHR = () => {
           <IoEye className="text-xl" />
         )}
       </button>
-    </div>
-
+          </div>
+        </div>
+        <div className="md:flex gap-4">
           {/* Date of Birth */}
-          <div className="mb-4">
+          <div className="mb-4 md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="dob"
@@ -271,7 +255,7 @@ const JoinHR = () => {
             <input
               type="date"
               id="dob"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("dob", { required: true })}
             />
             {errors.dob && (
@@ -279,8 +263,28 @@ const JoinHR = () => {
             )}
           </div>
 
-          {/* Package Selection */}
+          {/* Company Logo */}
           <div className="mb-4">
+            <label
+              className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+              htmlFor="logo"
+            >
+              Company Logo
+            </label>
+            <input
+              type="file"
+              id="logo"
+              placeholder="Enter your Company Logo"
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              {...register("company_logo", { required: true })}
+            />
+            {errors.company_logo && (
+              <p className="text-red-600">This field is required</p>
+            )}
+          </div>
+        </div>
+        {/* Package Selection */}
+        <div className="mb-4 ">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="package"
@@ -289,12 +293,12 @@ const JoinHR = () => {
             </label>
             <select
               id="package"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:bg-white focus:ring-gray-700 focus:border-[#1753c2]"
+              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:bg-white focus:ring-[#1753c2] focus:border-[#1753c2]"
               {...register("package", { required: true })}
             >
-              <option value="basic" className="bg-gray-200 text-black ">Maximum 5 Employees- $5/month</option>
-              <option value="standard" className="bg-gray-200 text-black ">Maximum 10 Employees- $8/month</option>
-              <option value="premium" className="bg-gray-200 text-black ">Maximum 20 Employees- $15/month</option>
+              <option value="basic" className="bg-gray-200 text-black text-sm px-0">Maximum 5 Employees- $5/month</option>
+              <option value="standard" className="bg-gray-200 text-black text-sm">Maximum 10 Employees- $8/month</option>
+              <option value="premium" className="bg-gray-200 text-black text-sm">Maximum 20 Employees- $15/month</option>
             </select>
             {errors.package && (
               <p className="text-red-600">This field is required</p>
@@ -307,12 +311,13 @@ const JoinHR = () => {
             value="Signup"
             className="w-full cursor-pointer bg-[#031278] text-white font-bold py-2 px-4 rounded-lg focus:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-[#031278]"
           />
+          
 
           {/* GoogleSignIn  */}
           <div className="text-center py-4 text-gray-600 dark:text-gray-200">____________OR____________</div>
             
             <div
-              className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
+              className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA] dark:hover:text-[#303030]"
               onClick={handleGoogleSignIn}>
 
               <img src={gImg} className="w-6" alt="Google" />

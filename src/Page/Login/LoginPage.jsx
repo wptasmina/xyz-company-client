@@ -112,7 +112,7 @@ const LoginPage = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none dark:text-[#000]"
               placeholder="Enter your email address"
               {...register("email", { required: "Email is required" })}
             />
@@ -125,7 +125,7 @@ const LoginPage = () => {
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 dark:text-[#000] rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
               placeholder="Enter your password"
               {...register("password", {
                 required: "Password is required",
@@ -153,7 +153,7 @@ const LoginPage = () => {
 
           <div className="text-center py-4 text-gray-600">____________OR____________</div>
           <div
-            className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
+            className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA] dark:hover:text-[#000] duration-300"
             onClick={handleGoogleSignIn}>
 
             <img src={gImg} className="w-6" alt="Google" />

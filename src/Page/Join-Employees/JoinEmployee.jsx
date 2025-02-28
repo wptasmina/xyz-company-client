@@ -127,17 +127,18 @@ const JoinEmployee = () => {
 
       {/* Right Form Section */}
       <div className="flex flex-col w-full rounded-md lg:w-1/2 md:shadow-md items-center justify-center px-8 lg:px-16 bg-white dark:bg-[#29354985] dark:text-white my-12">
-       <div className="inline-flex items-center justify-center gap-4 mb-4">
+       <div className="inline-flex items-center justify-center gap-2 mb-4">
         <Link to="/">
           <img src={logo} alt="Logo" className="w-12" />
         </Link>
-          <h1 className="sm:text-3xl text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
+          <h1 className="text-2xl md:text-3xl pt-6 font-bold dark:text-white text-gray-800 mb-4 text-center">
             Join as Employee
           </h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           {/* Full Name */}
-          <div className="mb-4">
+          <div className="md:flex gap-4">
+          <div className="mb-4 md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="name"
@@ -147,7 +148,7 @@ const JoinEmployee = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 border border-gray-300 dark:text-[#303030] rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
             />
@@ -157,7 +158,7 @@ const JoinEmployee = () => {
           </div>
 
           {/* Company Logo */}
-          <div className="mb-4">
+          <div className="mb-4 md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="logo"
@@ -167,16 +168,19 @@ const JoinEmployee = () => {
             <input
               type="file"
               id="logo"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 border border-gray-300 dark:text-[#303030] rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("profile", { required: true })}
             />
             {errors.company_logo && (
               <p className="text-red-600">This field is required</p>
             )}
           </div>
+          </div>
 
-          {/* Email */}
-          <div className="mb-4">
+          <div className="md:flex gap-4">
+
+              {/* Email */}
+          <div className="mb-4 md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="email"
@@ -186,7 +190,7 @@ const JoinEmployee = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none 
+              className="w-full px-4 py-2 border border-gray-300 dark:text-[#303030] rounded-lg focus:outline-none 
               outline-none focus:border-[#7789fd]"
               placeholder="Enter your email address"
               {...register("email", { required: true })}
@@ -197,7 +201,7 @@ const JoinEmployee = () => {
           </div>
 
           {/* Password */}
-          <div className="mb-4 relative">
+          <div className="mb-4 relative md:w-1/2">
             <label
               className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
               htmlFor="password"
@@ -207,7 +211,7 @@ const JoinEmployee = () => {
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 border border-gray-300 dark:text-[#303030] rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,
@@ -227,6 +231,7 @@ const JoinEmployee = () => {
               {passwordVisible ? <IoEyeOff className="text-xl" /> : <IoEye className="text-xl" />}
             </button>
           </div>
+        </div>
 
           {/* Submit Button */}
           <input
@@ -239,7 +244,7 @@ const JoinEmployee = () => {
            <div className="text-center py-4 text-gray-600">____________OR____________</div>
  
            <div
-             className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
+             className="flex justify-center items-center dark:hover:text-[#303030] border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA]"
              onClick={handleGoogleSignIn}>
  
              <img src={gImg} className="w-6" alt="Google" />
@@ -254,7 +259,7 @@ const JoinEmployee = () => {
           Already have an account?
           <Link
             to="/login"
-            className="text-[#031378ee] ml-1 font-bold underline"
+            className="text-[#031378ee] ml-1 font-bold underline dark:text-white"
           >
             Log In
           </Link>
