@@ -18,12 +18,16 @@ export default function AuthProvider({children}) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true);
 
-  const updateUserProfile = (name, photo) => {
-    setLoading(true);
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo,
-    });
+  // const updateUserProfile = (name, photo) => {
+  //   setLoading(true);
+  //   return updateProfile(auth.currentUser, {
+  //     displayName: name,
+  //     photoURL: photo,
+  //   });
+  // };
+
+  const updateUserProfile = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
   };
 
   // Register

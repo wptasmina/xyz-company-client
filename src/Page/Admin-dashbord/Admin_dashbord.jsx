@@ -147,13 +147,13 @@ export default function Admin_dashbord() {
               <img
                 src={hrCompanyLogo}
                 alt={hrCompanyName}
-                className="w-[40px] lg:w-[60px] rounded-md  object-fill "
+                className="w-[50px] md:w-[60px] rounded-md  object-fill "
               />
             ) : employeeData?.company_logo ? (
               <img
                 src={company_logo}
                 alt={company_name}
-                className="w-[40px] md:w-[60px] object-fill"
+                className="w-[50px] md:w-[60px] object-fill"
               />
             ) : (
               <div className="flex gap-2 justify-center items-center">
@@ -178,7 +178,7 @@ export default function Admin_dashbord() {
                 {user && user.photoURL ? (
                   <img
                     src={user.photoURL}
-                    className="rounded-full md:w-10  md:h-10 w-8 h-8 object-fill cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
+                    className="rounded-full md:w-10  md:h-10 w-11 h-11 object-cover cursor-pointer border-2 border-[#3047da] shadow-md p-0.5"
                   />
                 ) : (
                   <IconButton size="md" className="rounded-full bg-transparent">
