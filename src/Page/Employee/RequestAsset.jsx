@@ -202,7 +202,7 @@ export default function RequestAsset() {
                     </td>
                     <td className="px-4 py-2">
                       <button
-                        className={`px-3 py-1 text-sm text-white rounded ${
+                        className={`px-3 py-1 text-sm text-white  rounded ${
                           asset.product_quantity === 0
                             ? "bg-gray-400 cursor-not-allowed"
                             : "bg-[#1753c2] hover:bg-[#144b9c]"
@@ -262,7 +262,7 @@ export default function RequestAsset() {
 
         {isModalOpen && selectedAsset && (
           <form onSubmit={handleRequestSubmit}>
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="fixed inset-0 bg-black dark:text-black bg-opacity-50 flex justify-center items-center">
               <div className="bg-white rounded-lg shadow-lg p-6 w-96">
                 <h2 className="text-xl font-semibold mb-4">
                   Request Asset: {selectedAsset.product_name}
