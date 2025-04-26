@@ -56,14 +56,14 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink to="/product-featur" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
-            Product Features
+             Features_Product
           </NavLink>
-          <NavLink to="/employee-register" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
+          {/* <NavLink to="/employee-register" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
             Join as Employee
           </NavLink>
           <NavLink to="/hr-register" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
             Join as HR Manager
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/contact" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
             Contact
           </NavLink>
@@ -110,7 +110,7 @@ const Navbar = () => {
             to="/product-featur"
             className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-[#1a3566]"
           >
-            Product Features
+            Features_Product
           </NavLink>
           <NavLink
             to="/employee-register"

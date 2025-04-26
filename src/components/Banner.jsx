@@ -30,7 +30,7 @@ export default function Banner() {
       className="mySwiper "
     >
       <SwiperSlide>
-        <section className='relative bg-bannerImg bg-no-repeat bg-cover bg-center w-full h-auto object-fill' >
+        <section className='relative bg-bannerImg bg-no-repeat bg-cover bg-top w-full h-auto object-fill' >
           <div class="w-full h-[400px] object-cover flex justify-center items-center bg-blackOvrtlay">
             <div class="p-2 flex justify-center items-center flex-col gap-4"> 
               <h1 className='text-white md:text-4xl text-2xl font-bold text-center'>Smart Asset Managment for HR Excellence</h1>
