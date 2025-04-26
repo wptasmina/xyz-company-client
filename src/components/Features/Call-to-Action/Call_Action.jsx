@@ -13,7 +13,7 @@ export default function Call_Action() {
       <p data-aos="fade-up"
         ata-aos="zoom-in-right"
         data-aos-duration="1000"
-        className="mb-6">
+        className="mb-6 ">
         Join us today and streamline your asset management process.
       </p>
       <Link to="/login" className="bg-white text-[#20319e]  px-6 py-3 rounded-lg shadow-lg font-bold">

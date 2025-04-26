@@ -3,7 +3,7 @@ import React from 'react'
 export default function Works() {
   return (
     <section className="bg-gray-200 dark:bg-[#131e2e] rounded-md">
-                <div className="py-12 sm:w-10/12 w-full  px-6 sm:px-0 mx-auto">
+                <div className="py-12 sm:w-10/12 w-full px-6 sm:px-0 mx-auto">
                     <h2 data-aos="fade-up"
                         ata-aos="zoom-in-left"
                         data-aos-duration="1000"
