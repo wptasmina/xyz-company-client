@@ -1,180 +1,99 @@
-![xyzCompany](https://github.com/user-attachments/assets/8b49f975-d55d-4b7f-8f14-ac9c505f3af0)
 
-# Asset Management System
+# 🏢 xyzCompany - Asset Management System
 
-## 🚀 Live Site URL
-[xyz_company](https://xyzcompany-9211e.web.app)
-
-## 🛠 Admin Credentials
-- **HR Email:** `admin@xyz.com`
-- **HR Password:** `Admin123!`
-
----
-
-## 📌 Project Description
-The **Asset Management System** is a web application designed to help companies manage their assets efficiently. This tool allows HR Managers to track returnable and non-returnable assets while also handling employee records. Employees can request, return, and monitor assets assigned to them.
+| Section | Details |
+|:---|:---|
+| **🚀 Live Site** | [xyz_company](https://xyzcompany-9211e.web.app) |
+| **🛠 Admin Credentials** | - Email: `admin@xyz.com`<br>- Password: `Admin123!` |
+| **📝 Project Overview** | A full-stack web application for efficient management of company assets. HR Managers can manage assets and employees, while Employees can request, track, and return assets. |
+| **🔑 Key Features** | - Role-based dashboards (HR & Employee) <br> - JWT authentication (email/password & Google login) <br> - CRUD operations with alerts & notifications <br> - Server-side search, filter, pagination <br> - Payment integration for package expansion <br> - Real-time asset tracking with TanStack Query <br> - SEO Optimization with React Helmet |
+| **🛠 Technology Stack** | - **Frontend:** React.js, Tailwind CSS, React Toastify, TanStack Query, React Select, React PDF, React Helmet <br> - **Backend:** Node.js, Express.js, MongoDB (Mongoose), JWT, Axios Interceptors <br> - **Authentication:** Firebase Authentication (Email/Password & Google) <br> - **Deployment:** Vercel (Frontend) & Render (Backend) |
 
 ---
 
-## 🔑 Key Features
-1. **User Roles:**
-   - **HR Manager Dashboard:** Full control of assets and employee records.
-   - **Employee Dashboard:** Request, return, and view allocated assets.
+## 🗂 Pages Overview
 
-2. **Authentication:**
-   - Email/Password-based login with JWT stored in local storage.
-   - Social login (e.g., Google).
-
-3. **CRUD Operations:**
-   - Sweet alerts and toast notifications for CRUD operations and authentication actions.
-
-4. **Responsive Design:**
-   - Fully optimized for mobile, tablet, and desktop views.
-
-5. **Dynamic Data Handling:**
-   - TanStack Query used for GET requests.
-   - Server-side search, filtering, and sorting.
-
-6. **Pagination:**
-   - Server-side pagination for all tables (10 entries per page).
-
-7. **Package Management:**
-   - HR Managers can purchase packages to increase employee limits.
-
-8. **Data Visualization:**
-   - Pie chart showing returnable vs. non-returnable items requested by employees.
-
-9. **Environment Variables:**
-   - Firebase configuration and MongoDB credentials secured using environment variables.
+| Page | Description |
+|:---|:---|
+| **Home Page** | Public landing page with platform intro, packages, and call-to-action banners. |
+| **Login / Register** | Secure authentication system with email/password and Google sign-in. |
+| **Employee Dashboard** | View assigned assets, request new ones, and manage personal profile. |
+| **HR Manager Dashboard** | Manage assets, employees, pending requests, and purchase packages. |
+| **Asset Management** | Add, update, delete assets; approve/reject asset requests. |
+| **Employee Management** | Add single/multiple employees, view employee records. |
+| **Payment Page** | HR Managers can purchase packages to increase employee limits. |
+| **Profile Page** | View and update profile details (email editing restricted). |
 
 ---
 
-## 🛠 Technical Stack
-### **Frontend**
-- React.js with Hooks and Context API
-- Tailwind CSS for styling
-- React Toastify for notifications
-- TanStack Query for efficient data fetching
-- React Select for dropdowns
-- React PDF for generating printable documents
-- React Helmet for SEO
+## 🧩 Key Features Overview
 
-### **Backend**
-- Node.js and Express.js
-- MongoDB with Mongoose
-- JWT for authentication
-- Axios for API requests with interceptors
-
-### **Deployment**
-- **Frontend:** Vercel
-- **Backend:** Render
+| Feature | Details |
+|:---|:---|
+| **Role-Based Access** | Different dashboards and permissions for HR and Employee roles. |
+| **Authentication** | Secure login with email/password and Google; token management with JWT. |
+| **Real-Time Data** | Data fetching and caching with TanStack Query for faster performance. |
+| **Server-Side Operations** | Search, filter, and paginate large datasets efficiently from backend. |
+| **Dynamic Asset & Employee Management** | Real-time asset requests, returns, and employee data handling. |
+| **Payment Integration** | Expand employee limit by purchasing packages through secure payments. |
+| **Responsive Design** | Fully mobile, tablet, and desktop responsive UI. |
+| **SEO Optimized** | Meta tags and page titles managed via React Helmet for better visibility. |
+| **Bulk Employee Addition** | Upload multiple employees at once with a single API request. |
+| **PDF Generation** | Employees can generate printable asset assignment PDFs. |
 
 ---
 
-## 📋 Installation Instructions
+## 🛠️ Technology Stack (Detailed)
 
-### Prerequisites
-- Node.js installed
-- MongoDB connection URI
-- Firebase project setup for authentication
-
-### Steps
-1. Clone the repositories:
-   - **Client Side:** [GitHub Client Repo](https://github.com/wptasmina/xyz-company-client)
-   - **Server Side:** [GitHub Server Repo](https://github.com/wptasmina/xyz-company-server)
-
-2. **Setup Backend**:
-   - Navigate to the server directory:
-     ```bash
-     cd server
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Create a `.env` file and add the following:
-     ```env
-     PORT=5000
-     JWT_SECRET=your_jwt_secret
-     MONGO_URI=your_mongodb_connection_uri
-     ```
-   - Start the server:
-     ```bash
-     npm start
-     ```
-
-3. **Setup Frontend**:
-   - Navigate to the client directory:
-     ```bash
-     cd client
-     ```
-   - Install dependencies:
-     ```bash
-     npm install
-     ```
-   - Create a `.env` file and add the following:
-     ```env
-     REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
-     REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-     REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-     ```
-   - Start the client:
-     ```bash
-     npm start
-     ```
+| Category | Technologies |
+|:---|:---|
+| **Frontend** | React.js (Hooks, Context API), Tailwind CSS, React Toastify, React Select, TanStack Query, React PDF, React Helmet |
+| **Backend** | Node.js, Express.js, MongoDB (Mongoose), JWT Authentication, Axios Interceptors |
+| **Authentication** | Firebase Authentication (Email/Password, Google OAuth) |
+| **Deployment** | Vercel (Client), Render (Server) |
 
 ---
 
-## 🔍 Features in Detail
+## 🧪 How to Run the Project Locally
 
-### **Navbar**
-- **Without Login:** Contains links to Home, Join as Employee, Join as HR Manager, and Login.
-- **After Login (Employee):** Contains Home, My Assets, My Team, Request for an Asset, Profile, and Logout.
-- **After Login (HR Manager):** Contains Home, Asset List, Add an Asset, All Requests, My Employee List, Add an Employee, Profile, and Logout.
-
-### **Home Page**
-- **Without Login:** Includes a banner, about section, and packages section.
-  - **Banner Section:** Two image sliders with buttons to join as an HR Manager or Employee.
-  - **About Section:** Static details about the platform.
-  - **Packages Section:** Displays three packages (5 members for $5, 10 members for $8, 20 members for $15).
-- **After Login (Employee):** Displays pending requests, monthly requests, and additional sections (e.g., Calendar, Events).
-- **After Login (HR Manager):** Displays pending requests, top requested items, limited stock items, and a pie chart for asset requests.
-
-### **Asset Management**
-- Employees can:
-  - Search and filter requested assets.
-  - Cancel pending requests, return approved returnable assets, or print asset details.
-  - Request new assets with notes.
-- HR Managers can:
-  - Add, update, and delete assets.
-  - Approve/reject asset requests.
-
-### **Employee Management**
-- HR Managers can:
-  - View employee lists and remove members from teams.
-  - Add multiple employees at once.
-  - Purchase packages to increase employee limits.
-
-### **Profile Page**
-- Both roles can view and update personal information (except email).
-
-### **Payment Integration**
-- HR Managers can purchase packages for team expansion via a dedicated payment page.
+| Step | Commands / Instructions |
+|:---|:---|
+| **1. Clone Repositories** | - **Client:**<br>`git clone https://github.com/wptasmina/xyz-company-client`<br><br>- **Server:**<br>`git clone https://github.com/wptasmina/xyz-company-server` |
+| **2. Backend Setup** | - Navigate to server folder:<br>`cd xyz-company-server`<br><br>- Install dependencies:<br>`npm install`<br><br>- Create a `.env` file with:<br>```env<br>PORT=5000<br>JWT_SECRET=your_jwt_secret<br>MONGO_URI=your_mongo_uri<br>```<br><br>- Start the server:<br>`nodemon index.js` |
+| **3. Frontend Setup** | - Navigate to client folder:<br>`cd xyz-company-client`<br><br>- Install dependencies:<br>`npm install`<br><br>- Create a `.env` file with:<br>```env<br>VITE_FIREBASE_API_KEY=your_firebase_api_key```<br>```VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain```<br>```VITE_FIREBASE_PROJECT_ID=your_project_id```<br>```<br><br>- Start the client:<br>`npm run dev` |
 
 ---
 
-## 🏆 Challenges Implemented
-1. Used **TanStack Query** for efficient GET requests.
-2. JWT-based authentication with tokens stored in local storage.
-3. React Helmet for SEO.
-4. Server-side search, filtering, and pagination.
-5. Bulk employee addition using a single API call.
+## 💳 Payment System Details
+
+| Feature | Description |
+|:---|:---|
+| **Package Purchase** | HR Managers can buy employee packages (5, 10, or 20) to increase their team size. |
+| **Secure Transactions** | Payment gateway integration ensures secure transactions. |
+| **Instant Updates** | New employee slots are immediately reflected after successful payment. |
 
 ---
 
-## 📤 Submission Information
-- **Assignment Category/Variant:** HR email: `admin@xyz.com` | HR password: `Admin123!`
-- **Front-end Live Site Link:** [Frontend](#)
-- **Client Side GitHub Repository Link:** [Client Repo](#)
-- **Server Side GitHub Repository Link:** [Server Repo](#)
+## 🎯 Challenges Successfully Handled
+
+| Challenge | Solution |
+|:---|:---|
+| **Advanced Server-Side Pagination** | Handled on server to manage large data efficiently. |
+| **JWT Secured Routes** | All protected routes secured via JSON Web Tokens. |
+| **SEO Optimization** | React Helmet used for dynamic meta tags. |
+| **Bulk Employee Upload** | Enabled HR Managers to add multiple employees at once. |
+| **Database Query Optimization** | MongoDB queries optimized for faster response times. |
+
+---
+
+## 📤 Repositories and Live Links
+
+| Type | Link |
+|:---|:---|
+| **Frontend Repository** | [xyz-company-client](https://github.com/wptasmina/xyz-company-client) |
+| **Backend Repository** | [xyz-company-server](https://github.com/wptasmina/xyz-company-server) |
+| **Live Site** | [xyz_company](https://xyzcompany-9211e.web.app) |
+
+---
+
 
