@@ -58,17 +58,12 @@ const Navbar = () => {
           <NavLink to="/product-featur" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
              Features_Product
           </NavLink>
-          {/* <NavLink to="/employee-register" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
-            Join as Employee
-          </NavLink>
-          <NavLink to="/hr-register" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
-            Join as HR Manager
-          </NavLink> */}
+
           <NavLink to="/contact" className="font-semibold text-gray-700 hover:text-[#031278] dark:text-white dark:hover:text-white/70 duration-300">
             Contact
           </NavLink>
         </div>
-        
+
          <div className="flex items-center"> 
           {/* Dark Mode Toggle */}
          <button
@@ -84,7 +79,6 @@ const Navbar = () => {
             Login
           </button>
         </Link>
-         </div>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -93,8 +87,8 @@ const Navbar = () => {
         >
           {isMobileMenuOpen ? <IoMdClose /> : <IoIosMenu />}
         </button>
-
-       
+        </div>
+        
       </div>
 
       {/* Mobile Navigation */}
