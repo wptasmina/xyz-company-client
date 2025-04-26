@@ -84,6 +84,7 @@ env<br>VITE_FIREBASE_API_KEY=your_firebase_api_key<br>VITE_FIREBASE_AUTH_DOMAIN=
 
 - Start the client:
 npm run dev
+
 ---
 
 ## 💳 Payment System Details
