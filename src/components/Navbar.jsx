@@ -68,6 +68,7 @@ const Navbar = () => {
             Contact
           </NavLink>
         </div>
+        
          <div className="flex items-center"> 
           {/* Dark Mode Toggle */}
          <button

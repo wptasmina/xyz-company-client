@@ -10,7 +10,6 @@ module.exports = withMT ({
   ],
   theme: {
     extend: {
-      darkMode: "class",
       backgroundImage: {
         bannerImg: "url('/slide-1.jpg')",
         bannerImg2: "url('/slide-2.webp')",

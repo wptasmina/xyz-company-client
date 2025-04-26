@@ -6,17 +6,17 @@
 
 
 /* Light Mode (default) */
-body {
+/* body {
     font-family: "Oswald", serif;
     background-color: white;
     color: black;
     transition: background-color 0.3s ease-in-out;
-  }
+  } */
   
   /* Dark Mode */
-  .dark body {
+  /* .dark body {
     background-color: #161f2c;
     color: white;
   }
-  
+   */
 
