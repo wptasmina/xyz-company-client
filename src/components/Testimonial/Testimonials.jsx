@@ -24,22 +24,22 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-gray-100 dark:bg-[#1e293b]">
+    <section className="md:py-16 py-8 bg-gray-100 dark:bg-[#1e293b]">
       <div className="w-10/12 mx-auto text-center">
-        <h2 className="text-3xl font-bold text-[#131c58] dark:text-white mb-8">What Our Clients Say</h2>
+        <h2 className="md:text-3xl text-2xl font-bold text-[#131c58] dark:text-white mb-8">What Our Clients Say</h2>
         <div  className="grid md:grid-cols-3 gap-8 ">
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white p-6 shadow-lg rounded-2xl flex flex-col items-center text-center"
+              className="bg-white dark:bg-[#131e2e] p-6 shadow-lg rounded-2xl flex flex-col items-center text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <FaQuoteLeft className="text-gray-400 text-3xl mb-4" />
-              <p className="text-gray-700 mb-4">{testimonial.feedback}</p>
+              <FaQuoteLeft className="text-gray-400 dark:text-gray-800 text-3xl mb-4" />
+              <p className="text-gray-700 dark:text-gray-500 mb-4">{testimonial.feedback}</p>
               <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 rounded-full border-2 border-blue-500 mb-2" />
-              <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-gray-200">{testimonial.name}</h4>
               <p className="text-sm text-gray-500">{testimonial.company}</p>
             </motion.div>
           ))}

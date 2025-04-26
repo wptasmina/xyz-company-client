@@ -1,8 +1,6 @@
 
-import WhyChoose from "../components/Features/Why-Choose/WhyChoose";
-
-
 import Call_Action from "../components/Features/Call-to-Action/Call_Action";
+import WhyChoose from "../components/Features/Why-Choose/WhyChoose";
 import Works from "../components/Features/Work-section/Works";
 
 
@@ -35,13 +33,12 @@ const About_section = () => {
                 {/* Features Section */}
                 <WhyChoose />
 
-
                 {/* How It Works Section */}
                 <Works />
 
-
                 {/* Call-to-Action Section */}
-                {/* <Call_Action /> */}
+                <Call_Action />
+
             </div>
         </div>
     );
