@@ -58,9 +58,9 @@
 
 | Step | Commands / Instructions |
 |:---|:---|
-| **1. Clone Repositories** | ```bash<br>git clone https://github.com/wptasmina/xyz-company-client<br>git clone https://github.com/wptasmina/xyz-company-server<br>``` |
-| **2. Backend Setup** | - Navigate to server folder: `cd xyz-company-server` <br> - Install dependencies: `npm install` <br> - Create `.env` with:<br> ```env<br>PORT=5000<br>JWT_SECRET=your_jwt_secret<br>MONGO_URI=your_mongo_uri<br>``` <br> - Start server: `npm start` |
-| **3. Frontend Setup** | - Navigate to client folder: `cd xyz-company-client` <br> - Install dependencies: `npm install` <br> - Create `.env` with:<br> ```env<br>REACT_APP_FIREBASE_API_KEY=your_firebase_api_key<br>REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain<br>REACT_APP_FIREBASE_PROJECT_ID=your_project_id<br>``` <br> - Start client: `npm start` |
+| **1. Clone Repositories** | **client**`git clone https://github.com/wptasmina/xyz-company-client` | <br/>**Server**` git clone https://github.com/wptasmina/xyz-company-server`
+| **2. Backend Setup** | - Navigate to server folder: `cd xyz-company-server` <br> - Install dependencies: `npm install` <br> - Create `.env` with:<br> ```env<br>PORT=5000<br>JWT_SECRET=your_jwt_secret<br>MONGO_URI=your_mongo_uri<br>``` <br> - Start server: `nodemon index.js` |
+| **3. Frontend Setup** | - Navigate to client folder: `cd xyz-company-client` <br> - Install dependencies: `npm install` <br> - Create `.env` with:<br> ```env<br>REACT_APP_FIREBASE_API_KEY=your_firebase_api_key<br>REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain<br>REACT_APP_FIREBASE_PROJECT_ID=your_project_id<br>``` <br> - Start client: `npm run dev` |
 
 ---
 
