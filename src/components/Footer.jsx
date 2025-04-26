@@ -5,18 +5,19 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
 
-  <footer class="text-gray-600 body-font bg-[#eff1fdc9]">
+  <footer class="text-gray-600 body-font bg-[#eff1fdc9] dark:bg-[#131e2e] ">
   <div class="w-10/12 pt-20 mx-auto flex justify-between md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+
     <div class="w-64 md:text-left">
       <Link class="flex title-font font-medium items-center justify-start text-gray-900">
        <img src={logo} alt="logo"className='w-10' />
-        <span class="ml-1 text-xl text-[#031278] font-bold">TrakSmart.</span>
+        <span class="ml-1 text-xl text-[#031278] dark:text-[#3043c4] font-bold">TrakSmart.</span>
       </Link>
       <p class="mt-2 text-sm text-gray-500 mb-7 text-left pr-2">Air plant banjo lyft occupy retro adaptogen indego</p>
     </div>
     <div class="flex flex-wrap">
       <div class="">
-        <h2 class="title-font font-bold text-[#0d133d] tracking-widest text-lg mb-3">QuickLinks</h2>
+        <h2 class="title-font font-bold text-[#0d133d] dark:text-gray-400 tracking-widest text-lg mb-3">QuickLinks</h2>
         <nav class="list-none mb-10">
           <li>
             <a class="text-gray-600 hover:text-[#031278]">Home</a>
@@ -35,7 +36,7 @@ export default function Footer() {
     </div>
     <div class=" flex-wrap">
       <div class="">
-        <h2 class="title-font font-bold text-[#0d133d] tracking-widest text-lg mb-3">CATEGORIES</h2>
+        <h2 class="title-font font-bold text-[#0d133d] dark:text-gray-400 tracking-widest text-lg mb-3">CATEGORIES</h2>
         <nav class="list-none mb-10">
           <li>
             <a class="text-gray-600 hover:text-[#031278]">Add Employee</a>
@@ -53,8 +54,8 @@ export default function Footer() {
       </div>
     </div>
     <div class="flex flex-wrap">
-      <div class="">
-        <h2 class="title-font font-bold text-[#0d133d] tracking-widest text-lg mb-3">Resources</h2>
+      <div class="dark:text-gray-400">
+        <h2 class="title-font font-bold text-[#0d133d] dark:text-gray-400 tracking-widest text-lg mb-3">Resources</h2>
         <nav class="list-none mb-10">
           <li>
             <a class="text-gray-600 hover:text-[#031278]">Blogs</a>
