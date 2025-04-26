@@ -15,7 +15,7 @@ export default function Home() {
     </Helmet>
 
     <Navbar />
-      {/* <Banner/> */}
+      <Banner/>
       <About_section/>
       <PackagesSection/> 
       <Testimonials />
