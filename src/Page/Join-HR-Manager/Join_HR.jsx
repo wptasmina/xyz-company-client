@@ -134,7 +134,7 @@ const JoinHR = () => {
       </div>
 
       {/* Right Form Section */}
-      <div className="bg-white dark:bg-[#101927] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md md:px-8 px-4 my-12">
+      <div className="bg-white dark:bg-[#101927] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md md:px-8 px-4 py-8 my-12">
 
         <div className="inline-flex items-center justify-center gap-2 mb-4">
           <Link to="/">
