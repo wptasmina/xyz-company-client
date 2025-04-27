@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Navbar from './../components/Navbar';
 
 export default function MainLayouts({ theme }) {
   useEffect(() => {
@@ -10,7 +12,9 @@ export default function MainLayouts({ theme }) {
 
   return (
     <div className={theme}>
+      <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import Navbar from "../../components/Navbar";
 import { FaCheckCircle, FaTools, FaShieldAlt, FaChartPie, FaBell, FaSearch, FaMoneyBillWave, FaLock, FaPrint, FaMobileAlt } from "react-icons/fa";
-import Footer from "../../components/Footer";
+
 
 
 const features = [
@@ -36,7 +35,6 @@ const ProductFeatures = () => {
         <title>TrakSmart | Contact </title>
       </Helmet>
 
-      <Navbar />
       <div className="bg-white dark:bg-[#161f2c] pt-10">
 
         <div className="w-10/12 mx-auto">
@@ -110,9 +108,6 @@ const ProductFeatures = () => {
         </div>
 
       </div>
-
-      <Footer />
-
     </>
   );
 };
