@@ -124,14 +124,17 @@ const JoinHR = () => {
     
 
   return (
-    <div className="flex sm:w-11/12 w-full mx-auto min-h-screen">
+    <div className="bg-white dark:bg-[#172231]">
+
+    <div className="w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center min-h-screen">
+
       {/* Left Section */}
-      <div className="hidden md:flex w-1/2 items-center justify-center bg-white dark:bg-[#161f2c]">
+      <div className="hidden md:flex w-1/2 items-center justify-center bg-white dark:bg-[#172231]">
         <img src={img} alt="Image" />
       </div>
 
       {/* Right Form Section */}
-      <div className="bg-white dark:bg-[#29354985] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md px-8 lg:px-16 my-12">
+      <div className="bg-white dark:bg-[#101927] dark:text-white flex flex-col w-full md:w-1/2 items-center justify-center sm:shadow-md rounded-md md:px-8 px-4 my-12">
 
         <div className="inline-flex items-center justify-center gap-2 mb-4">
           <Link to="/">
@@ -155,7 +158,7 @@ const JoinHR = () => {
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none
                outline-none focus:border-[#7789fd]"
               placeholder="Enter your full name"
               {...register("name", { required: true })}
@@ -176,7 +179,7 @@ const JoinHR = () => {
             <input
               type="text"
               id="company"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               placeholder="Enter your company name"
               {...register("company_name", { required: true })}
             />
@@ -198,8 +201,8 @@ const JoinHR = () => {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
-              placeholder="Enter your email address"
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              placeholder="email"
               {...register("email", { required: true })}
             />
             {errors.email && (
@@ -217,8 +220,8 @@ const JoinHR = () => {
       <input
         type={passwordVisible ? "text" : "password"} // Toggle between text and password
         id="password"
-        className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none focus:border-[#7789fd]"
-        placeholder="Enter your password"
+        className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none focus:border-[#7789fd]"
+        placeholder="password"
         {...register("password", {
           required: true,
           minLength: 6,
@@ -255,7 +258,7 @@ const JoinHR = () => {
             <input
               type="date"
               id="dob"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("dob", { required: true })}
             />
             {errors.dob && (
@@ -275,7 +278,7 @@ const JoinHR = () => {
               type="file"
               id="logo"
               placeholder="Enter your Company Logo"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
               {...register("company_logo", { required: true })}
             />
             {errors.company_logo && (
@@ -293,7 +296,7 @@ const JoinHR = () => {
             </label>
             <select
               id="package"
-              className="w-full px-4 py-2 dark:text-[#303030] border border-gray-300 rounded-lg focus:bg-white focus:ring-[#1753c2] focus:border-[#1753c2]"
+              className="w-full px-4 py-2 dark:text-gray-500 dark:bg-[#101927] border border-gray-300 rounded-lg focus:bg-white focus:ring-[#1753c2] focus:border-[#1753c2]"
               {...register("package", { required: true })}
             >
               <option value="basic" className="bg-gray-200 text-black text-sm px-0">Maximum 5 Employees- $5/month</option>
@@ -328,16 +331,17 @@ const JoinHR = () => {
           
         </form>
 
-        <p className="text-md text-gray-600 dark:text-gray-200 my-4">
+        <p className="text-md text-gray-700 dark:text-gray-200 my-4">
           Already have an account?
           <Link
             to="/login"
-            className="text-[#142f61] dark:text-gray-400 ml-1 font-bold underline"
+            className="text-[#142f61] dark:text-blue-700 ml-1 font-bold underline"
           >
             Login
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Navbar = () => {
   }, [isDarkMode]);
 
   return (
-    <nav className="py-2 px-4 md:px-0 shadow-md sticky z-50 top-0 bg-white dark:bg-[#1e293b]">
+    <nav className="py-2 px-4 md:px-0 shadow-md sticky z-50 top-0 bg-white/80 backdrop:blur dark:bg-[#1e293b]">
       <div className="md:w-10/12 mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
