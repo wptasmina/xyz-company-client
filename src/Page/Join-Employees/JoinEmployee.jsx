@@ -129,7 +129,7 @@ const JoinEmployee = () => {
         </div>
 
         {/* Right Form Section */}
-        <div className="flex flex-col w-full rounded-md lg:w-1/2 md:shadow-md items-center justify-center md:px-8 px-4 py-8 bg-white dark:text-gray-500 dark:bg-[#101927] my-12">
+        <div className="flex flex-col w-full rounded-lg lg:w-1/2 md:shadow-xl items-center justify-center md:px-8 px-4 py-8 bg-white dark:text-gray-500 dark:bg-[#101927] my-10">
           <div className="inline-flex items-center justify-center gap-2 mb-4">
             <Link to="/">
               <img src={logo} alt="Logo" className="w-12" />
