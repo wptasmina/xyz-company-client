@@ -76,17 +76,18 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-[#161f2c] flex md:flex-row flex-col justify-center items-center min-h-screen">
+    <div className=" bg-white dark:bg-[#172231]">
+    <div className="w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center min-h-screen">
       <Helmet>
         <title>TrakSmart || Login</title>
       </Helmet>
 
-      <div className="hidden md:block w-3/6">
+    <div className="hidden md:block w-3/6">
         <Lottie animationData={loginAm} />
       </div>
 
       {/* Right Form Section */}
-      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white dark:bg-[#25314485] shadow-md rounded-md py-6">
+      <div className="flex flex-col w-full md:w-1/2 items-center justify-center px-8 lg:px-16 bg-white dark:bg-[#101927] shadow-md rounded-md py-6">
         <div className="flex sm:gap-6 gap-2 mb-4 pt-4">
           <div>
             <Link to="/">
@@ -108,11 +109,11 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
           {/* Email */}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">Email</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2" htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none dark:text-[#000]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none dark:text-gray-400 dark:bg-[#101927]"
               placeholder="Enter your email address"
               {...register("email", { required: "Email is required" })}
             />
@@ -121,11 +122,11 @@ const LoginPage = () => {
 
           {/* Password */}
           <div className="mb-4 relative">
-            <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="password">Password</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2" htmlFor="password">Password</label>
             <input
               type={passwordVisible ? "text" : "password"}
               id="password"
-              className="w-full px-4 py-2 border border-gray-300 dark:text-[#000] rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 dark:text-gray-400 dark:bg-[#101927] rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
               placeholder="Enter your password"
               {...register("password", {
                 required: "Password is required",
@@ -152,17 +153,21 @@ const LoginPage = () => {
           />
 
           <div className="text-center py-4 text-gray-600">____________OR____________</div>
+
+          {/* Google login  */}
           <div
             className="flex justify-center items-center border border-[#1753c2ce] md:gap-6 gap-2 py-2 rounded-full hover:bg-[#EDF2FA] dark:hover:text-[#000] duration-300"
             onClick={handleGoogleSignIn}>
 
             <img src={gImg} className="w-6" alt="Google" />
             <div>
-              <h4 className="w-full font-medium cursor-pointer text-center">Continue with Google</h4>
+              <h4 className="w-full font-medium cursor-pointer text-center dark:text-gray-400 dark:hover:text-gray-900">Continue with Google</h4>
             </div>
           </div>
         </form>
       </div>
+    </div>
+
     </div>
   );
 };

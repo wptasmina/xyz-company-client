@@ -13,7 +13,7 @@ const PackagesSection = () => {
         <h2 data-aos="fade-up"
                         ata-aos="zoom-in-left"
                         data-aos-duration="1000" 
-                        className="text-3xl font-bold mb-6 text-[#131c58] dark:text-white ">Our Packages</h2>
+                        className="text-3xl font-bold mb-6 text-[#131c58] dark:text-white">Our Packages</h2>
         <p data-aos="fade-up"
            ata-aos="zoom-in-left"
           data-aos-duration="1000" 

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaArrowLeft, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaRegArrowAltCircleLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import contact from "/contact.jpg";
 
 const ContactPage = () => {
@@ -23,7 +21,7 @@ const ContactPage = () => {
         <title>TrakSmart | Contact </title>
       </Helmet>
       
-      <div className="bg-white dark:bg-[#1e293b] pt-10">
+      <div className="bg-white dark:bg-[#172231] py-10">
         <section className="w-10/12 mx-auto md:p-10 md:shadow-lg rounded-lg md:bg-white md:dark:bg-[#101927]">
           {/* Heading */}
           <h2 className="text-3xl font-bold md:text-center text-[#1a3566ee] dark:text-white pb-2">Contact Us</h2>
@@ -48,15 +46,6 @@ const ContactPage = () => {
           </div>
        
         </section>
-
-
-        <div className="w-10/12 mx-auto px-4 py-8">
-          <Link to="/">
-            <button className="inline-flex items-center gap-1 shadow-2xl bg-[#031278] text-white px-4 py-2 rounded-full">
-              <FaRegArrowAltCircleLeft className="text-xl" />Back To Home
-            </button>
-          </Link>
-        </div>
       </div>
 
     </>

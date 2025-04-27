@@ -35,7 +35,7 @@ const ProductFeatures = () => {
         <title>TrakSmart | Contact </title>
       </Helmet>
 
-      <div className="bg-white dark:bg-[#161f2c] pt-10">
+      <div className="bg-white dark:bg-[#172231] py-10">
 
         <div className="w-10/12 mx-auto">
           {/* Title & Description */}
@@ -88,12 +88,12 @@ const ProductFeatures = () => {
               data-aos-duration="1000" className="dark:text-white text-3xl font-bold text-[#131c58]">Business Benefits</h3>
             <p data-aos="fade-up"
               ata-aos="zoom-in-left"
-              data-aos-duration="1000" className="text-gray-600 dark:text-gray-400 mt-2 text-lg">
+              data-aos-duration="1000" className="text-gray-600 dark:text-gray-400 mt-2 text-lg mb-6">
               Unlock the advantages of smarter asset management.
             </p>
 
             {/* Benefits Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 py-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}

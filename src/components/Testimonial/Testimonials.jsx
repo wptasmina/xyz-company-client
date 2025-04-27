@@ -24,14 +24,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="md:py-10 py-8 bg-gray-100 dark:bg-[#1e293b]">
+    <section className="md:py-10 py-8 bg-gray-100 dark:bg-[#172231]">
       <div className="w-10/12 mx-auto text-center">
         <h2 className="md:text-3xl text-2xl font-bold text-[#131c58] dark:text-white mb-8">What Our Clients Say</h2>
         <div  className="grid md:grid-cols-3 gap-8 ">
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white dark:bg-[#131e2e] p-6 shadow-lg rounded-2xl flex flex-col items-center text-center"
+              className="bg-white dark:bg-[#0d1520] p-6 shadow-lg rounded-2xl flex flex-col items-center text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
