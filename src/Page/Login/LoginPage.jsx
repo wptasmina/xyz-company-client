@@ -121,7 +121,7 @@ const LoginPage = () => {
           </div>
 
           {/* Password */}
-          <div className="mb-6">
+          <div className="mb-4">
           <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">Password</label>
           <div className="relative">
             <input

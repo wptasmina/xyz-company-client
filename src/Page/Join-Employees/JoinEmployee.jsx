@@ -195,7 +195,7 @@ const JoinEmployee = () => {
                   id="email"
                   className="w-full px-4 py-2 border border-gray-300 dark:text-gray-500 dark:bg-[#101927] rounded-lg focus:outline-none 
               outline-none focus:border-[#7789fd]"
-                  placeholder="Enter your email address"
+                  placeholder="email"
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
@@ -203,37 +203,41 @@ const JoinEmployee = () => {
                 )}
               </div>
 
-              {/* Password */}
-              <div className="mb-4 relative md:w-1/2">
-                <label
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
-                  htmlFor="password"
-                >
-                  Password
-                </label>
-                <input
-                  type={passwordVisible ? "text" : "password"}
-                  id="password"
-                  className="w-full px-4 py-2 border border-gray-300 dark:text-gray-500 dark:bg-[#101927] rounded-lg focus:outline-none outline-none focus:border-[#7789fd]"
-                  placeholder="Enter your password"
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 16,
-                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
-                  })}
-                />
-                {errors.password && (
-                  <p className="text-red-600">This field is required</p>
-                )}
-                <button
-                  type="button"
-                  onClick={togglePasswordVisibility}
-                  className="absolute inset-y-0 right-4 top-[40%] flex items-center text-gray-500 dark:text-gray-200 hover:text-[#203a6b] focus:outline-none"
-                >
-                  {passwordVisible ? <IoEyeOff className="text-xl" /> : <IoEye className="text-xl" />}
-                </button>
-              </div>
+             {/* Password */}
+          <div className="mb-4 relative md:w-1/2">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-2">Password</label>
+          <div className="relative">
+            <input
+              id="password"
+              type={passwordVisible ? "text" : "password"}
+              className="w-full px-4 py-2 border border-gray-300 dark:text-gray-400 dark:bg-[#101927] rounded-lg focus:ring-[#1753c2] focus:border-[#1753c2] focus:outline-none"
+              placeholder="password"
+              {...register("password", { required: "Password is required",
+                minLength: { value: 6, message: "Password must be at least 6 characters" },
+                maxLength: { value: 16, message: "Password must be at most 16 characters" },
+                pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/, message: "Password must contain an uppercase, a number, and a special character" }
+               })}
+            />
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2"
+            >
+              {passwordVisible ? (
+                <IoEyeOff className="w-5 h-5 text-gray-500" />
+              ) : (
+                <IoEye className="w-5 h-5 text-gray-500" />
+              )}
+            </button>
+          </div>
+          {errors.password && (
+            <div className="text-red-600 text-sm mt-1">
+              <p>{errors.password?.message}</p>
+            </div>
+          )}
+          </div>
+
+
             </div>
 
             {/* Submit Button */}
