@@ -118,11 +118,11 @@ const JoinEmployee = () => {
   return (
 
     <div className="bg-white dark:bg-[#172231]">
-      <div className=" w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center min-h-screen">
-
-        <Helmet>
+      <Helmet>
           <title>TrakSmart || Join Employee </title>
-        </Helmet>
+      </Helmet>
+
+      <div className=" w-10/12 mx-auto flex md:flex-row flex-col justify-center items-center min-h-screen">
         {/* Left Animation Section */}
         <div className="hidden md:flex w-1/2 items-center justify-center">
           <img src={img} alt="image" />
